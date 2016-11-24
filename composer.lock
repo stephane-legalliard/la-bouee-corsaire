@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d688b60cbce67f16cf791df97abe9b2",
-    "content-hash": "d3db27cb82d21fddd92e1c7525428890",
+    "hash": "967d428902cb2952de3d659c5ea5ee46",
+    "content-hash": "a4d841caefd22b3c785634cebf5fd2f8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1096,6 +1096,58 @@
             "time": "2016-10-10 12:19:37"
         },
         {
+            "name": "sameddin/bootstrap-bundle",
+            "version": "dev-symfony3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vv221/ElnurBootstrapBundle.git",
+                "reference": "d83a0fc26aa3450323393b5dc6b3383eb579fa1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vv221/ElnurBootstrapBundle/zipball/d83a0fc26aa3450323393b5dc6b3383eb579fa1c",
+                "reference": "d83a0fc26aa3450323393b5dc6b3383eb579fa1c",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/config": "~3.1",
+                "symfony/dependency-injection": "~3.1",
+                "symfony/form": "~3.1",
+                "symfony/http-kernel": "~3.1",
+                "symfony/twig-bridge": "~3.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Elnur\\Bundle\\BootstrapBundle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Elnur Abdurrakhimov",
+                    "email": "elnur@elnur.pro",
+                    "homepage": "http://www.elnur.pro"
+                }
+            ],
+            "description": "Unobtrusive support for Bootstrap 3 - Compatible with Symfony 3.x",
+            "keywords": [
+                "bootstrap",
+                "templating"
+            ],
+            "support": {
+                "source": "https://github.com/vv221/ElnurBootstrapBundle/tree/symfony3"
+            },
+            "time": "2016-11-24 16:24:21"
+        },
+        {
             "name": "sensio/distribution-bundle",
             "version": "v5.0.14",
             "source": {
@@ -1904,6 +1956,57 @@
             "time": "2016-11-21 02:44:44"
         },
         {
+            "name": "twbs/bootstrap",
+            "version": "v3.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0b9c4a4007c44201dce9a6cc1a38407005c26c86",
+                "reference": "0b9c4a4007c44201dce9a6cc1a38407005c26c86",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2016-07-25 15:51:55"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.28.2",
             "source": {
@@ -2076,7 +2179,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "sameddin/bootstrap-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
