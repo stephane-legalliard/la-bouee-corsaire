@@ -2,13 +2,14 @@
 	
 	namespace AppBundle\Entity;
 	
+	use FOS\UserBundle\Model\User as BaseUser;
 	use Doctrine\ORM\Mapping as ORM;
 	
 	/**
 	 * @ORM\Entity
 	 * @ORM\Table(name="users")
 	 */
-	class User {
+	class User extends BaseUser {
 		/**
 		 * User ID
 		 *
@@ -16,169 +17,179 @@
 		 * @ORM\Id
 		 * @ORM\GeneratedValue(strategy="AUTO")
 		 *
-		 * @var    INT $id
-		 * @access private
+		 * @var    int
+		 * @access protected
 		 */
-		private $id;
-		
-		/**
-		 * User nickname, used to identify it on the application
-		 *
-		 * @ORM\Column(type="string", length=100)
-		 *
-		 * @var    VARCHAR $nick
-		 * @access private
-		 */
-		private $nick;
+		protected $id;
 		
 		/**
 		 * User name, only shown during transactions
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
-		 * @var    VARCHAR $name
-		 * @access private
+		 * @var    string
+		 * @access protected
 		 */
-		private $name;
+		protected $name;
 		
 		/**
 		 * User surname, only shown during transactions
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
-		 * @var    VARCHAR $surname
-		 * @access private
+		 * @var    string
+		 * @access protected
 		 */
-		private $surname;
+		protected $surname;
 		
 		/**
 		 * User physical adress, visible only by the administrator
 		 *
 		 * @ORM\Column(type="text")
 		 *
-		 * @var    TEXT $adress
-		 * @access private
+		 * @var    string
+		 * @access protected
 		 */
-		private $adress;
-		
-		/**
-		 * User e-mail adress
-		 *
-		 * @ORM\Column(type="string", length=100)
-		 *
-		 * @var    VARCHAR $email
-		 * @access private
-		 */
-		private $email;
-		
-		/**
-		 * User password (encrypted)
-		 *
-		 * @ORM\Column(type="string", length=100)
-		 *
-		 * @var    VARCHAR $password
-		 * @access private
-		 */
-		private $password;
+		protected $adress;
 		
 		/**
 		 * User short text description
 		 *
 		 * @ORM\Column(type="text")
 		 *
-		 * @var    TEXT $description
-		 * @access private
+		 * @var    string
+		 * @access protected
 		 */
-		private $description;
+		protected $description;
 		
 		/**
 		 * User region
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
-		 * @var    VARCHAR $region
-		 * @access private
+		 * @var    string
+		 * @access protected
 		 */
-		private $region;
+		protected $region;
 		
 		/**
 		 * User city
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
-		 * @var    VARCHAR $city
-		 * @access private
+		 * @var    string
+		 * @access protected
 		 */
-		private $city;
+		protected $city;
 		
 		/**
 		 * User phone number (optional)
 		 *
 		 * @ORM\Column(type="bigint")
 		 *
-		 * @var    BIGINT $phone
-		 * @access private
+		 * @var    int
+		 * @access protected
 		 */
-		private $phone;
+		protected $phone;
 		
 		/**
 		 * User hours credit
 		 *
 		 * @ORM\Column(type="float")
 		 *
-		 * @var    FLOAT $hours
-		 * @access private
+		 * @var    float
+		 * @access protected
 		 */
-		private $hours;
+		protected $hours;
 		
 		/**
-		 * User status, may be "new", "active" or "disabled"
-		 *
-		 * @var    ENUM $status
-		 * @access private
-		 */
-		private $status;
-		
-		/**
-		 * User role, may be "USER" or "ADMIN"
-		 *
-		 * @var    ENUM $role
-		 * @access private
-		 */
-		private $role;
-		
-		/**
-		 * Get id
-		 *
-		 * @return integer
-		 */
-		public function getId()
-		{
-			return $this->id;
-		}
-		
-		/**
-		 * Set nick
-		 *
-		 * @param string $nick
-		 *
-		 * @return User
-		 */
-		public function setNick($nick)
-		{
-			$this->nick = $nick;
-			
-			return $this;
-		}
-		
-		/**
-		 * Get nick
+		 * Get name
 		 *
 		 * @return string
 		 */
-		public function getNick()
+		public function getName() { return $this->name; }
+		
+		/**
+		 * Get surname
+		 *
+		 * @return string
+		 */
+		public function getSurname() { return $this->surname; }
+		
+		/**
+		 * Get adress
+		 *
+		 * @return string
+		 */
+		public function getAdress() { return $this->adress; }
+		
+		/**
+		 * Get description
+		 *
+		 * @return string
+		 */
+		public function getDescription() { return $this->description; }
+		
+		/**
+		 * Get region
+		 *
+		 * @return string
+		 */
+		public function getRegion() { return $this->region; }
+		
+		/**
+		 * Get city
+		 *
+		 * @return string
+		 */
+		public function getCity() { return $this->city; }
+		
+		/**
+		 * Get phone
+		 *
+		 * @return integer
+		 */
+		public function getPhone() { return $this->phone; }
+		
+		/**
+		 * Get hours
+		 *
+		 * @return float
+		 */
+		public function getHours() { return $this->hours; }
+		
+		/**
+		 * Set username
+		 *
+		 * @param string $username
+		 *
+		 * @return User
+		 */
+		public function setUsername($username)
 		{
-			return $this->nick;
+			$username = (string) $username;
+			
+			$length = strlen($username);
+			if ($length >= 3 && $length <= 180) {
+				parent::setUsername($username);
+			}
+		}
+		
+		/**
+		 * Set password (encrypted)
+		 *
+		 * @param string $password
+		 *
+		 * @return User
+		 */
+		public function setPassword($password)
+		{
+			$username = (string) $password;
+			
+			$length = strlen($password);
+			if ($length >= 3 && $length <= 255) {
+				parent::setPassword($password);
+			}
 		}
 		
 		/**
@@ -190,19 +201,14 @@
 		 */
 		public function setName($name)
 		{
-			$this->name = $name;
+			$name = (string) $name;
+			
+			$length = strlen($name);
+			if ($length >= 3 && $length <= 100) {
+				$this->name = $name;
+			}
 			
 			return $this;
-		}
-		
-		/**
-		 * Get name
-		 *
-		 * @return string
-		 */
-		public function getName()
-		{
-			return $this->name;
 		}
 		
 		/**
@@ -214,19 +220,14 @@
 		 */
 		public function setSurname($surname)
 		{
-			$this->surname = $surname;
+			$surname = (string) $surname;
+			
+			$length = strlen($surname);
+			if ($length >= 3 && $length <= 100) {
+				$this->surname = $surname;
+			}
 			
 			return $this;
-		}
-		
-		/**
-		 * Get surname
-		 *
-		 * @return string
-		 */
-		public function getSurname()
-		{
-			return $this->surname;
 		}
 		
 		/**
@@ -238,19 +239,11 @@
 		 */
 		public function setAdress($adress)
 		{
+			$adress = (string) $adress;
+			
 			$this->adress = $adress;
 			
 			return $this;
-		}
-		
-		/**
-		 * Get adress
-		 *
-		 * @return string
-		 */
-		public function getAdress()
-		{
-			return $this->adress;
 		}
 		
 		/**
@@ -262,43 +255,12 @@
 		 */
 		public function setEmail($email)
 		{
-			$this->email = $email;
+			$email = (string) $email;
 			
-			return $this;
-		}
-		
-		/**
-		 * Get email
-		 *
-		 * @return string
-		 */
-		public function getEmail()
-		{
-			return $this->email;
-		}
-		
-		/**
-		 * Set password
-		 *
-		 * @param string $password
-		 *
-		 * @return User
-		 */
-		public function setPassword($password)
-		{
-			$this->password = $password;
-			
-			return $this;
-		}
-		
-		/**
-		 * Get password
-		 *
-		 * @return string
-		 */
-		public function getPassword()
-		{
-			return $this->password;
+			$length = strlen($email);
+			if ($length >= 3 && $length <= 180 && preg_match('/.*@.*/', $email)) {
+				parent::setEmail($email);
+			}
 		}
 		
 		/**
@@ -310,19 +272,11 @@
 		 */
 		public function setDescription($description)
 		{
+			$description = (string) $description;
+			
 			$this->description = $description;
 			
 			return $this;
-		}
-		
-		/**
-		 * Get description
-		 *
-		 * @return string
-		 */
-		public function getDescription()
-		{
-			return $this->description;
 		}
 		
 		/**
@@ -334,19 +288,14 @@
 		 */
 		public function setRegion($region)
 		{
-			$this->region = $region;
+			$region = (string) $region;
+			
+			$length = strlen($region);
+			if ($length >= 3 && $length <= 100) {
+				$this->region = $region;
+			}
 			
 			return $this;
-		}
-		
-		/**
-		 * Get region
-		 *
-		 * @return string
-		 */
-		public function getRegion()
-		{
-			return $this->region;
 		}
 		
 		/**
@@ -358,19 +307,14 @@
 		 */
 		public function setCity($city)
 		{
-			$this->city = $city;
+			$city = (string) $city;
+			
+			$length = strlen($city);
+			if ($length >= 3 && $length <= 100) {
+				$this->city = $city;
+			}
 			
 			return $this;
-		}
-		
-		/**
-		 * Get city
-		 *
-		 * @return string
-		 */
-		public function getCity()
-		{
-			return $this->city;
 		}
 		
 		/**
@@ -382,19 +326,13 @@
 		 */
 		public function setPhone($phone)
 		{
-			$this->phone = $phone;
+			$phone = (int) $phone;
+			
+			if (strlen($phone) == 10) {
+				$this->phone = $phone;
+			}
 			
 			return $this;
-		}
-		
-		/**
-		 * Get phone
-		 *
-		 * @return integer
-		 */
-		public function getPhone()
-		{
-			return $this->phone;
 		}
 		
 		/**
@@ -406,19 +344,11 @@
 		 */
 		public function setHours($hours)
 		{
+			$hours = (float) $hours;
+			
 			$this->hours = $hours;
 			
 			return $this;
-		}
-		
-		/**
-		 * Get hours
-		 *
-		 * @return float
-		 */
-		public function getHours()
-		{
-			return $this->hours;
 		}
 	
 }
