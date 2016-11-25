@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c6433dbe3966a08a5e4fdc71da7f2fd8",
-    "content-hash": "6951ccabeb5b6c97fe546cab6340f553",
+    "hash": "3bc1000d201dde3a0ee1a72c4becbf69",
+    "content-hash": "05486de9db57b8ce08c353e1670c94fa",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1169,58 +1169,6 @@
             "time": "2016-10-10 12:19:37"
         },
         {
-            "name": "sameddin/bootstrap-bundle",
-            "version": "dev-symfony3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vv221/ElnurBootstrapBundle.git",
-                "reference": "d83a0fc26aa3450323393b5dc6b3383eb579fa1c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vv221/ElnurBootstrapBundle/zipball/d83a0fc26aa3450323393b5dc6b3383eb579fa1c",
-                "reference": "d83a0fc26aa3450323393b5dc6b3383eb579fa1c",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/config": "~3.1",
-                "symfony/dependency-injection": "~3.1",
-                "symfony/form": "~3.1",
-                "symfony/http-kernel": "~3.1",
-                "symfony/twig-bridge": "~3.1"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Elnur\\Bundle\\BootstrapBundle\\": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Elnur Abdurrakhimov",
-                    "email": "elnur@elnur.pro",
-                    "homepage": "http://www.elnur.pro"
-                }
-            ],
-            "description": "Unobtrusive support for Bootstrap 3 - Compatible with Symfony 3.x",
-            "keywords": [
-                "bootstrap",
-                "templating"
-            ],
-            "support": {
-                "source": "https://github.com/vv221/ElnurBootstrapBundle/tree/symfony3"
-            },
-            "time": "2016-11-24 16:24:21"
-        },
-        {
             "name": "sensio/distribution-bundle",
             "version": "v5.0.14",
             "source": {
@@ -2253,7 +2201,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sameddin/bootstrap-bundle": 20,
         "friendsofsymfony/user-bundle": 20
     },
     "prefer-stable": false,
