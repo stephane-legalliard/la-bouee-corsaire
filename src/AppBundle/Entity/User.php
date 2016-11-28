@@ -4,6 +4,7 @@
 	
 	use FOS\UserBundle\Model\User as BaseUser;
 	use Doctrine\ORM\Mapping as ORM;
+	use Symfony\Component\Validator\Constraints as Assert;
 	
 	/**
 	 * @ORM\Entity
@@ -13,7 +14,7 @@
 		/**
 		 * User ID
 		 *
-		 * @ORM\Column(type="integer")
+		 * @ORM\Column(type="integer", options={"unsigned"=true})
 		 * @ORM\Id
 		 * @ORM\GeneratedValue(strategy="AUTO")
 		 *
@@ -27,6 +28,16 @@
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
+		 * @Assert\NotBlank(message="Veuillez entrer votre prénom.", groups={"Registration", "Profile"})
+		 *
+		 * @Assert\Length(
+		 * 	min=3,
+		 * 	max=100,
+		 * 	minMessage="Le prénom est trop court.",
+		 * 	maxMessage="Le prénom est trop long.",
+		 * 	groups={"Registration", "Profile"}
+		 * )
+		 *
 		 * @var    string
 		 * @access protected
 		 */
@@ -37,6 +48,16 @@
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
+		 * @Assert\NotBlank(message="Veuillez entrer votre nom.", groups={"Registration", "Profile"})
+		 *
+		 * @Assert\Length(
+		 * 	min=3,
+		 * 	max=100,
+		 * 	minMessage="Le nom est trop court.",
+		 * 	maxMessage="Le nom est trop long.",
+		 * 	groups={"Registration", "Profile"}
+		 * )
+		 *
 		 * @var    string
 		 * @access protected
 		 */
@@ -45,7 +66,17 @@
 		/**
 		 * User physical adress, visible only by the administrator
 		 *
-		 * @ORM\Column(type="text")
+		 * @ORM\Column(type="text", length=255)
+		 *
+		 * @Assert\NotBlank(message="Veuillez entrer votre adresse.", groups={"Registration", "Profile"})
+		 *
+		 * @Assert\Length(
+		 * 	min=3,
+		 * 	max=255,
+		 * 	minMessage="L’adresse est trop courte.",
+		 * 	maxMessage="L’adresse est trop longue.",
+		 * 	groups={"Registration", "Profile"}
+		 * )
 		 *
 		 * @var    string
 		 * @access protected
@@ -55,7 +86,17 @@
 		/**
 		 * User short text description
 		 *
-		 * @ORM\Column(type="text")
+		 * @ORM\Column(type="text", length=255)
+		 *
+		 * @Assert\NotBlank(message="Veuillez entrer un court texte pour vous présenter.", groups={"Registration", "Profile"})
+		 *
+		 * @Assert\Length(
+		 * 	min=3,
+		 * 	max=255,
+		 * 	minMessage="La description est trop courte.",
+		 * 	maxMessage="La description est trop longue.",
+		 * 	groups={"Registration", "Profile"}
+		 * )
 		 *
 		 * @var    string
 		 * @access protected
@@ -67,6 +108,16 @@
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
+		 * @Assert\NotBlank(message="Veuillez entrer votre région.", groups={"Registration", "Profile"})
+		 *
+		 * @Assert\Length(
+		 * 	min=3,
+		 * 	max=100,
+		 * 	minMessage="La région est trop courte.",
+		 * 	maxMessage="La région est trop longue.",
+		 * 	groups={"Registration", "Profile"}
+		 * )
+		 *
 		 * @var    string
 		 * @access protected
 		 */
@@ -77,6 +128,16 @@
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
+		 * @Assert\NotBlank(message="Veuillez entrer votre ville.", groups={"Registration", "Profile"})
+		 *
+		 * @Assert\Length(
+		 * 	min=3,
+		 * 	max=100,
+		 * 	minMessage="La ville est trop courte.",
+		 * 	maxMessage="La ville est trop longue.",
+		 * 	groups={"Registration", "Profile"}
+		 * )
+		 *
 		 * @var    string
 		 * @access protected
 		 */
@@ -85,7 +146,15 @@
 		/**
 		 * User phone number (optional)
 		 *
-		 * @ORM\Column(type="bigint")
+		 * @ORM\Column(type="bigint", nullable=true, options={"unsigned"=true, "default"=null})
+		 *
+		 * @Assert\Length(
+		 * 	min=3,
+		 * 	max=10,
+		 * 	minMessage="Le numéro de téléphone trop court.",
+		 * 	maxMessage="Le numéro de téléphone est trop long.",
+		 * 	groups={"Registration", "Profile"}
+		 * )
 		 *
 		 * @var    int
 		 * @access protected
@@ -95,7 +164,7 @@
 		/**
 		 * User hours credit
 		 *
-		 * @ORM\Column(type="float")
+		 * @ORM\Column(type="float", scale=2, nullable=true, options={"unsigned"=true, "default"=0})
 		 *
 		 * @var    float
 		 * @access protected
@@ -241,7 +310,10 @@
 		{
 			$adress = (string) $adress;
 			
-			$this->adress = $adress;
+			$length = strlen($adress);
+			if ($length >= 3 && $length <= 255) {
+				$this->adress = $adress;
+			}
 			
 			return $this;
 		}
@@ -274,7 +346,10 @@
 		{
 			$description = (string) $description;
 			
-			$this->description = $description;
+			$length = strlen($description);
+			if ($length >= 3 && $length <= 255) {
+				$this->description = $description;
+			}
 			
 			return $this;
 		}
@@ -326,9 +401,11 @@
 		 */
 		public function setPhone($phone)
 		{
+			$phone = (string) $phone;
+			$length = strlen($phone);
 			$phone = (int) $phone;
 			
-			if (strlen($phone) == 10) {
+			if ($length <= 10) {
 				$this->phone = $phone;
 			}
 			
@@ -346,7 +423,9 @@
 		{
 			$hours = (float) $hours;
 			
-			$this->hours = $hours;
+			if ($hours > 0) {
+				$this->hours = $hours;
+			}
 			
 			return $this;
 		}
