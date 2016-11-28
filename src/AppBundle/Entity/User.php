@@ -146,17 +146,17 @@
 		/**
 		 * User phone number (optional)
 		 *
-		 * @ORM\Column(type="bigint", nullable=true, options={"unsigned"=true, "default"=null})
+		 * @ORM\Column(type="string", length=20, nullable=true, options={"default"=null})
 		 *
 		 * @Assert\Length(
 		 * 	min=3,
-		 * 	max=10,
+		 * 	max=20,
 		 * 	minMessage="Le numéro de téléphone trop court.",
 		 * 	maxMessage="Le numéro de téléphone est trop long.",
 		 * 	groups={"Registration", "Profile"}
 		 * )
 		 *
-		 * @var    int
+		 * @var    string
 		 * @access protected
 		 */
 		protected $phone;
@@ -402,10 +402,9 @@
 		public function setPhone($phone)
 		{
 			$phone = (string) $phone;
-			$length = strlen($phone);
-			$phone = (int) $phone;
 			
-			if ($length <= 10) {
+			$length = strlen($phone);
+			if ($length >= 3 && $length <= 20) {
 				$this->phone = $phone;
 			}
 			
