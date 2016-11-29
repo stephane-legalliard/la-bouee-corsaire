@@ -1,109 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="29cm" height="23cm" viewBox="308 -30 575 444" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="37cm" height="23cm" viewBox="231 -30 739 444" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g>
-    <rect style="fill: #ffffff" x="347.124" y="192.794" width="135.713" height="68.0973"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="347.124" y="192.794" width="135.713" height="68.0973"/>
+    <rect style="fill: #ffffff" x="409.752" y="300" width="135.713" height="68.0973"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="409.752" y="300" width="135.713" height="68.0973"/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="500" y="60" width="256.4" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="500" y="60" width="256.4" height="28"/>
-    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="628.2" y="79">User</text>
-    <rect style="fill: #ffffff" x="500" y="88" width="256.4" height="324"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="500" y="88" width="256.4" height="324"/>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="102">#id: int</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="118">#username: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="134">#username_canonical: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="150">#email: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="166">#email_canonical: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="182">#enabled: bool</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="198">#salt: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="214">#password: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="230">#last_login: datetime</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="246">#confirmation_token: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="262">#password_requested_at: datetime</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="278">#roles: array</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="294">#name: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="310">#surname: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="326">#adress: text</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="342">#description: text</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="358">#region: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="374">#city: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="390">#phone: int</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="503" y="406">#hours: float</text>
+    <rect style="fill: #ffffff" x="587" y="60" width="256.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="587" y="60" width="256.4" height="28"/>
+    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="715.2" y="79">User</text>
+    <rect style="fill: #ffffff" x="587" y="88" width="256.4" height="324"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="587" y="88" width="256.4" height="324"/>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="102">#id: int</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="118">#username: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="134">#username_canonical: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="150">#email: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="166">#email_canonical: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="182">#enabled: bool</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="198">#salt: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="214">#password: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="230">#last_login: datetime</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="246">#confirmation_token: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="262">#password_requested_at: datetime</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="278">#roles: array</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="294">#name: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="310">#surname: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="326">#adress: text</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="342">#description: text</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="358">#region: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="374">#city: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="390">#phone: int</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="406">#hours: float</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="403" y="150" width="76.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="403" y="150" width="76.55" height="28"/>
-    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="441.275" y="169">Service</text>
+    <rect style="fill: #ffffff" x="480" y="240" width="76.55" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="480" y="240" width="76.55" height="28"/>
+    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="518.275" y="259">Service</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="309" y="150" width="56.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="309" y="150" width="56.55" height="28"/>
-    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="337.275" y="169">Need</text>
+    <rect style="fill: #ffffff" x="380" y="240" width="56.55" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="380" y="240" width="56.55" height="28"/>
+    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="408.275" y="259">Need</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="792.476" y="60" width="88.85" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="792.476" y="60" width="88.85" height="28"/>
-    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="836.901" y="79">Message</text>
+    <rect style="fill: #ffffff" x="879.476" y="60" width="88.85" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="879.476" y="60" width="88.85" height="28"/>
+    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="923.901" y="79">Message</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="570.63" y="-29" width="114.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="570.63" y="-29" width="114.6" height="28"/>
-    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="627.93" y="-10">Transaction</text>
+    <rect style="fill: #ffffff" x="657.63" y="-29" width="114.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="657.63" y="-29" width="114.6" height="28"/>
+    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="714.93" y="-10">Transaction</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="360" y="60" width="50.05" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="360" y="60" width="50.05" height="28"/>
-    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="385.025" y="79">Task</text>
+    <rect style="fill: #ffffff" x="387" y="60" width="148.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="387" y="60" width="148.6" height="28"/>
+    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="461.3" y="79">Task</text>
+    <rect style="fill: #ffffff" x="387" y="88" width="148.6" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="387" y="88" width="148.6" height="100"/>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="102">#id: int</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="118">#title: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="134">#description: text</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="150">#level: enum</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="166">#location: string</text>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="182">#status: enum</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #ff0000" points="385.025,106.236 385.025,127 441.275,127 441.275,150 "/>
-    <polygon style="fill: #ffffff" points="393.025,106.236 385.025,90.2361 377.025,106.236 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="393.025,106.236 385.025,90.2361 377.025,106.236 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #0000ff" points="461.3,206.236 461.3,222 518.275,222 518.275,240 "/>
+    <polygon style="fill: #ffffff" points="469.3,206.236 461.3,190.236 453.3,206.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="469.3,206.236 461.3,190.236 453.3,206.236 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #ff0000" points="385.025,106.236 385.025,127 337.275,127 337.275,150 "/>
-    <polygon style="fill: #ffffff" points="393.025,106.236 385.025,90.2361 377.025,106.236 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="393.025,106.236 385.025,90.2361 377.025,106.236 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #0000ff" points="461.3,206.236 461.3,222 408.275,222 408.275,240 "/>
+    <polygon style="fill: #ffffff" points="469.3,206.236 461.3,190.236 453.3,206.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="469.3,206.236 461.3,190.236 453.3,206.236 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="627.93,-1 627.93,29.5 628.2,29.5 628.2,60 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="628.065" y="26.5"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="631.93" y="11">*</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="632.2" y="56">2..*</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="714.93,-1 714.93,29.5 715.2,29.5 715.2,60 "/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="715.065" y="26.5"/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="718.93" y="11">*</text>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="719.2" y="56">2..*</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="410.05,74 455.024,74 455.024,74 500,74 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="455.024" y="71"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="414.05" y="71">*</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="496" y="71">1</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="535.6,74 544,74 544,74 587,74 "/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="544" y="71"/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="539.6" y="71">*</text>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="583" y="71">1</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="570.63,-15 385.025,-15 385.025,60 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="477.827" y="-18"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="566.63" y="-18">0..1</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="389.025" y="56">0..1</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="657.63,-15 461.3,-15 461.3,60 "/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="559.465" y="-18"/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="653.63" y="-18">0..1</text>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465.3" y="56">0..1</text>
   </g>
-  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="357.372" y="212.794">
-    <tspan x="357.372" y="212.794">tâche non-réalisée</tspan>
+  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="320">
+    <tspan x="420" y="320">tâche non-réalisée</tspan>
   </text>
-  <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="357.372" y="232.794">
-    <tspan x="357.372" y="232.794">tâche en cours</tspan>
+  <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="340">
+    <tspan x="420" y="340">tâche en cours</tspan>
   </text>
-  <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="357.372" y="252.794">
-    <tspan x="357.372" y="252.794">tâche réalisée</tspan>
+  <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="360">
+    <tspan x="420" y="360">tâche réalisée</tspan>
   </text>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="792.476,74 774.438,74 774.438,74 756.4,74 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="774.438" y="71"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="788.476" y="71">*</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="760.4" y="71">2</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="879.476,74 864,74 864,74 843.4,74 "/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="864" y="71"/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="875.476" y="71">*</text>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="847.4" y="71">2</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="836.901,60 836.901,-15 685.23,-15 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="761.065" y="-18"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="840.901" y="56">*</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="689.23" y="-18">1</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="923.901,60 923.901,-15 772.23,-15 "/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="848.065" y="-18"/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="927.901" y="56">*</text>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="776.23" y="-18">1</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="232" y="60" width="91.85" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="232" y="60" width="91.85" height="28"/>
+    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="277.925" y="79">Category</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="323.85,74 324.85,74 386,74 387,74 "/>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="327.85" y="71">*</text>
+    <text font-size="12.7998" style="fill: #ff0000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="383" y="71">0..1</text>
   </g>
 </svg>
