@@ -8,3 +8,15 @@
 {% block fos_user_content %}
 	{% include "FOSUserBundle:Registration:register_content.html.twig" %}
 {% endblock fos_user_content %}
+
+{% block javascripts %}
+        <!-- Javascript -->
+        <script src="{{ asset('bootstrap-login-register-forms/assets/js/jquery-1.11.1.min.js') }}"></script>
+        <script src="{{ asset('bootstrap-login-register-forms/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('bootstrap-login-register-forms/assets/js/jquery.backstretch.min.js') }}"></script>
+        <script src="{{ asset('bootstrap-login-register-forms/assets/js/scripts.js') }}"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+{% endblock %}
