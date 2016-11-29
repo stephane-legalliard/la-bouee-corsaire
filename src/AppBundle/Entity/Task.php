@@ -2,9 +2,12 @@
 	
 	namespace AppBundle\Entity;
 	
+	use AppBundle\DBAL\Types\TaskLevelType;
+	use AppBundle\DBAL\Types\TaskStatusType;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
 	use Symfony\Component\Validator\Constraints as Assert;
+	use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
 	
 	/**
 	 * @ORM\MappedSuperclass
@@ -63,6 +66,9 @@
 		/**
 		 * Level of the User providing the service
 		 *
+		 * @ORM\Column(type="TaskLevelType", nullable=false, options={"default"="1"})
+		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskLevelType")
+		 *
 		 * @var    enum $level
 		 * @access protected
 		 */
@@ -89,6 +95,9 @@
 		
 		/**
 		 * Task status
+		 *
+		 * @ORM\Column(type="TaskStatusType", nullable=false, options={"default"="OP"})
+		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskStatusType")
 		 *
 		 * @var    enum
 		 * @access protected
