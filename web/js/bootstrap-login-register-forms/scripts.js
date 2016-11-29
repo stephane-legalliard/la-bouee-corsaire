@@ -4,8 +4,7 @@ jQuery(document).ready(function() {
     /*
         Fullscreen background
     */
-    $.backstretch("img/backgrounds/1.jpg"); //plugin js
-    
+    $.backstretch("../img/backgrounds/1.jpg"); //plugin js
     /*
         Forms show / hide
     */
