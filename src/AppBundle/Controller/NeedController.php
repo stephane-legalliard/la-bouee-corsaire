@@ -108,6 +108,44 @@
 			));
 		}
 		
+		/**
+		*@Route("/disable/{id}")
+		*/
+		public function disableAction(Request $request, $id) {
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			$user = $this->getUser();
+			
+			$need = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Need')
+				->find($id);
+			
+			if (!$need) {
+				throw $this->createNotFoundException(
+					'No Need found for id '.$id
+				);
+			}
+			
+			if ($need->getUser() !== $user) {
+				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
+			}
+			
+			if ($need->getStatus() === 'DI') {
+				//TODO need disabled page
+				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
+			}
+			
+			$need->setStatus('DI');
+			
+			$em = $this->getDoctrine()->getManager();
+			$em->flush();
+				
+			//TODO need disabling confirmation page
+			return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
+		}
+		
 	}
 	
 ?>
