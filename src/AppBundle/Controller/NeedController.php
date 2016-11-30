@@ -55,6 +55,48 @@
 			));
 		}
 		
+		/**
+		*@Route("/edit/{id}")
+		*/
+		public function editAction(Request $request, $id) {
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			$user = $this->getUser();
+			
+			$need = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Need')
+				->find($id);
+			
+			if (!$need) {
+				throw $this->createNotFoundException(
+					'No Need found for id '.$id
+				);
+			}
+			
+			if ($need->getUser() !== $user) {
+				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
+			}
+			
+			$formFactory = $this->get('form.factory');
+			$form = $formFactory->createNamed('edit_need', 'AppBundle\Form\NeedType', $need);
+			$form->handleRequest($request);
+			
+			if ($form->isSubmitted() && $form->isValid()) {
+				$need = $form->getData();
+				$em = $this->getDoctrine()->getManager();
+				$em->flush();
+				
+				//TODO edit confirmation page
+				return new Response('<p>Saved modifications to Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
+			}
+			
+			return $this->render('user/need_edit.html.twig', array(
+				'form' => $form->createView(),
+			));
+		}
+		
 	}
 	
 ?>
