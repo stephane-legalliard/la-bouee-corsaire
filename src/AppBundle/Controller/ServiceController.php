@@ -1,45 +1,61 @@
 <?php
 
-namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use AppBundle\Entity\Task;
-use Doctrine\ORM\Mapping as ORM;
+	
+	namespace AppBundle\Controller;
+	
+	use AppBundle\Entity\Service;
+	use AppBundle\Entity\User;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Component\HttpFoundation\Response;
+	
+	/**
+	 * Service controller
+	 *
+	 * @Route("/user/service")
+	 */
+    
+	class ServiceController extends Controller {
+		
+		/**
+		*@Route("/new")
+		*/
+		public function newAction(Request $request) {
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			
+			$formFactory = $this->get('form.factory');
+			
+			$service = new Service;
+			$form = $formFactory->createNamed('new_service', 'AppBundle\Form\ServiceType', $service);
+			
+			$form->handleRequest($request);
+			
+			if ($form->isSubmitted() && $form->isValid()) {
+				$user = $this->getUser();
+				$service = $form->getData();
+				$now = new \DateTime();
+				$service
+					->setDate($now)
+					->setStatus('OP')
+					->setUser($user);
+				$em = $this->getDoctrine()->getManager();
+				$em->persist($service);
+				$em->flush();
+				
+				//TODO creation confirmation page
+				return new Response('<p>Saved new Service with id '.$service->getId()."</p>\n<pre>".var_export($service, true).'</pre>');
+			}
+			
+			return $this->render('user/service_new.html.twig', array(
+				'form' => $form->createView(),
+			));
+		}
+		
+	}
+	
+?>
 
-
-/**
- * User controller.
- *
- * @Route("/admin")
- */
-
-
-class ServiceController extends Controller
-{
-
-/**
- *
- * @Route("/service")
- *
- */
-
-
-public function listServiceAction(Request $request)
-    {
-
-    	// create a service 
-        $service = new service();
-
-        $form = $this->createFormBuilder($task)
-        	->add('service', TextType::class)
-        	->getForm();
-
-
-       return $this->render('admin/service.html.twig', array(
-            'form' => $form->createView(),
-        ));
-        }
-
-}

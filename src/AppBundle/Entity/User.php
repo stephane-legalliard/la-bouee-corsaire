@@ -164,12 +164,12 @@
 		/**
 		 * User hours credit
 		 *
-		 * @ORM\Column(type="float", scale=2, nullable=true, options={"unsigned"=true, "default"=0})
+		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
 		 *
 		 * @var    float
 		 * @access protected
 		 */
-		protected $hours;
+		protected $hours = 0;
 		
 		/**
 		 * Get name
@@ -422,7 +422,7 @@
 		{
 			$hours = (float) $hours;
 			
-			if ($hours > 0) {
+			if ($hours >= 0) {
 				$this->hours = $hours;
 			}
 			

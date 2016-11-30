@@ -16,7 +16,7 @@ namespace AppBundle\Controller;
 	/**
 	 * Need controller
 	 *
-	 * @Route("/need")
+	 * @Route("/user/need")
 	 */
 
 	class NeedController extends Controller {
@@ -26,6 +26,10 @@ namespace AppBundle\Controller;
 		*/
 
 		public function newAction(Request $request) {
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			
 			$formFactory = $this->get('form.factory');
 			
 			$need = new Need;
@@ -34,20 +38,25 @@ namespace AppBundle\Controller;
 			$form->handleRequest($request);
 			
 			if ($form->isSubmitted() && $form->isValid()) {
+				$user = $this->getUser();
 				$need = $form->getData();
-				$now = new \DateTime();
+				if ($user->getHours() < $need->getHours()) {
+					//TODO not enough hours credit page
+					return new Response('<p>New Need not created. You need at least '.$need->getHours().' hours in your credit to post it, and you have only '.$user->getHours().' hours available.</p>');
+				}
 				$need
-					->setDate($now)
-					->setStatus('OP');
+					->setDate(new \DateTime())
+					->setStatus('OP')
+					->setUser($user);
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($need);
 				$em->flush();
 				
 				//TODO creation confirmation page
-				return new Response('Saved new need with id '.$need->getId());
+				return new Response('<p>Saved new Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
 			}
 			
-			return $this->render('user/task_new.html.twig', array(
+			return $this->render('user/need_new.html.twig', array(
 				'form' => $form->createView(),
 			));
 		}
