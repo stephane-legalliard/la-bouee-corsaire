@@ -123,6 +123,16 @@
 		protected $category;
 		
 		/**
+		 * Date of Task creation
+		 *
+		 * @ORM\Column(type="datetime")
+		 *
+		 * @var    DateTime
+		 * @access protected
+		 */
+		protected $date;
+		
+		/**
 		 * Get id
 		 *
 		 * @return integer
