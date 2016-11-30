@@ -18,11 +18,13 @@ namespace AppBundle\Controller;
 	 *
 	 * @Route("/need")
 	 */
+
 	class NeedController extends Controller {
 		
 		/**
 		*@Route("/new")
 		*/
+
 		public function newAction(Request $request) {
 			$formFactory = $this->get('form.factory');
 			
@@ -55,23 +57,19 @@ namespace AppBundle\Controller;
          * @Route("/list")
          *
          */
-        public function listNeedAction(Request $request)
+
+        /*public function listNeedAction(Request $request)
             {
 
-                // create a need 
-                $need = new need();
-
-                $form = $this->createFormBuilder($task)
-                    ->add('need', TextType::class)
-                    ->getForm();
+                $needManager = $this->getDoctrine()->getManager();
+                $need = $needManager->listNeedAction();
 
 
-               return $this->render('admin/need.html.twig', array(
-                    'form' => $form->createView(),
+               return $this->render('need/need_list.html.twig', array(
+                    'need' => $need,
                 ));
-                }
+                }*/
 
-}
 
 	}
 	
