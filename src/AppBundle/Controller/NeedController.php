@@ -38,7 +38,7 @@
 				$em->flush();
 				
 				//TODO creation confirmation page
-				return new Response('Saved new need with id '.$need->getId());
+				return new Response('<p>Saved new Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
 			}
 			
 			return $this->render('user/task_new.html.twig', array(
