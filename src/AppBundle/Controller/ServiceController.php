@@ -12,7 +12,7 @@
 	/**
 	 * Service controller
 	 *
-	 * @Route("/service")
+	 * @Route("/user/service")
 	 */
 	class ServiceController extends Controller {
 		
