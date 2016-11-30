@@ -26,22 +26,22 @@
 		 */
 		public function buildForm(FormBuilderInterface $builder, array $options) {
 			$builder
-			 ->add('username', null, array('label' => 'Pseudonyme'))
+			 ->add('username', null, array('label' => 'Pseudonyme…'))
 			 ->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
 			 	'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
 			 	'options' => array('translation_domain' => 'FOSUserBundle'),
-			 	'first_options' => array('label' => 'Mot de passe'),
+			 	'first_options' => array('label' => 'Mot de passe…'),
 			 	'second_options' => array('label' => 'Mot de passe (confirmation)'),
 			 	'invalid_message' => 'fos_user.password.mismatch',
 			 ))
-			 ->add('name', null, array('label' => 'Prénom'))
-			 ->add('surname', null, array('label' => 'Nom'))
+			 ->add('name', null, array('label' => 'Prénom…'))
+			 ->add('surname', null, array('label' => 'Nom…'))
 			 ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'), array('label' => 'Adresse e-mail'))
-			 ->add('adress', null, array('label' => 'Adresse'))
-			 ->add('region', null, array('label' => 'Région'))
-			 ->add('city', null, array('label' => 'Ville'))
-			 ->add('phone', null, array('label' => 'Téléphone (optionnel)'))
-			 ->add('description', null, array('label' => 'Description'));
+			 ->add('adress', null, array('label' => 'Adresse…'))
+			 ->add('region', null, array('label' => 'Région…'))
+			 ->add('city', null, array('label' => 'Ville…'))
+			 ->add('phone', null, array('label' => 'Téléphone… (optionnel)'))
+			 ->add('description', null, array('label' => 'Description…'));
 		}
 		
 		/**
