@@ -70,13 +70,25 @@
 				->find($id);
 			
 			if (!$need) {
+				//TODO need not found page
 				throw $this->createNotFoundException(
 					'No Need found for id '.$id
 				);
 			}
 			
 			if ($need->getUser() !== $user) {
+				//TODO need not owned by current user page
 				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
+			}
+			
+			if ($need->getStatus() === 'DI') {
+				//TODO need disabled page
+				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
+			}
+			
+			if ($need->getStatus() === 'DO') {
+				//TODO need already done page
+				return new Response('<p>Need with id '.$need->getId().' has already been done.</p>');
 			}
 			
 			$formFactory = $this->get('form.factory');
@@ -87,7 +99,6 @@
 				$need = $form->getData();
 				$em = $this->getDoctrine()->getManager();
 				$em->flush();
-				
 				//TODO edit confirmation page
 				return new Response('<p>Saved modifications to Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
 			}
