@@ -26,8 +26,9 @@
 		public function buildForm(FormBuilderInterface $builder, array $options) {
 			$builder
 			 ->add('title', null, array('label' => 'Titre'))
-			 ->add('description', null, array('label' => 'Description'))
-			 ->add('location', null, array('label' => 'Lieu'));
+			 ->add('location', null, array('label' => 'Lieu'))
+			 ->add('level', null, array('label' => 'Niveau d’expertise'))
+			 ->add('description', null, array('label' => 'Description'));
 		}
 		
 		/**
