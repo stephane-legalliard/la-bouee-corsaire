@@ -34,9 +34,12 @@
 			if ($form->isSubmitted() && $form->isValid()) {
 				$user = $this->getUser();
 				$need = $form->getData();
-				$now = new \DateTime();
+				if ($user->getHours() < $need->getHours()) {
+					//TODO not enough hours credit page
+					return new Response('<p>New Need not created. You need at least '.$need->getHours().' hours in your credit to post it, and you have only '.$user->getHours().' hours available.</p>');
+				}
 				$need
-					->setDate($now)
+					->setDate(new \DateTime())
 					->setStatus('OP')
 					->setUser($user);
 				$em = $this->getDoctrine()->getManager();
