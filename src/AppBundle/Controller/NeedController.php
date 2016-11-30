@@ -20,6 +20,10 @@
 		*@Route("/new")
 		*/
 		public function newAction(Request $request) {
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			
 			$formFactory = $this->get('form.factory');
 			
 			$need = new Need;
@@ -28,11 +32,13 @@
 			$form->handleRequest($request);
 			
 			if ($form->isSubmitted() && $form->isValid()) {
+				$user = $this->getUser();
 				$need = $form->getData();
 				$now = new \DateTime();
 				$need
 					->setDate($now)
-					->setStatus('OP');
+					->setStatus('OP')
+					->setUser($user);
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($need);
 				$em->flush();
