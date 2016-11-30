@@ -76,6 +76,11 @@
 				return new Response('<p>You are not allowed to edit the Service with id '.$service->getId().'</p>');
 			}
 			
+			if ($service->getStatus() === 'DI') {
+				//TODO service disabled page
+				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
+			}
+			
 			$formFactory = $this->get('form.factory');
 			$form = $formFactory->createNamed('edit_service', 'AppBundle\Form\ServiceType', $service);
 			$form->handleRequest($request);
@@ -92,6 +97,44 @@
 			return $this->render('user/service_edit.html.twig', array(
 				'form' => $form->createView(),
 			));
+		}
+		
+		/**
+		*@Route("/disable/{id}")
+		*/
+		public function disableAction(Request $request, $id) {
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			$user = $this->getUser();
+			
+			$service = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Service')
+				->find($id);
+			
+			if (!$service) {
+				throw $this->createNotFoundException(
+					'No Service found for id '.$id
+				);
+			}
+			
+			if ($service->getUser() !== $user) {
+				return new Response('<p>You are not allowed to edit the Service with id '.$service->getId().'</p>');
+			}
+			
+			if ($service->getStatus() === 'DI') {
+				//TODO service disabled page
+				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
+			}
+			
+			$service->setStatus('DI');
+			
+			$em = $this->getDoctrine()->getManager();
+			$em->flush();
+				
+			//TODO service disabling confirmation page
+			return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
 		}
 		
 	}
