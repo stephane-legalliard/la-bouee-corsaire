@@ -27,6 +27,7 @@
 			$builder
 			 ->add('title', null, array('label' => 'Titre'))
 			 ->add('location', null, array('label' => 'Lieu'))
+			 ->add('hours', null, array('label' => 'Durée estimée (en heures)'))
 			 ->add('level', null, array('label' => 'Niveau d’expertise'))
 			 ->add('description', null, array('label' => 'Description'));
 		}
