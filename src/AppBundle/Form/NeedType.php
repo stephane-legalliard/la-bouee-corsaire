@@ -29,6 +29,7 @@
 			 ->add('location', null, array('label' => 'Lieu'))
 			 ->add('hours', null, array('label' => 'Durée estimée (en heures)'))
 			 ->add('level', null, array('label' => 'Niveau d’expertise'))
+			 ->add('status', null, array('label' => 'Statut'))
 			 ->add('description', null, array('label' => 'Description'));
 		}
 		
