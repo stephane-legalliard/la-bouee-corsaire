@@ -41,7 +41,7 @@
 				return new Response('<p>Saved new Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
 			}
 			
-			return $this->render('user/task_new.html.twig', array(
+			return $this->render('user/need_new.html.twig', array(
 				'form' => $form->createView(),
 			));
 		}
