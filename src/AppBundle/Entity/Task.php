@@ -66,7 +66,7 @@
 		/**
 		 * Level of the User providing the service
 		 *
-		 * @ORM\Column(type="TaskLevelType", nullable=false, options={"default"="1"})
+		 * @ORM\Column(type="TaskLevelType", nullable=true, options={"default"="1"})
 		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskLevelType")
 		 *
 		 * @var    enum $level
@@ -243,6 +243,27 @@
 		}
 		
 		/**
+		 * Set status
+		 *
+		 * @param string
+		 *
+		 * @return Task
+		 */
+		public function setStatus($status) {
+			switch ($status) {
+				case 'OP':
+				case 'PE':
+				case 'VA':
+				case 'DO':
+				case 'DI':
+					$this->status = $status;
+					break;
+			}
+			
+			return $this;
+		}
+		
+		/**
 		 * Set User
 		 *
 		 * @param User
@@ -251,6 +272,16 @@
 		 */
 		public function setUser(User $user) {
 			$this->user = $user;
+			return $this;
+		}
+		
+		/**
+		 * Set date
+		 *
+		 * @return Task
+		 */
+		public function setDate(\DateTime $date) {
+			$this->date = $date;
 			return $this;
 		}
 		
