@@ -25,11 +25,28 @@
 		protected $level;
 		
 		/**
+		 * Number of hours needed to fullfil the Need
+		 *
+		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
+		 *
+		 * @var    float
+		 * @access protected
+		 */
+		protected $hours = 0;
+		
+		/**
 		 * Get level
 		 *
 		 * @return string
 		 */
 		public function getLevel() { return $this->level; }
+		
+		/**
+		 * Get hours
+		 *
+		 * @return float
+		 */
+		public function getHours() { return $this->hours; }
 		
 		/**
 		 * Set level
@@ -46,6 +63,24 @@
 				case '3':
 					$this->level = $level;
 					break;
+			}
+			
+			return $this;
+		}
+		
+		/**
+		 * Set hours
+		 *
+		 * @param float $hours
+		 *
+		 * @return User
+		 */
+		public function setHours($hours)
+		{
+			$hours = (float) $hours;
+			
+			if ($hours >= 0) {
+				$this->hours = $hours;
 			}
 			
 			return $this;
