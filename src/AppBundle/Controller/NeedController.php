@@ -1,28 +1,49 @@
 <?php
-
-namespace AppBundle\Controller;
-
-    use Symfony\Component\Form\Extension\Core\Type\TextType;
-    use AppBundle\Entity\Task;
-    use Doctrine\ORM\Mapping as ORM;
-    use AppBundle\Entity\Need;
-    use AppBundle\Entity\User;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\HttpFoundation\Response;
-
-
-	/**
-	 * Need controller
-	 *
-	 * @Route("/need")
-	 */
-
+	
+	namespace AppBundle\Controller;
+	
+	use AppBundle\Entity\Need;
+	use AppBundle\Entity\User;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Component\HttpFoundation\Response;
+	
 	class NeedController extends Controller {
 		
 		/**
-		*@Route("/new")
+		*@Route("/need/{id}")
+		*/
+		public function showAction(Request $request, $id) {
+			$need = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Need')
+				->find($id);
+			
+			if (!$need) {
+				//TODO need not found page
+				throw $this->createNotFoundException(
+					'No Need found for id '.$id
+				);
+			}
+			
+			if ($need->isDisabled()) {
+				//TODO need disabled page
+				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
+			}
+			
+			if ($need->getStatus() === 'DO') {
+				//TODO need already done page
+				return new Response('<p>Need with id '.$need->getId().' has already been done.</p>');
+			}
+			
+			return $this->render('need/show.html.twig', array(
+				'need' => $need,
+			));
+		}
+		
+		/**
+		*@Route("/user/need/new")
 		*/
 
 		public function newAction(Request $request) {
@@ -72,7 +93,7 @@ namespace AppBundle\Controller;
     
 
 		/**
-		*@Route("/edit/{id}")
+		*@Route("/user/need/edit/{id}")
 		*/
 		public function editAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
@@ -97,7 +118,7 @@ namespace AppBundle\Controller;
 				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}
@@ -125,7 +146,7 @@ namespace AppBundle\Controller;
 		}
 		
 		/**
-		*@Route("/disable/{id}")
+		*@Route("/user/need/disable/{id}")
 		*/
 		public function disableAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
@@ -148,7 +169,7 @@ namespace AppBundle\Controller;
 				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}

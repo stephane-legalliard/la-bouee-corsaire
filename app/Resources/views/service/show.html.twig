@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Service</h1>
+	<h2>{{ service.title }}</h2>
+	<h3>Prestataire</h3>
+	<p>{{ service.user.username }}</p>
+	<h3>Lieu</h3>
+	<p>{{ service.location }}</p>
+	<h3>Description</h3>
+	<p>{{ service.description }}</p>
+{% endblock %}
+

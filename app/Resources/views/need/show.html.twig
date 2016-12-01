@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Besoin</h1>
+	<h2>{{ need.title }}</h2>
+	<h3>Demandeur</h3>
+	<p>{{ need.user.username }}</p>
+	<h3>Lieu</h3>
+	<p>{{ need.location }}</p>
+	<h3>Durée estimée</h3>
+	<p>{{ need.hours }} heures</p>
+	<h3>Description</h3>
+	<p>{{ need.description }}</p>
+{% endblock %}
+

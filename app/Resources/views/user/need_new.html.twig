@@ -14,6 +14,7 @@
 	<h1>Création d’un nouveau Besoin</h1>
 	
 	{{ form_start(form, {'method': 'POST'}) }}
+		{% do form.status.setRendered %}
 		
 		<div class="form-group">
 			{{ form_label(form.title, null, {'label_attr': {

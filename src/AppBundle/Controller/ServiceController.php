@@ -11,16 +11,41 @@
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
 	
-	/**
-	 * Service controller
-	 *
-	 * @Route("/user/service")
-	 */
-    
 	class ServiceController extends Controller {
 		
 		/**
-		*@Route("/new")
+		*@Route("/service/{id}")
+		*/
+		public function showAction(Request $request, $id) {
+			$service = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Service')
+				->find($id);
+			
+			if (!$service) {
+				//TODO service not found page
+				throw $this->createNotFoundException(
+					'No Service found for id '.$id
+				);
+			}
+			
+			if ($service->isDisabled()) {
+				//TODO service disabled page
+				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
+			}
+			
+			if ($service->getStatus() === 'DO') {
+				//TODO service already done page
+				return new Response('<p>Service with id '.$service->getId().' has already been done.</p>');
+			}
+			
+			return $this->render('service/show.html.twig', array(
+				'service' => $service,
+			));
+		}
+		
+		/**
+		*@Route("/user/service/new")
 		*/
 		public function newAction(Request $request) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
@@ -76,7 +101,7 @@
                 }
 		
 		/**
-		*@Route("/edit/{id}")
+		*@Route("/user/service/edit/{id}")
 		*/
 		public function editAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
@@ -99,7 +124,7 @@
 				return new Response('<p>You are not allowed to edit the Service with id '.$service->getId().'</p>');
 			}
 			
-			if ($service->getStatus() === 'DI') {
+			if ($service->isDisabled()) {
 				//TODO service disabled page
 				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
 			}
@@ -123,7 +148,7 @@
 		}
 		
 		/**
-		*@Route("/disable/{id}")
+		*@Route("/user/service/disable/{id}")
 		*/
 		public function disableAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
@@ -146,7 +171,7 @@
 				return new Response('<p>You are not allowed to edit the Service with id '.$service->getId().'</p>');
 			}
 			
-			if ($service->getStatus() === 'DI') {
+			if ($service->isDisabled()) {
 				//TODO service disabled page
 				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
 			}
