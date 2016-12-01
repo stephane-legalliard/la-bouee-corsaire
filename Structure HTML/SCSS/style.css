@@ -15,4 +15,15 @@ header .btn-primary:hover {
   background: none;
   border: none; }
 
+/*----------FOOTER------------------*/
+footer ul, footer ul h3 {
+  list-style-type: none;
+  color: currentColor; }
+footer ul li a {
+  color: currentColor;
+  text-decoration: none; }
+footer ul li a:hover {
+  text-decoration: none;
+  color: currentColor; }
+
 /*# sourceMappingURL=style.css.map */

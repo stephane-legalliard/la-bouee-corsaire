@@ -20,3 +20,19 @@ header{
   }
 
 }
+/*----------FOOTER------------------*/
+footer{
+
+  ul, ul h3{
+    list-style-type: none;
+    color: currentColor;
+  }
+  ul li a{
+    color: currentColor;
+    text-decoration: none;
+  }
+  ul li a:hover{
+  text-decoration: none;
+  color: currentColor;
+  }
+}
