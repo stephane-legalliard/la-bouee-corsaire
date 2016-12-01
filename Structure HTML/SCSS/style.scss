@@ -1,0 +1,22 @@
+body{
+  font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Serif', serif;
+}
+/*-------------HEADER----------------*/
+header{
+  .navbar{
+    margin-bottom: 0;
+  }
+  .btn-primary{
+    color: gray;
+    padding: 15px 16px;
+    background-color: transparent;
+    border:none ;
+  }
+  .btn-primary:hover{
+    color: gray;
+    background: none;
+    border: none ;
+  }
+
+}

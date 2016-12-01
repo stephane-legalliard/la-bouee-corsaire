@@ -12,14 +12,14 @@
   <!--Google Font--->
 <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif" rel="stylesheet">
   <!--Font Awesome-->
-  <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" title="no title">
+  <link rel="stylesheet" href="SCSS/font-awesome.min.css" media="screen" title="no title">
 
   <!--Bootstrap-->
-  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title">
+  <link rel="stylesheet" href="SCSS/bootstrap.min.css" media="screen" title="no title">
 <!--Owl Carousel-->
-<link rel="stylesheet" href="css/owl.carousel.css" media="screen" title="no title">
+<link rel="stylesheet" href="SCSS/owl.carousel.css" media="screen" title="no title">
   <!--CSS-->
-  <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+  <link rel="stylesheet" href="SCSS/style.css" media="screen" title="no title">
 
   <!--JavaScript-->
   <script src="js/jquery.js"></script>
@@ -61,17 +61,26 @@
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h3>La Bouée Corsaire</h3>
         <p>Mentions légales</p>
         <p>CGU</p>
       </div>
-      <div class="col-md-3">
-<h3>Nos services</h3>
-<p>Jardinerie</p>
+      <div class="col-md-4">
+<ul>
+  <h3>Nos services</h3>
+  <li>Jardinerie</li>
+  <li>Soutien scolaire</li>
+  <li>Automobile</li>
+</ul>
       </div>
-      <div class="col-md-3">
-
+      <div class="col-md-4">
+<h3>Contactez-nous</h3>
+<form class="contact" action="index.html" method="post">
+  <input type="text" class="form-control" placeholder="Votre Nom Prénom" required>
+    <input type="mail" class="form-control" placeholder="Votre e-mail" required>
+    <button type="submit" class="btn btn-primary" name="button">Envoyer</button>
+</form>
       </div>
     </div>
   </div>
