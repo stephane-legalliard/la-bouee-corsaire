@@ -109,7 +109,7 @@
 			if (!$need) {
 				//TODO need not found page
 				throw $this->createNotFoundException(
-					'No Need found for id '.$idsrc/AppBundle/Controller/NeedController.php
+					'No Need found for id '.$id
 				);
 			}
 			
