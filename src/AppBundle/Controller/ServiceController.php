@@ -54,6 +54,26 @@
 				'form' => $form->createView(),
 			));
 		}
+
+
+
+		/**
+         *
+         * @Route("/list")
+         *
+         */
+
+        public function listServiceAction()
+            {
+
+                $repository = $this->getDoctrine()->getRepository('AppBundle:Service');
+                $needs = $repository->findAll();
+
+
+               return $this->render('service/service_list.html.twig', array(
+                    'services' => $services,
+                ));
+                }
 		
 		/**
 		*@Route("/edit/{id}")
