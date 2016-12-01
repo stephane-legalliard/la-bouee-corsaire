@@ -76,4 +76,7 @@ fos_user:
     registration:
         form:
             type: AppBundle\Form\RegistrationType
+        confirmation:
+            # set to 'true' to require email confirmation for new accounts
+            enabled: false
 
