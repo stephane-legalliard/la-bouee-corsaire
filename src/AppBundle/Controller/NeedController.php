@@ -12,8 +12,10 @@
 	class NeedController extends Controller {
 		
 		/**
-		*@Route("/need/{id}")
-		*/
+		 *
+		 * @Route("/need/show/{id}")
+		 *
+		 */
 		public function showAction(Request $request, $id) {
 			$need = $this
 				->getDoctrine()
@@ -27,7 +29,7 @@
 				);
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}
@@ -43,8 +45,10 @@
 		}
 		
 		/**
-		*@Route("/user/need/new")
-		*/
+		 *
+		 * @Route("/user/need/new")
+		 *
+		 */
 		public function newAction(Request $request) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
 				throw $this->createAccessDeniedException();
@@ -82,8 +86,23 @@
 		}
 		
 		/**
-		*@Route("/user/need/edit/{id}")
-		*/
+		 *
+		 * @Route("/need/list")
+		 *
+		 */
+		public function listAction() {
+			$repository = $this->getDoctrine()->getRepository('AppBundle:Need');
+			$needs = $repository->findAll();
+			return $this->render('need/need_list.html.twig', array(
+				'needs' => $needs,
+			));
+		}
+		
+		/**
+		 *
+		 * @Route("/user/need/edit/{id}")
+		 *
+		 */
 		public function editAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
 				throw $this->createAccessDeniedException();
@@ -107,7 +126,7 @@
 				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}
@@ -135,8 +154,10 @@
 		}
 		
 		/**
-		*@Route("/user/need/disable/{id}")
-		*/
+		 *
+		 * @Route("/user/need/disable/{id}")
+		 *
+		 */
 		public function disableAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
 				throw $this->createAccessDeniedException();
@@ -158,7 +179,7 @@
 				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}

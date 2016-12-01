@@ -266,6 +266,10 @@
 			return $this;
 		}
 		
+		public function isDisabled() {
+			return ($this->getStatus() === 'DI');
+		}
+		
 	}
 	
 ?>
