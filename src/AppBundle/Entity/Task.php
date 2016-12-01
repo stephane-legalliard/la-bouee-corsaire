@@ -2,7 +2,6 @@
 	
 	namespace AppBundle\Entity;
 	
-	use AppBundle\DBAL\Types\TaskLevelType;
 	use AppBundle\DBAL\Types\TaskStatusType;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
@@ -64,17 +63,6 @@
 		protected $description;
 		
 		/**
-		 * Level of the User providing the service
-		 *
-		 * @ORM\Column(type="TaskLevelType", nullable=true, options={"default"="1"})
-		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskLevelType")
-		 *
-		 * @var    enum $level
-		 * @access protected
-		 */
-		protected $level;
-		
-		/**
 		 * Task region/city
 		 *
 		 * @ORM\Column(type="string", length=100)
@@ -125,7 +113,7 @@
 		/**
 		 * Date of Task creation
 		 *
-		 * @ORM\Column(type="datetime")
+		 * @ORM\Column(type="datetimetz")
 		 *
 		 * @var    DateTime
 		 * @access protected
@@ -152,13 +140,6 @@
 		 * @return string
 		 */
 		public function getDescription() { return $this->description; }
-		
-		/**
-		 * Get level
-		 *
-		 * @return string
-		 */
-		public function getLevel() { return $this->level; }
 		
 		/**
 		 * Get location
@@ -283,6 +264,10 @@
 		public function setDate(\DateTime $date) {
 			$this->date = $date;
 			return $this;
+		}
+		
+		public function isDisabled() {
+			return ($this->getStatus() === 'DI');
 		}
 		
 	}
