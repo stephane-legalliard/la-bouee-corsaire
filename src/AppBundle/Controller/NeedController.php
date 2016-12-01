@@ -12,8 +12,10 @@
 	class NeedController extends Controller {
 		
 		/**
-		*@Route("/need/{id}")
-		*/
+		 *
+		 * @Route("/need/show/{id}")
+		 *
+		 */
 		public function showAction(Request $request, $id) {
 			$need = $this
 				->getDoctrine()
@@ -43,8 +45,10 @@
 		}
 		
 		/**
-		*@Route("/user/need/new")
-		*/
+		 *
+		 * @Route("/user/need/new")
+		 *
+		 */
 		public function newAction(Request $request) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
 				throw $this->createAccessDeniedException();
@@ -83,7 +87,7 @@
 		
 		/**
 		 *
-		 * @Route("/list")
+		 * @Route("/need/list")
 		 *
 		 */
 		public function listNeedAction() {
@@ -95,8 +99,10 @@
 		}
 		
 		/**
-		*@Route("/user/need/edit/{id}")
-		*/
+		 *
+		 * @Route("/user/need/edit/{id}")
+		 *
+		 */
 		public function editAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
 				throw $this->createAccessDeniedException();
@@ -148,8 +154,10 @@
 		}
 		
 		/**
-		*@Route("/user/need/disable/{id}")
-		*/
+		 *
+		 * @Route("/user/need/disable/{id}")
+		 *
+		 */
 		public function disableAction(Request $request, $id) {
 			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
 				throw $this->createAccessDeniedException();
