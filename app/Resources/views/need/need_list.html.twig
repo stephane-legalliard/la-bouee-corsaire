@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	{% for need in needs %}
+	<div>
+	    <p>titre : {{ need.title }}</p>
+	    <p>description : {{ need.description }}</p>
+            <p>lieu : {{ need.location }}</p>
+ 
+	</div>
+	{% endfor %}
+
+{% endblock %}
