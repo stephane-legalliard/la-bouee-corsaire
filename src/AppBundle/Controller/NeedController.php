@@ -90,7 +90,7 @@
 		 * @Route("/need/list")
 		 *
 		 */
-		public function listNeedAction() {
+		public function listAction() {
 			$repository = $this->getDoctrine()->getRepository('AppBundle:Need');
 			$needs = $repository->findAll();
 			return $this->render('need/need_list.html.twig', array(
