@@ -58,18 +58,18 @@ namespace AppBundle\Controller;
          *
          */
 
-        public function listNeedAction(Request $request)
+        public function listNeedAction()
             {
 
-                $needManager = $this->getDoctrine()->getManager();
-                $need = $needManager->listNeedAction();
+                $repository = $this->getDoctrine()->getRepository('AppBundle:Need');
+                $needs = $repository->findAll();
 
 
                return $this->render('need/need_list.html.twig', array(
-                    'need' => $need,
+                    'needs' => $needs,
                 ));
                 }
-
+    
 
 		/**
 		*@Route("/edit/{id}")
@@ -88,7 +88,7 @@ namespace AppBundle\Controller;
 			if (!$need) {
 				//TODO need not found page
 				throw $this->createNotFoundException(
-					'No Need found for id '.$id
+					'No Need found for id '.$idsrc/AppBundle/Controller/NeedController.php
 				);
 			}
 			
