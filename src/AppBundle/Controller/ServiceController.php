@@ -27,7 +27,7 @@
 				);
 			}
 			
-			if ($service->getStatus() === 'DI') {
+			if ($service->isDisabled()) {
 				//TODO service disabled page
 				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
 			}
@@ -102,7 +102,7 @@
 				return new Response('<p>You are not allowed to edit the Service with id '.$service->getId().'</p>');
 			}
 			
-			if ($service->getStatus() === 'DI') {
+			if ($service->isDisabled()) {
 				//TODO service disabled page
 				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
 			}
@@ -149,7 +149,7 @@
 				return new Response('<p>You are not allowed to edit the Service with id '.$service->getId().'</p>');
 			}
 			
-			if ($service->getStatus() === 'DI') {
+			if ($service->isDisabled()) {
 				//TODO service disabled page
 				return new Response('<p>Service with id '.$service->getId().' has been disabled.</p>');
 			}
