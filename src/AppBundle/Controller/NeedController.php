@@ -27,7 +27,7 @@
 				);
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}
@@ -107,7 +107,7 @@
 				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}
@@ -158,7 +158,7 @@
 				return new Response('<p>You are not allowed to edit the Need with id '.$need->getId().'</p>');
 			}
 			
-			if ($need->getStatus() === 'DI') {
+			if ($need->isDisabled()) {
 				//TODO need disabled page
 				return new Response('<p>Need with id '.$need->getId().' has been disabled.</p>');
 			}
