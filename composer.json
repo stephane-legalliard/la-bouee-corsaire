@@ -35,7 +35,8 @@
         "leafo/scssphp": "^0.6.6",
         "fortawesome/font-awesome": "^4.7",
         "oyejorge/less.php": "v1.7.0.10",
-        "patchwork/jsqueeze": "^2.0"
+        "patchwork/jsqueeze": "^2.0",
+        "components/jquery": "^3.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
