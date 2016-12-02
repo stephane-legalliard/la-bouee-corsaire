@@ -33,7 +33,8 @@
         "fresh/doctrine-enum-bundle": "~4.8",
         "symfony/assetic-bundle": "^2.8",
         "leafo/scssphp": "^0.6.6",
-        "fortawesome/font-awesome": "^4.7"
+        "fortawesome/font-awesome": "^4.7",
+        "oyejorge/less.php": "v1.7.0.10"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
