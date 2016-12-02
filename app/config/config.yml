@@ -84,13 +84,10 @@ fos_user:
 assetic:
     debug:          '%kernel.debug%'
     use_controller: '%kernel.debug%'
-    node:           '%kernel.root_dir%/../vendor/bin/node'
     filters:
         cssrewrite: ~
         scssphp:
             formatter: 'Leafo\ScssPhp\Formatter\Compressed'
         lessphp:
             file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
-        uglifyjs2:
-            bin: %kernel.root_dir%/../app/Resources/node_modules/.bin/uglifyjs
         jsqueeze: ~
