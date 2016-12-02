@@ -32,7 +32,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "fresh/doctrine-enum-bundle": "~4.8",
         "symfony/assetic-bundle": "^2.8",
-        "leafo/scssphp": "^0.6.6"
+        "leafo/scssphp": "^0.6.6",
+        "fortawesome/font-awesome": "^4.7"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
