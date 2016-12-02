@@ -24,6 +24,11 @@
 			{% block body %}{% endblock %}
 			{% block fos_user_content %}{% endblock %}
 		</div>
+		{% javascripts filter="uglifyjs2" output="js/bootstrap.js"
+			"js/bootstrap/*.js"
+		%}
+			<script src="{{ asset_url }}"></script>
+		{% endjavascripts %}
 		{% block javascripts %}{% endblock %}
 	</body>
 </html>
