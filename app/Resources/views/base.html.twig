@@ -25,7 +25,11 @@
 			{% block fos_user_content %}{% endblock %}
 		</div>
 		<script src="{{ asset('js/jquery.min.js') }}"></script>
-		<script src="{{ asset('js/bootstrap/tooltip.js') }}"></script>
+		{% javascripts filter="jsqueeze" output="js/tooltip.js" combine=true
+			"js/bootstrap/tooltip.js"
+		%}
+			<script src="{{ asset_url }}"></script>
+		{% endjavascripts %}
 		{% javascripts filter="jsqueeze" output="js/bootstrap.js" combine=true
 			"js/bootstrap/*.js"
 		%}
