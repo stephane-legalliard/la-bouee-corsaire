@@ -8,7 +8,11 @@
 		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
+		{% stylesheets filter="scssphp" output="css/font-awesome.css"
+			"scss/font-awesome/font-awesome.scss"
+		%}
+			<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+		{% endstylesheets %}
 		{% block stylesheets %}{% endblock %}
 	</head>
 	<body>
