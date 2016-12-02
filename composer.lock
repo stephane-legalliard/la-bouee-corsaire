@@ -948,12 +948,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "3f2576444781f3eb1cf42857d111528ae3480d91"
+                "reference": "507ae09e95788d23e8cdbd1b3c23b5c46dc8b5a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/3f2576444781f3eb1cf42857d111528ae3480d91",
-                "reference": "3f2576444781f3eb1cf42857d111528ae3480d91",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/507ae09e95788d23e8cdbd1b3c23b5c46dc8b5a1",
+                "reference": "507ae09e95788d23e8cdbd1b3c23b5c46dc8b5a1",
                 "shasum": ""
             },
             "require": {
@@ -962,6 +962,7 @@
                 "symfony/form": "^2.7 || ^3.0",
                 "symfony/framework-bundle": "^2.7 || ^3.0",
                 "symfony/security-bundle": "^2.7 || ^3.0",
+                "symfony/templating": "^2.7 || ^3.0",
                 "symfony/twig-bundle": "^2.7 || ^3.0"
             },
             "conflict": {
@@ -1014,7 +1015,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-12-01 10:54:27"
+            "time": "2016-12-02 11:20:52"
         },
         {
             "name": "incenteev/composer-parameter-handler",
