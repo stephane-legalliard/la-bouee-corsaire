@@ -2,13 +2,111 @@
 
 
 {% block body %}
+
+	<div style="display:none;"><input name="_method" value="POST" type="hidden"></div>     			 <table>
+                    <tbody><tr>
+                      <td width="100px">Type de <strong>Service</strong></td>
+                      <td width="150px"><div class="input select"><select name="data[Demande][service_id]" id="DemandeServiceId">
+<option value="43">Tous les services</option>
+<option value="70"> - -------------------------------------------------</option>
+<option value="44"> - Travaux et entretien habitat - JARDIN</option>
+<option value="45"> - Travaux et entretien habitat - PEINTURE</option>
+<option value="46"> - Travaux et entretien habitat - MAÇONNERIE</option>
+<option value="47"> - Travaux et entretien habitat - PLOMBERIE</option>
+<option value="48"> - Travaux et entretien habitat - ELECTRICITÉ</option>
+<option value="49"> - Travaux et entretien habitat - AUTRES</option>
+<option value="72"> - --------------------------------------------------</option>
+<option value="50"> - Bricolage - MONTER UN MEUBLE EN KIT</option>
+<option value="52"> - Bricolage - REPARATIONS</option>
+<option value="51"> - Bricolage - PETITS TRAVAUX MANUELS</option>
+<option value="53"> - Bricolage - AUTRES</option>
+<option value="73"> - --------------------------------------------------</option>
+<option value="54"> - Déménagement - AIDE DÉMÉNAGEMENT</option>
+<option value="56"> - Déménagement - AUTRES</option>
+<option value="74"> - --------------------------------------------------</option>
+<option value="57"> - Baby-sitting - GARDE D'ENFANT</option>
+<option value="58"> - Baby-sitting - ACCOMPAGNEMENT ÉCOLE OU ACTIVITÉ</option>
+<option value="59"> - Baby-sitting - AUTRES</option>
+<option value="75"> - --------------------------------------------------</option>
+<option value="60"> - Animaux - GARDE D'ANIMAUX</option>
+<option value="61"> - Animaux - PROMENADE D'ANIMAUX</option>
+<option value="62"> - Animaux - TOILETTAGE</option>
+<option value="63"> - Animaux - AUTRES</option>
+<option value="76"> - --------------------------------------------</option>
+<option value="64"> - Aide ménagère - NETTOYAGE</option>
+<option value="65"> - Aide ménagère - REPASSAGE</option>
+<option value="66"> - Aide ménagère - AUTRES</option>
+<option value="77"> - ---------------------------------------------</option>
+<option value="99"> - Automobile - VIDANGE</option>
+<option value="100"> - Automobile - NETTOYAGE</option>
+<option value="101"> - Automobile - CHANGEMENT DE PIÈCES</option>
+<option value="102"> - Automobile - AUTRES</option>
+<option value="78"> - -----------------------------------------------</option>
+<option value="67"> - Cours particuliers - MUSIQUE</option>
+<option value="68"> - Cours particuliers - LANGUES</option>
+<option value="69"> - Cours particuliers - MATIÈRES SCIENTIFIQUES</option>
+<option value="71"> - Cours particuliers - AUTRES</option>
+<option value="84"> - ---------------------------------------------</option>
+<option value="79"> - Coaching / Conseils - SPORT </option>
+<option value="80"> - Coaching / Conseils - CUISINE</option>
+<option value="81"> - Coaching / Conseils - DECO</option>
+<option value="82"> - Coaching / Conseils - JEUX</option>
+<option value="83"> - Coaching / Conseils - AUTRES</option>
+<option value="90"> - ------------------------------------------</option>
+<option value="87"> - Soins beauté - MASSAGE</option>
+<option value="85"> - Soins beauté - COIFFURE</option>
+<option value="86"> - Soins beauté - MANUCURE</option>
+<option value="88"> - Soins beauté - EPILATION</option>
+<option value="89"> - Soins beauté - AUTRES</option>
+<option value="94"> - --------------------------------------------</option>
+<option value="91"> - Courses - FAIRE LES COURSES A PARTIR D'UNE LISTE</option>
+<option value="92"> - Courses - DÉMARCHES ADMINISTRATIVES</option>
+<option value="93"> - Courses - AUTRES</option>
+<option value="98"> - -----------------------------------------</option>
+<option value="95"> - Absences / Vacances - ARROSER LE JARDIN</option>
+<option value="96"> - Absences / Vacances - EFFECTUER DES RONDES</option>
+<option value="97"> - Absences / Vacances - AUTRES</option>
+<option value="103"> - ------------------------------------------</option>
+<option value="104"> - Informatique - RESOLUTION DE PROBLÈMES</option>
+<option value="105"> - Informatique - REDACTION DE DOCUMENTS</option>
+<option value="106"> - Informatique - AUTRES</option>
+<option value="107"> - ----------------------------------------</option>
+<option value="108"> - Festivités - ANIMATION MUSICALE</option>
+<option value="109"> - Festivités - AIDE A LA PRÉPARATION D'UNE FÊTE</option>
+<option value="110"> - Festivités - AUTRES</option>
+<option value="111"> - -----------------------------------------------</option>
+<option value="112"> - Autres</option>
+</select></div></td>
+                     </tr>
+                     <tr>
+                      <td width="100px"><strong>Titre</strong> de votre demande :</td>
+                      <td width="150px"><div class="input text"><input name="data[Demande][objet]" class="validate[required]" maxlength="150" id="DemandeObjet" type="text"></div></td>
+                     </tr>
+                     <tr>
+                      <td width="120px">Rédigez <strong>votre demande </strong></td>
+                      <td><textarea name="data[Demande][description]" cols="50" rows="7" class="validate[required]" id="DemandeDescription"></textarea></td>
+                    </tr>
+                  </tbody></table>
+                    <br>
+                    <div style="margin-left:400px"> <div class="submit"><input class="btn btn-primary" value="Valider" type="submit"></div> </div>
+<form>
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname">
+</form>
+
+<div class="row register-form">
+	<div class="col-sm-4 col-sm-offset-1">
+	
+    			
 	{% for need in needs %}
-	<div>
+	<div class='form-group'>
 	    <p>titre : {{ need.title }}</p>
 	    <p>description : {{ need.description }}</p>
-            <p>lieu : {{ need.location }}</p>
- 
-	</div>
+        <p>lieu : {{ need.location }}</p>
+ 	</div>
 	{% endfor %}
 
 {% endblock %}
