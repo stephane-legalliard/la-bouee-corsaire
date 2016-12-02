@@ -6,18 +6,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{% block title %}La Bouée Corsaire{% endblock %}</title>
 		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
-		{% block stylesheets %}{% endblock %}
+		{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/fonts.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+		{% endblock %}
 	</head>
 	<body>
+	
+	{% block navbar %}{% endblock %}
+		
 		<div class="container-fluid">
 			{% block body %}{% endblock %}
 			{% block fos_user_content %}{% endblock %}
 		</div>
-		{% block javascripts %}
-        
-        {% endblock %}
+
+		{% block javascripts %}{% endblock %}
+
+		{% block footer %}{% endblock %}
+
 	</body>
 </html>

@@ -1,14 +1,25 @@
 {% extends 'base.html.twig' %}
 
 
+
 {% block body %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/bootstrap-login-register-forms/form-elements.css') }}" />
+	<link rel="stylesheet" href="{{ asset('css/bootstrap-login-register-forms/style.css') }}" />
+{% endblock %}
+
+
+{% include "user/navbar_content.html.twig" %}
 	{% for need in needs %}
 	<div>
 	    <p>titre : {{ need.title }}</p>
 	    <p>description : {{ need.description }}</p>
             <p>lieu : {{ need.location }}</p>
- 
+
 	</div>
 	{% endfor %}
 
+{% include "user/footer_content.html.twig" %}
 {% endblock %}
+
