@@ -80,3 +80,9 @@ fos_user:
             # set to 'true' to require email confirmation for new accounts
             enabled: false
 
+# Assetic Configuration
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
