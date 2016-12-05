@@ -5,13 +5,12 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif; }
 
-.clearfix:before, .clearfix:after {
+/*.clearfix:before, .clearfix:after {
   content: " ";
   display: block; }
 
 .clearfix:after {
-  clear: both; }
-
+  clear: both; }*/
 /*-------------HEADER----------------*/
 header .navbar {
   margin-bottom: 0; }
@@ -25,11 +24,14 @@ header .btn-primary:hover {
   background: none;
   border: none; }
 
-<<<<<<< HEAD
 /*----------Explications-------------*/
-section .col-md-3 img {
-  width: 50%; }
-=======
+section {
+  padding-top: 25px; }
+  section h1 {
+    margin-bottom: 25px; }
+  section .col-md-3 img {
+    width: 50%; }
+
 /*----------CAROUSEL------------------*/
 .slide1, .slide2, .slide3 {
   background-image: url("../images/black-and-white.jpg");
@@ -50,9 +52,10 @@ section .col-md-3 img {
   padding-bottom: .4em; }
 .carousel-caption p {
   font-size: 2em; }
->>>>>>> 44cca7efd6826e6587a1827d22a0da248d57ccc7
 
 /*----------FOOTER------------------*/
+footer .SocialMedia li {
+  display: inline-block; }
 footer ul, footer ul h3 {
   list-style-type: none;
   color: currentColor; }

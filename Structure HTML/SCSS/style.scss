@@ -5,12 +5,12 @@ body{
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif;
 }
-.clearfix:before, .clearfix:after {
+/*.clearfix:before, .clearfix:after {
   content: " ";
   display: block; }
 
 .clearfix:after {
-  clear: both; }
+  clear: both; }*/
 
 /*-------------HEADER----------------*/
 header{
@@ -31,10 +31,17 @@ header{
 
 }
 /*----------Explications-------------*/
-section .col-md-3 img{
-  width: 50%;
+section{
+  padding-top: 25px;
+  h1{
+    margin-bottom: 25px;
+  }
+  .col-md-3 img{
+    width: 50%;
+  }
 
 }
+
 /*----------CAROUSEL------------------*/
 
   .slide1, .slide2, .slide3 {
@@ -69,7 +76,9 @@ section .col-md-3 img{
 
 /*----------FOOTER------------------*/
 footer{
-
+.SocialMedia li{
+  display: inline-block;
+}
   ul, ul h3{
     list-style-type: none;
     color: currentColor;
