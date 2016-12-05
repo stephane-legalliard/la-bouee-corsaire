@@ -6,13 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{% block title %}La Bouée Corsaire{% endblock %}</title>
 		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-
-		{% block stylesheets %}
-		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-		<link rel="stylesheet" href="{{ asset('css/fonts.css') }}" />
-		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
-		{% endblock %}
-
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}" />
 		{% stylesheets filter="lessphp" output="css/bootstrap.css" combine=true
 			"less/bootstrap/bootstrap.less"
