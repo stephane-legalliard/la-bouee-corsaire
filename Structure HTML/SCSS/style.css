@@ -1,6 +1,16 @@
+* {
+  box-sizing: border-box; }
+
 body {
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: block; }
+
+.clearfix:after {
+  clear: both; }
 
 /*-------------HEADER----------------*/
 header .navbar {
@@ -15,9 +25,32 @@ header .btn-primary:hover {
   background: none;
   border: none; }
 
+<<<<<<< HEAD
 /*----------Explications-------------*/
 section .col-md-3 img {
   width: 50%; }
+=======
+/*----------CAROUSEL------------------*/
+.slide1, .slide2, .slide3 {
+  background-image: url("../images/black-and-white.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.slide2 {
+  background-image: url("../images/colleagues.jpg"); }
+
+.slide3 {
+  background-image: url("../images/woman-at-sunset.jpg"); }
+
+.carousel-caption h1 {
+  font-size: 5.4em;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: .4em; }
+.carousel-caption p {
+  font-size: 2em; }
+>>>>>>> 44cca7efd6826e6587a1827d22a0da248d57ccc7
 
 /*----------FOOTER------------------*/
 footer ul, footer ul h3 {

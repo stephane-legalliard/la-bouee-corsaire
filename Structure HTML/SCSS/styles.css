@@ -1,0 +1,39 @@
+#demo {
+  width: 600px;
+  margin: 100px auto 0 auto;
+}
+#demo .search-box {
+  width: 100%;
+  position: relative;
+}
+#demo .search-box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 12pt;
+  margin: 0px;
+}
+#demo .search-box input[type="text"]:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+#demo .search-box .search-filters {
+  display: none;
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-top: 0px;
+}
+#demo .search-box .search-filters:after {
+  content: "";
+  display: table;
+}
+#demo .search-box .search-filters label {
+  margin-bottom: 7px;
+  font-size: 13px;
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
