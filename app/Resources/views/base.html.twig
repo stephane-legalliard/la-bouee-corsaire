@@ -54,7 +54,6 @@
 
 		{% block javascripts %}
 
-        {% endblock %}
 
 		<script src="{{ asset('js/jquery.min.js') }}"></script>
 		{% javascripts filter="jsqueeze" output="js/tooltip.js" combine=true
@@ -67,7 +66,7 @@
 		%}
 			<script src="{{ asset_url }}"></script>
 		{% endjavascripts %}
-		{% block javascripts %}{% endblock %}
+{% endblock %}
 
 
 		{% block footer %}
