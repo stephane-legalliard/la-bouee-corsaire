@@ -51,6 +51,11 @@
 			{% block body %}{% endblock %}
 			{% block fos_user_content %}{% endblock %}
 		</div>
+
+		{% block javascripts %}
+
+        {% endblock %}
+
 		<script src="{{ asset('js/jquery.min.js') }}"></script>
 		{% javascripts filter="jsqueeze" output="js/tooltip.js" combine=true
 			"js/bootstrap/tooltip.js"
@@ -63,6 +68,7 @@
 			<script src="{{ asset_url }}"></script>
 		{% endjavascripts %}
 		{% block javascripts %}{% endblock %}
+
 
 		{% block footer %}
 		<!--Footer--->
@@ -103,5 +109,6 @@
 		  </div>
 		</footer>
 	{% endblock %}
+
 	</body>
 </html>
