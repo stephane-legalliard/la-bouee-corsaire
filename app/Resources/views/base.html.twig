@@ -22,7 +22,7 @@
 	</head>
 	<body>
 	
-	{% block navbar %}{% endblock %}
+	{% block navbar %}{% include "user/navbar_content.html.twig" %}{% endblock %}
 		
 		<div class="container-fluid">
 			{% block body %}{% endblock %}
@@ -31,8 +31,6 @@
 
 
 		{% block javascripts %}
-
-
 
 		<script src="{{ asset('js/jquery.min.js') }}"></script>
 		{% javascripts filter="jsqueeze" output="js/tooltip.js" combine=true
@@ -49,48 +47,9 @@
 		{% endblock %}
 
 
-		{% block footer %}
-		<!--Footer-->
-		<footer>
-		  <div class="container">
-		    <div class="row">
-		      <div class="col-md-4">
-		        <ul>
-		          <h3><a href="#">BrandName</a></h3>
-		          <li><a href="#">Mentions légales</a></li>
-		          <li><a href="#">Conditions générales d'utilisations</a></li>
-		          <li><a href="#">Copyright</a></li>
-		        </ul>
 
-		      </div>
-		      <div class="col-md-4">
-		<ul>
-		  <h3>Nos services</h3>
-		  <li>Jardinerie</li>
-		  <li>Soutien scolaire</li>
-		  <li>Automobile</li>
-		</ul>
-		      </div>
-		      <div class="col-md-4">
-		<h3>Contactez-nous</h3>
-		<form class="contact" action="index.html" method="post">
-		  <input type="text" class="form-control" placeholder="Votre Nom Prénom" required>
-		    <input type="mail" class="form-control" placeholder="Votre e-mail" required>
-		    <button type="submit" class="btn btn-primary" name="button">Envoyer</button>
-<ul>
-	<li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></li>
-	<li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
-	<li><a href="#"><i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
-</ul>
-		</form>
-		      </div>
-		    </div>
-		  </div>
-		</footer>
-	{% endblock %}
-
-
-	
+		
+		{% block footer %}{% include "user/footer_content.html.twig" %}{% endblock %}
 
 
 
