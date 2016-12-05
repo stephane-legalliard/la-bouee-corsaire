@@ -76,4 +76,18 @@ fos_user:
     registration:
         form:
             type: AppBundle\Form\RegistrationType
+        confirmation:
+            # set to 'true' to require email confirmation for new accounts
+            enabled: false
 
+# Assetic Configuration
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+        scssphp:
+            formatter: 'Leafo\ScssPhp\Formatter\Compressed'
+        lessphp:
+            file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
+        jsqueeze: ~

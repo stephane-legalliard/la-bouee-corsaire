@@ -19,7 +19,7 @@
 				La Bouée Corsaire
 			}\\ [0.5cm]
 			{\large
-				version 1.0 - \today
+				version 1.1 - \today
 			}\\
 			
 			\vspace*{\fill}
@@ -47,6 +47,14 @@
 	% Table of contents
 	\newpage
 	\tableofcontents
+	
+	% Document history
+	\newpage
+	\section{Historique du document}
+	\begin{description}
+		\item [1.0] (23 novembre 2016) première version de travail
+		\item [1.1] (2 décembre 2016) mise-à-jour du planning
+	\end{description}
 	
 	% Presentation
 	\newpage
@@ -213,9 +221,7 @@
 				\item [Titre]
 				\item [\hyperlink{categorie}{Catégorie}]
 				\item [Région de l’\hyperlink{utilisateur}{Utilisateur}]
-				\item [
-					Région du \hyperlink{besoin}{Besoin}/\hyperlink{service}{Service}
-				]
+				\item [Région du \hyperlink{besoin}{Besoin}/\hyperlink{service}{Service}]
 			\end{description}
 			
 		% RSS Feed
@@ -242,16 +248,10 @@
 				\item [\hyperlink{besoin}{Besoin}/\hyperlink{service}{Service} concerné]
 					(pré-rempli si le formulaire est accédé depuis la page d’un
 					 \hyperlink{besoin}{Besoin}/\hyperlink{service}{Service})
-				\item [
-					\hyperlink{utilisateur}{Utilisateur} répondant au
-					 \hyperlink{besoin}{Besoin}/\hyperlink{service}{Service}
-				]
+				\item [\hyperlink{utilisateur}{Utilisateur} répondant au \hyperlink{besoin}{Besoin}/\hyperlink{service}{Service}]
 					(pré-rempli)
 				\item [Commentaire]
-				\item [
-					Évaluation du temps nécessaire pour le \hyperlink{service}{Service}
-					 rendu
-				]
+				\item [Évaluation du temps nécessaire pour le \hyperlink{service}{Service} rendu]
 					(facultatif)
 				\item [Date définie pour le \hyperlink{service}{Service} rendu]
 					(facultatif)
@@ -464,12 +464,12 @@
 		 découpage en sprints devant chacun aboutir à un livrable fonctionnel.\\
 		Voici la liste des sprints planifiés :
 		\begin{enumerate}
-			\item Réalisation des spécifications fonctionnelles
-			\item Réalisation des spécifications techniques
-			\item Mise en place du système de comptes
-			 \hyperlink{utilisateur}{Utilisateurs}
+			\item Mise en place d’un système de comptes
+			 \hyperlink{utilisateur}{Utilisateurs} basique
 			\item Mise en place du système de gestion des \hyperlink{besoin}{Besoins}
 			 et \hyperlink{service}{Services}
+			\item Finalisation du système de gestion des comptes
+			 \hyperlink{utilisateur}{Utilisateurs}
 			\item Mise en place du système de gestion des
 			 \hyperlink{quota}{Quotas d’heures}
 			\item Mise en place du système de \hyperlink{messagerie}{Messagerie}
