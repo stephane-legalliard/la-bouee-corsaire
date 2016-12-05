@@ -22,7 +22,7 @@
 	</head>
 	<body>
 	
-	{% block navbar %}{% endblock %}
+	{% block navbar %}{% include "user/navbar_content.html.twig" %}{% endblock %}
 		
 		<div class="container-fluid">
 			{% block body %}{% endblock %}
@@ -32,11 +32,6 @@
 
 		{% block javascripts %}
         
-        {% endblock %}
-
-
-
-
 		<script src="{{ asset('js/jquery.min.js') }}"></script>
 		{% javascripts filter="jsqueeze" output="js/tooltip.js" combine=true
 			"js/bootstrap/tooltip.js"
@@ -49,10 +44,10 @@
 			<script src="{{ asset_url }}"></script>
 		{% endjavascripts %}
 
-		{% block javascripts %}{% endblock %}
+		{% endblock %}
 
 
-		{% block footer %}{% endblock %}
+		{% block footer %}{% include "user/footer_content.html.twig" %}{% endblock %}
 
 
 	</body>
