@@ -30,6 +30,11 @@ header{
   }
 
 }
+/*----------Explications-------------*/
+section .col-md-3 img{
+  width: 50%;
+
+}
 /*----------CAROUSEL------------------*/
 
   .slide1, .slide2, .slide3 {
@@ -49,7 +54,7 @@ header{
   }
 
   .carousel-caption {
-    
+
     h1 {
     font-size: 5.4em;
     font-family: 'Pacifico', cursive;
@@ -60,6 +65,7 @@ header{
     font-size: 2em;
     }
   }
+
 
 /*----------FOOTER------------------*/
 footer{

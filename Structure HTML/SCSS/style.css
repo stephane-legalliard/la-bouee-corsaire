@@ -25,6 +25,11 @@ header .btn-primary:hover {
   background: none;
   border: none; }
 
+<<<<<<< HEAD
+/*----------Explications-------------*/
+section .col-md-3 img {
+  width: 50%; }
+=======
 /*----------CAROUSEL------------------*/
 .slide1, .slide2, .slide3 {
   background-image: url("../images/black-and-white.jpg");
@@ -45,6 +50,7 @@ header .btn-primary:hover {
   padding-bottom: .4em; }
 .carousel-caption p {
   font-size: 2em; }
+>>>>>>> 44cca7efd6826e6587a1827d22a0da248d57ccc7
 
 /*----------FOOTER------------------*/
 footer ul, footer ul h3 {

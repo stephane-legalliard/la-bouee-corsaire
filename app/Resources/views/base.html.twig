@@ -21,9 +21,9 @@
 
 	</head>
 	<body>
-	
+
 	{% block navbar %}{% include "user/navbar_content.html.twig" %}{% endblock %}
-		
+
 		<div class="container-fluid">
 			{% block body %}{% endblock %}
 			{% block fos_user_content %}{% endblock %}
@@ -44,13 +44,11 @@
 			<script src="{{ asset_url }}"></script>
 		{% endjavascripts %}
 
-		{% endblock %}
-
+{% endblock %}
 
 
 		
 		{% block footer %}{% include "user/footer_content.html.twig" %}{% endblock %}
-
 
 
 	</body>
