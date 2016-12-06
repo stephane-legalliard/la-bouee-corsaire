@@ -93,7 +93,7 @@
 		public function listAction() {
 			$repository = $this->getDoctrine()->getRepository('AppBundle:Need');
 			$needs = $repository->findAll();
-			return $this->render('need/need_list.html.twig', array(
+			return $this->render('need/list.html.twig', array(
 				'needs' => $needs,
 			));
 		}
