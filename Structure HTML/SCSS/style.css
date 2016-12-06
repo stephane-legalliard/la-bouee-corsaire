@@ -5,13 +5,12 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif; }
 
-.clearfix:before, .clearfix:after {
+/*.clearfix:before, .clearfix:after {
   content: " ";
   display: block; }
 
 .clearfix:after {
-  clear: both; }
-
+  clear: both; }*/
 /*-------------HEADER----------------*/
 header .navbar {
   margin-bottom: 0; }
@@ -24,6 +23,14 @@ header .btn-primary:hover {
   color: gray;
   background: none;
   border: none; }
+
+/*----------Explications-------------*/
+section {
+  padding-top: 25px; }
+  section h1 {
+    margin-bottom: 25px; }
+  section .col-md-3 img {
+    width: 50%; }
 
 /*----------CAROUSEL------------------*/
 .slide1, .slide2, .slide3 {
@@ -49,6 +56,8 @@ header .btn-primary:hover {
 /*----------FOOTER------------------*/
 footer {
   background-color: #F8F8F8; }
+  footer .SocialMedia li {
+    display: inline-block; }
   footer ul, footer ul h3 {
     list-style-type: none;
     color: currentColor; }

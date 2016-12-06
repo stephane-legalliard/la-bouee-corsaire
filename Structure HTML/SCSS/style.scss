@@ -5,12 +5,12 @@ body{
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif;
 }
-.clearfix:before, .clearfix:after {
+/*.clearfix:before, .clearfix:after {
   content: " ";
   display: block; }
 
 .clearfix:after {
-  clear: both; }
+  clear: both; }*/
 
 /*-------------HEADER----------------*/
 header{
@@ -30,6 +30,18 @@ header{
   }
 
 }
+/*----------Explications-------------*/
+section{
+  padding-top: 25px;
+  h1{
+    margin-bottom: 25px;
+  }
+  .col-md-3 img{
+    width: 50%;
+  }
+
+}
+
 /*----------CAROUSEL------------------*/
 
   .slide1, .slide2, .slide3 {
@@ -49,7 +61,7 @@ header{
   }
 
   .carousel-caption {
-    
+
     h1 {
     font-size: 5.4em;
     font-family: 'Pacifico', cursive;
@@ -61,11 +73,16 @@ header{
     }
   }
 
+
 /*----------FOOTER------------------*/
 footer{
-    
-  background-color: #F8F8F8;
-  
+   
+background-color: #F8F8F8;
+   
+.SocialMedia li{
+  display: inline-block;
+}
+
   ul, ul h3{
     list-style-type: none;
     color: currentColor;
@@ -79,4 +96,3 @@ footer{
   color: currentColor;
   }
 }
-
