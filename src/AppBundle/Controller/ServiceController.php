@@ -77,7 +77,7 @@
 				return new Response('<p>Saved new Service with id '.$service->getId()."</p>\n<pre>".var_export($service, true).'</pre>');
 			}
 			
-			return $this->render('user/service_new.html.twig', array(
+			return $this->render('service/new.html.twig', array(
 				'form' => $form->createView(),
 			));
 		}
