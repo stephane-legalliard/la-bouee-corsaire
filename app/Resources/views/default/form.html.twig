@@ -1,8 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-login-register-forms/form-elements.css') }}" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-login-register-forms/style.css') }}" />
+	{% stylesheets filter="scssphp" output="css/forms.css" combine=true
+		'css/bootstrap-login-register-forms/form-elements.css'
+		'css/bootstrap-login-register-forms/style.css'
+	%}
+		<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+	{% endstylesheets %}
 {% endblock %}
 
 {% block body %}
