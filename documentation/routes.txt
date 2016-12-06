@@ -1,4 +1,5 @@
 /                        : page d’accueil
+/admin/users             : liste des utilisateurs
 /login                   : page de connexion
 /need/list               : liste des besoins
 /need/show/{id}          : détails d’un besoin
