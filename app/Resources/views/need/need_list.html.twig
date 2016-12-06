@@ -6,21 +6,17 @@
 {% endblock %}
 
 {% block body %}
-
-
-
-
-{# {% include "user/navbar_content.html.twig" %} #}
-
-
-	{% for need in needs %}
-	<div class='form-group'>
-	    <p>titre : {{ need.title }}</p>
-	    <p>description : {{ need.description }}</p>
-            <p>lieu : {{ need.location }}</p>
-
+<div class="row register-form">
+	<div class="col-sm-4 col-sm-offset-1">
+		{# {% include "user/navbar_content.html.twig" %} #}
+		{% for need in needs %}
+			<div class='form-group'>
+				<p>titre : {{ need.title }}</p>
+				<p>description : {{ need.description }}</p>
+				<p>lieu : {{ need.location }}</p>
+			</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
-
+</div>
 {# {% include "user/footer_content.html.twig" %} #}
 {% endblock %}
