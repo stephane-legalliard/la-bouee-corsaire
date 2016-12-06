@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box; }
+
+body{
+  font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Serif', serif;
+}
+/*.clearfix:before, .clearfix:after {
+  content: " ";
+  display: block; }
+
+.clearfix:after {
+  clear: both; }*/
+
+/*-------------HEADER----------------*/
+header{
+  .navbar{
+    margin-bottom: 0;
+  }
+  .btn-primary{
+    color: gray;
+    padding: 15px 16px;
+    background-color: transparent;
+    border:none ;
+  }
+  .btn-primary:hover{
+    color: gray;
+    background: none;
+    border: none ;
+  }
+
+}
+/*----------Explications-------------*/
+section{
+  padding-top: 25px;
+  h1{
+    margin-bottom: 25px;
+  }
+  .col-md-3 img{
+    width: 50%;
+  }
+
+}
+
+/*----------CAROUSEL------------------*/
+
+  .slide1, .slide2, .slide3 {
+    background-image: url('../images/black-and-white.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .slide2 {
+    background-image: url('../images/colleagues.jpg');
+  }
+
+  .slide3 {
+    background-image: url('../images/woman-at-sunset.jpg');
+  }
+
+  .carousel-caption {
+
+    h1 {
+    font-size: 5.4em;
+    font-family: 'Pacifico', cursive;
+    padding-bottom: .4em;
+    }
+
+    p {
+    font-size: 2em;
+    }
+  }
+
+
+/*----------FOOTER------------------*/
+footer{
+.SocialMedia li{
+  display: inline-block;
+}
+  ul, ul h3{
+    list-style-type: none;
+    color: currentColor;
+  }
+  ul li a{
+    color: currentColor;
+    text-decoration: none;
+  }
+  ul li a:hover{
+  text-decoration: none;
+  color: currentColor;
+  }
+}
