@@ -148,7 +148,7 @@
 				return new Response('<p>Saved modifications to Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
 			}
 			
-			return $this->render('user/need_edit.html.twig', array(
+			return $this->render('need/edit.html.twig', array(
 				'form' => $form->createView(),
 			));
 		}
