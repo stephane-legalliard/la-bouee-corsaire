@@ -28,7 +28,6 @@
 			{% block fos_user_content %}{% endblock %}
 		</div>
 		
-		{% block javascripts %}
 		<script src="{{ asset('js/jquery.min.js') }}"></script>
 		{% javascripts filter="jsqueeze" output="js/tooltip.js" combine=true
 			"js/bootstrap/tooltip.js"
@@ -40,7 +39,7 @@
 		%}
 			<script src="{{ asset_url }}"></script>
 		{% endjavascripts %}
-		{% endblock %}
+		{% block javascripts %}{% endblock %}
 		
 		{% block footer %}{% include "user/footer_content.html.twig" %}{% endblock %}
 	</body>
