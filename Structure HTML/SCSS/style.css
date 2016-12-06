@@ -47,14 +47,16 @@ header .btn-primary:hover {
   font-size: 2em; }
 
 /*----------FOOTER------------------*/
-footer ul, footer ul h3 {
-  list-style-type: none;
-  color: currentColor; }
-footer ul li a {
-  color: currentColor;
-  text-decoration: none; }
-footer ul li a:hover {
-  text-decoration: none;
-  color: currentColor; }
+footer {
+  background-color: #F8F8F8; }
+  footer ul, footer ul h3 {
+    list-style-type: none;
+    color: currentColor; }
+  footer ul li a {
+    color: currentColor;
+    text-decoration: none; }
+  footer ul li a:hover {
+    text-decoration: none;
+    color: currentColor; }
 
 /*# sourceMappingURL=style.css.map */

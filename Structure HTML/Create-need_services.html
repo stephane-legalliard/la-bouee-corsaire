@@ -44,7 +44,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <!--Connection/Inscription-->
-          <li><button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-xs">Se connecter/S'inscrire</button></li>
+          <li><button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-xs">S'inscrire/Se connecter</button></li>
           <!--Réseaux Sociaux-->
           <li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></li>
           <li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
@@ -53,88 +53,67 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
-<!-- Carousel -->
-<!-- Surround everything with a div with the class carousel slide -->
-<div id="theCarousel" class="carousel slide" data-ride="carousel">
-
-  <!-- Define how many slides to put in the carousel -->
-  <ol class="carousel-indicators">
-    <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
-    <li data-target="#theCarousel" data-slide-to="1"> </li>
-    <li data-target ="#theCarousel" data-slide-to="2"> </li>
-  </ol >
-
-  <!-- Define the text to place over the image -->
-  <div class="carousel-inner">
-    <div class="item active" >
-      <div class ="slide1"></div>
-        <div class="carousel-caption">
-
-
-          <h1>LA BOUEE CORSAIRE</h1>
-          <div class="container">
-            <div id="demo">
-              <form action="" method="get">
-                  <div class="search-box">
-                      <input type="text" value="" class="search-input" placeholder="search:" />
-                      <div class="search-filters">
-                        <label><input type="radio" name="filter" value="value" /> Besoins</label>
-                        <label><input type="radio" name="filter" value="value" /> Services</label>             
-                      </div>
-                  </div>
-              </form>
-          </div>  
-          </div>
-        <p></p>
-        </div>
-    </div>
-
-    <div class="item">
-      <div class="slide2"></div>
-      <div class="carousel-caption">
-        <h1></h1>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="slide3"></div>
-      <div class="carousel-caption">
-      <h1></h1>
-      <p></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Set the actions to take when the arrows are clicked -->
-  <a class="left carousel-control" href="#theCarousel" data-slide="prev">
-  <span class="glyphicon glyphicon-chevron-left"> </span>
-  </a>
-  <a class="right carousel-control" href="#theCarousel" data-slide="next">
-  <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
 </header>
 
-<!--Explications - Exemples-->
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <img src="images" alt="" />
-      </div>
-      <div class="col-md-6">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-      <div class="col-md-3">
-        <img src="images" alt="" />
+
+<div class="row register-form">
+  <div class="col-xs-10 col-xs-offset-1">
+
+  <div class="form-group row">
+    <h3>Creation d'un Besoin/ Service</h3>
+  </div>
+
+
+    <div class="form-group row">
+      <label for="intitule-text-input" class="col-xs-2 col-form-label">Intitulé</label>
+      <div class="col-xs-4">
+        <input class="form-control" type="text" placeholder="Titre"  id="intitule-text-input">
       </div>
     </div>
+
+    <div class="form-group row">
+      <label for="lieu-text-input" class="col-xs-2 col-form-label">Lieu</label>
+      <div class="col-xs-4">
+        <input class="form-control" type="text" placeholder="Lieu" id="lieu-text-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="time-number-input" class="col-xs-2 col-form-label">Temps d'éxécution (heures)</label>
+      <div class="col-xs-4">
+        <input class="form-control" type="number" value="1" id="time-number-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="niv_exp-input" class="col-xs-2 col-form-label">Niveau d'expertise</label>
+      <div class="col-xs-4">
+        <select class="form-control" id="exampleSelect1">
+          <option>initié</option>
+          <option>avancé</option>
+          <option>expert</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="status-input" class="col-xs-2 col-form-label">Status</label>
+      <div class="col-xs-4">
+        <input class="form-control" type="text" placeholder="Status" id="status-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="Textarea" class="col-xs-2 col-form-label">Description</label>
+      <div class="col-xs-4">
+         <textarea class="form-control" type='text' placeholder="Description" id="Textarea" rows="4"></textarea>
+      </div>
+    </div>
+
   </div>
-</section>
+</div>
+
 
 <!--Footer-->
     <footer>
@@ -181,9 +160,6 @@
 <!--JavaScript-->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
-<!--SearchBox-->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/index.js"></script>
 
@@ -191,31 +167,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
