@@ -24,7 +24,7 @@ class AdminController extends Controller
     {
     	$userManager = $this->get('fos_user.user_manager');
         $users = $userManager->findUsers();
-        return $this->render('admin/users.html.twig', array(
+        return $this->render('user/list.html.twig', array(
         	'users' => $users,
         ));
     }
