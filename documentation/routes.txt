@@ -1,12 +1,11 @@
 /                        : page d’accueil
 /admin/users             : liste des utilisateurs
-/login                   : page de connexion
+/login                   : page de connexion / création d’un compte utilisateur
 /need/list               : liste des besoins
 /need/show/{id}          : détails d’un besoin
 /profile                 : affichage du profil utilisateur
 /profile/change-password : modification du mot de passe
 /profile/edit            : modification du profil utilisateur
-/register                : création d’un compte utilisateur
 /register/confirmed      : confirmation de création d’un compte utilisateur
 /resetting/check-email   : confirmation de la réinitialisation du mot de passe
 /resetting/request       : demande de réinitialisation du mot de passe
