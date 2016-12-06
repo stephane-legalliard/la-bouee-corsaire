@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
+	
 	{% for service in services %}
-	<div>
-	    <p>titre : {{ service.title }}</p>
-	    <p>description : {{ service.description }}</p>
-            <p>lieu : {{ service.location }}</p>
- 
-	</div>
+		
+		<div>
+			<p>titre : {{ service.title }}</p>
+			<p>description : {{ service.description }}</p>
+			<p>lieu : {{ service.location }}</p>
+		</div>
+		
 	{% endfor %}
-
+	
 {% endblock %}
