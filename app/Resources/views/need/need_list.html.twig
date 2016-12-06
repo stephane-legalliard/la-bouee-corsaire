@@ -2,13 +2,21 @@
 
 
 {% block body %}
+
+	
+
+<div class="row register-form">
+	<div class="col-sm-4 col-sm-offset-1">
+	
+    			
 	{% for need in needs %}
-	<div>
+	<div class='form-group'>
 	    <p>titre : {{ need.title }}</p>
 	    <p>description : {{ need.description }}</p>
-            <p>lieu : {{ need.location }}</p>
- 
+	    <p>lieu : {{ need.location }}</p>
+
 	</div>
+
 	{% endfor %}
 
 {% endblock %}
