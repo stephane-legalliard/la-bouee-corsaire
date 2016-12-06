@@ -1,0 +1,23 @@
+{% extends 'default/form.html.twig' %}
+
+{% block title %}
+	Édition du profil Utilisateur
+{% endblock %}
+
+{% block body %}
+	
+	{{ parent() }}
+	
+	{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': {
+		'class': 'fos_user_profile_edit'
+	} }) }}
+		
+		{{ form_widget(form) }}
+		
+		<div>
+			<input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+		</div>
+		
+	{{ form_end(form) }}
+	
+{% endblock body %}

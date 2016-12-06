@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	
+	{% for user in users %}
+		
+		<div>
+			<p>pseudo : {{ user.username }}</p>
+			<p>e-mail : {{ user.email }}</p>
+		</div>
+		
+	{% endfor %}
+	
+{% endblock %}
