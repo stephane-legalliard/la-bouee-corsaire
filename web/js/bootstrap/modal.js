@@ -1,1 +1,0 @@
-../../../vendor/twbs/bootstrap/js/modal.js
