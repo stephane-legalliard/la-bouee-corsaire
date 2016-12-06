@@ -139,7 +139,7 @@
 				return new Response('<p>Saved modifications to Service with id '.$service->getId()."</p>\n<pre>".var_export($service, true).'</pre>');
 			}
 			
-			return $this->render('user/service_edit.html.twig', array(
+			return $this->render('service/edit.html.twig', array(
 				'form' => $form->createView(),
 			));
 		}
