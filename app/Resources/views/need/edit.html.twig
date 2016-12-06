@@ -1,9 +1,4 @@
-{% extends 'base.html.twig' %}
-
-{% block stylesheets %}
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-login-register-forms/form-elements.css') }}" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-login-register-forms/style.css') }}" />
-{% endblock %}
+{% extends 'default/form.html.twig' %}
 
 {% block title %}
 	Édition d’un Besoin
@@ -11,7 +6,7 @@
 
 {% block body %}
 	
-	<h1>Édition d’un Besoin</h1>
+	{{ parent() }}
 	
 	{{ form_start(form, {'method': 'POST'}) }}
 		
