@@ -4,6 +4,7 @@
 	
 	use Symfony\Component\HttpFoundation\RedirectResponse;
 	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Component\Security\Core\Exception\AuthenticationException;
 	use Symfony\Component\Security\Core\Security;
 	use FOS\UserBundle\FOSUserEvents;
 	use FOS\UserBundle\Event\GetResponseUserEvent;
