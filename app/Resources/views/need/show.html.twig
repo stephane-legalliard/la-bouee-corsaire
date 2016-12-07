@@ -1,15 +1,18 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}{{ need.title }}{% endblock %}
+
 {% block body %}
-	<h1>Besoin</h1>
-	<h2>{{ need.title }}</h2>
-	<h3>Demandeur</h3>
+	<h1>{{ block('title') }}</h1>
+	<h2>Demandeur</h2>
 	<p>{{ need.user.username }}</p>
-	<h3>Lieu</h3>
+	<h2>Lieu</h2>
 	<p>{{ need.location }}</p>
-	<h3>Durée estimée</h3>
+	<h2>Durée estimée</h2>
 	<p>{{ need.hours }} heures</p>
-	<h3>Description</h3>
+	<h2>Description</h2>
 	<p>{{ need.description }}</p>
+	
+	<a href='/need/list'>Retour à la liste des Besoins</a>
 {% endblock %}
 
