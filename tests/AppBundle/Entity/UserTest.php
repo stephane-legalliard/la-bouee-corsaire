@@ -1,10 +1,10 @@
 <?php
 	
-	namespace Tests\AppBundle;
+	namespace Tests\AppBundle\Entity;
 	
 	use AppBundle\Entity\User;
 	
-	class TestUser extends User {
+	class UserTest extends User {
 		/**
 		 * @param $id
 		 */

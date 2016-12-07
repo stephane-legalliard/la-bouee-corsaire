@@ -1,13 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}{{ service.title }}{% endblock %}
+
 {% block body %}
-	<h1>Service</h1>
-	<h2>{{ service.title }}</h2>
-	<h3>Prestataire</h3>
+	<h1>{{ block('title') }}</h1>
+	<h2>Prestataire</h2>
 	<p>{{ service.user.username }}</p>
-	<h3>Lieu</h3>
+	<h2>Lieu</h2>
 	<p>{{ service.location }}</p>
-	<h3>Description</h3>
+	<h2>Description</h2>
 	<p>{{ service.description }}</p>
+	
+	<a href='/service/list'>Retour à la liste des Services</a>
 {% endblock %}
 

@@ -2,16 +2,17 @@
 	
 	namespace AppBundle\Controller;
 	
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 	use Symfony\Component\HttpFoundation\RedirectResponse;
 	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Component\Security\Core\Exception\AuthenticationException;
 	use Symfony\Component\Security\Core\Security;
 	use FOS\UserBundle\FOSUserEvents;
 	use FOS\UserBundle\Event\GetResponseUserEvent;
 	use FOS\UserBundle\Event\FormEvent;
 	use FOS\UserBundle\Event\FilterUserResponseEvent;
-	use FOS\UserBundle\Controller\SecurityController as BaseController;
 	
-	class SecurityController extends BaseController {
+	class SecurityController extends Controller {
 		
 		/**
 		 * @param Request $request

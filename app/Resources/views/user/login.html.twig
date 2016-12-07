@@ -1,3 +1,5 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
 {% extends "default/form.html.twig" %}
 
 {% block title %}Connexion/Inscription{% endblock %}
@@ -44,7 +46,7 @@
 			</div>
 
 			<button type="submit" class="btn btn-default" id="_submit" name="_submit">
-				Connexion
+				{{ 'security.login.submit'|trans }}
 			</button>
 
 		</form>
@@ -178,7 +180,7 @@
 			</div>
 
 			<button type="submit" class="btn">
-				Enregistrer
+				{{ 'registration.submit'|trans }}
 			</button>
 
 		{{ form_end(form) }}

@@ -50,6 +50,16 @@
 			return $this;
 		}
 		
+		public static function fromArray($array) {
+			$service = parent::fromArray($array);
+			
+			if (isset($array['level'])) {
+				$service->setLevel($array['level']);
+			}
+			
+			return $service;
+		}
+		
 	}
 	
 ?>

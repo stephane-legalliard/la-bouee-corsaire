@@ -2,14 +2,14 @@
 	
 	namespace Tests\AppBundle\Form\Type;
 	
-	use Tests\AppBundle\TestUser;
+	use Tests\AppBundle\Entity\UserTest;
 	use AppBundle\Form\RegistrationType;
 	use FOS\UserBundle\Tests\Form\Type\ValidatorExtensionTypeTestCase;
 	use FOS\UserBundle\Util\LegacyFormHelper;
 	
-	class RegistrationFormTypeTest extends ValidatorExtensionTypeTestCase {
+	class RegistrationTypeTest extends ValidatorExtensionTypeTestCase {
 		public function testSubmit() {
-			$user = new TestUser();
+			$user = new UserTest();
 			
 			$form = $this->factory->create(LegacyFormHelper::getType('AppBundle\Form\RegistrationType'), $user);
 			$formData = array(
@@ -48,7 +48,7 @@
 		 */
 		protected function getTypes() {
 			return array_merge(parent::getTypes(), array(
-				new RegistrationType('Tests\AppBundle\TestUser'),
+				new RegistrationType('Tests\AppBundle\Entity\UserTest'),
 			));
 		}
 	}
