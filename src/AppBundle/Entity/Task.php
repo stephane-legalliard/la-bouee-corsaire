@@ -270,6 +270,28 @@
 			return ($this->getStatus() === 'DI');
 		}
 		
+		public static function fromArray($array) {
+			$task = new static();
+			
+			if (isset($array['title'])) {
+				$task->setTitle($array['title']);
+			}
+			
+			if (isset($array['description'])) {
+				$task->setDescription($array['description']);
+			}
+			
+			if (isset($array['location'])) {
+				$task->setLocation($array['location']);
+			}
+			
+			if (isset($array['status'])) {
+				$task->setStatus($array['status']);
+			}
+			
+			return $task;
+		}
+		
 	}
 	
 ?>
