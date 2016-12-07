@@ -1,0 +1,74 @@
+{% extends 'default/form.html.twig' %}
+
+{% block title %}
+	Édition d’un Besoin
+{% endblock %}
+
+{% block body %}
+	
+	{{ parent() }}
+	
+	{{ form_start(form, {'method': 'POST'}) }}
+		
+		<div class="form-group">
+			{{ form_label(form.title, null, {'label_attr': {
+				'class': 'sr-only'
+			}}) }}
+			{{ form_errors(form.title) }}
+			{{ form_widget(form.title, {'attr': {
+				'class': 'form-control',
+				'placeholder': form.title.vars.label
+			}}) }}
+		</div>
+		
+		<div class="form-group">
+			{{ form_label(form.location, null, {'label_attr': {
+				'class': 'sr-only'
+			}}) }}
+			{{ form_errors(form.location) }}
+			{{ form_widget(form.location, {'attr': {
+				'class': 'form-control',
+				'placeholder': form.location.vars.label
+			}}) }}
+		</div>
+		
+		<div class="form-group">
+			{{ form_label(form.hours) }}
+			{{ form_errors(form.hours) }}
+			{{ form_widget(form.hours, {'attr': {
+				'class': 'form-control'
+			}}) }}
+		</div>
+		
+		<div class="form-group">
+			{{ form_label(form.level) }}
+			{{ form_errors(form.level) }}
+			{{ form_widget(form.level, {'attr': {
+				'class': 'form-control'
+			}}) }}
+		</div>
+		
+		<div class="form-group">
+			{{ form_label(form.status, null) }}
+			{{ form_errors(form.status) }}
+			{{ form_widget(form.status, {'attr': {
+				'class': 'form-control'
+			}}) }}
+		</div>
+		
+		<div class="form-group">
+			{{ form_label(form.description, null, {'label_attr': {
+				'class': 'sr-only'
+			}}) }}
+			{{ form_errors(form.description) }}
+			{{ form_widget(form.description, {'attr': {
+				'class': 'form-control',
+				'placeholder': form.description.vars.label
+			}}) }}
+		</div>
+		
+		<button type="submit" class="btn btn-default">Créer</button>
+		
+	{{ form_end(form) }}
+	
+{% endblock %}
