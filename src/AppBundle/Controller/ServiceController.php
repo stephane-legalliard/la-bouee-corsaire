@@ -13,7 +13,7 @@
 		
 		/**
 		 *
-		 * @Route("/service/show/{id}")
+		 * @Route("/service/show/{id}", name="service_show")
 		 *
 		 */
 		public function showAction(Request $request, $id) {
@@ -73,8 +73,7 @@
 				$em->persist($service);
 				$em->flush();
 				
-				//TODO creation confirmation page
-				return new Response('<p>Saved new Service with id '.$service->getId()."</p>\n<pre>".var_export($service, true).'</pre>');
+				return $this->redirectToRoute('service_show', array('id' => $service->getId()));
 			}
 			
 			return $this->render('service/new.html.twig', array(
