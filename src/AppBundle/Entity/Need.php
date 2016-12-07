@@ -86,6 +86,20 @@
 			return $this;
 		}
 		
+		public static function fromArray($array) {
+			$need = parent::fromArray($array);
+			
+			if (isset($array['level'])) {
+				$need->setLevel($array['level']);
+			}
+			
+			if (isset($array['hours'])) {
+				$need->setHours($array['hours']);
+			}
+			
+			return $need;
+		}
+		
 	}
 	
 ?>
