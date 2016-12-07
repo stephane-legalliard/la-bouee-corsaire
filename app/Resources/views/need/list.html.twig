@@ -1,21 +1,29 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Liste des Besoins{% endblock %}
+
 {% block body %}
 	
-	<div class="row register-form">
-		<div class="col-sm-4 col-sm-offset-1">
+	<h1>{{ block('title') }}</h1>
+	
+	<div class="row">
+		
+		{% for need in needs %}
 			
-			{% for need in needs %}
-				
-				<div class='form-group'>
-					<p>titre : {{ need.title }}</p>
-					<p>description : {{ need.description }}</p>
-					<p>lieu : {{ need.location }}</p>
-				</div>
-				
-			{% endfor %}
+			<div class='col-lg-3 col-md-4 col-sm-6'>
+				<a href='/need/show/{{ need.id }}'>
+					<div class='panel panel-default'>
+						<div class="panel-heading">{{ need.title }}</div>
+						<div class="panel-body">
+							<p>{{ need.description }}</p>
+							<p>lieu : {{ need.location }}</p>
+						</div>
+					</div>
+				</a>
+			</div>
 			
-		</div>
+		{% endfor %}
+		
 	</div>
 	
 {% endblock %}
