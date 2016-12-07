@@ -7,51 +7,57 @@
 		<title>{% block title %}La Bouée Corsaire{% endblock %}</title>
 		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 		{% block stylesheets %}
-			
+
 			<link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}" />
-			
+
 			{% stylesheets filter="lessphp" output="css/bootstrap.css" combine=true
 				"less/bootstrap/bootstrap.less"
 			%}
 				<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
 			{% endstylesheets %}
-			
+
 			{% stylesheets filter="scssphp" output="css/font-awesome.css" combine=true
 				"scss/font-awesome/font-awesome.scss"
 			%}
 				<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
 			{% endstylesheets %}
-			
+
+			{% stylesheets filter="scssphp" output="css/style.css" combine=true
+				"scss/style.scss"
+			%}
+				<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+			{% endstylesheets %}
+
 		{% endblock %}
 	</head>
 	<body>
-		
+
 		{% block navbar %}{% include "navbar.html.twig" %}{% endblock %}
-		
+
 		<div class="container-fluid">
 			{% block body %}{% endblock %}
 			{% block fos_user_content %}{% endblock %}
 		</div>
-		
+
 		{% block footer %}{% include "footer.html.twig" %}{% endblock %}
-		
+
 		{% block javascripts %}
-			
+
 			<script src="{{ asset('js/jquery.min.js') }}"></script>
-			
+
 			{% javascripts filter="jsqueeze" output="js/tooltip.js" combine=true
 				"js/bootstrap/tooltip.js"
 			%}
 				<script src="{{ asset_url }}"></script>
 			{% endjavascripts %}
-			
+
 			{% javascripts filter="jsqueeze" output="js/bootstrap.js" combine=true
 				"js/bootstrap/*.js"
 			%}
 				<script src="{{ asset_url }}"></script>
 			{% endjavascripts %}
-			
+
 		{% endblock %}
-		
+
 	</body>
 </html>

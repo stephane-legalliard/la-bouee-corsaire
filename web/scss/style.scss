@@ -1,0 +1,77 @@
+/*Déclaration variables couleurs*/
+$navbar_fond:#93A567 ;
+$body_fond: #D4CC8E;
+$input_border:#CF6243;
+
+body{
+  background-color: white;
+}
+.container-fluid{
+  padding-bottom: 25px;
+}
+.navbar-default{
+  /*Couleur barre de navigation*/
+  background-color: $navbar_fond;
+  border-radius: 0;
+  border:none;
+  /*Hamburger*/
+  .navbar-toggle{
+    background-color: white;
+  }
+  /*Hamburger - Barre*/
+.navbar-toggle .icon-bar{
+  background-color: $navbar_fond;
+  }
+  .navbar-brand{
+    color: white;
+    font-weight: 400;
+  }
+  .navbar-brand:hover{
+    color: white;
+  }
+  /*Liens navbar*/
+  .navbar-nav > li > a{
+    color: white;
+  }
+  /*Bouton Log In/Sign up*/
+.btn-primary{
+  background-color: transparent;
+  border-color: transparent;
+}
+}
+/*----------FOOTER------------------*/
+footer{
+  background-color:$navbar_fond;
+  padding-bottom: 0;
+.SocialMedia li{
+  display: inline-block;
+}
+h3{
+  color: white;
+  font-size: 20px;
+  font-weight:400;
+}
+  ul, ul h3 a{
+    list-style-type: none;
+    color: white;
+  }
+  ul li a{
+    color: white;
+    text-decoration: none;
+  }
+  ul li a:hover{
+    color: white;
+  }
+  input[type="text"],input[type="mail"]{
+    margin-bottom: 0.5em;
+    height: 34px;
+    width: 65%;
+  }
+  button.btn{
+    background-color:$input_border;
+  }
+   button.btn:focus, button.btn:hover{
+    background-color:$input_border;
+    opacity: 1;
+  }
+}
