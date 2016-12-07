@@ -26,22 +26,49 @@
 		 */
 		public function buildForm(FormBuilderInterface $builder, array $options) {
 			$builder
-			 ->add('username', null, array('label' => 'Pseudonyme…'))
+			 ->add('username', null, array(
+			 	'translation_domain' => 'FOSUserBundle',
+			 	'label' => 'form.username',
+			 ))
 			 ->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
 			 	'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
 			 	'options' => array('translation_domain' => 'FOSUserBundle'),
-			 	'first_options' => array('label' => 'Mot de passe…'),
-			 	'second_options' => array('label' => 'Mot de passe (confirmation)'),
+			 	'first_options' => array('label' => 'form.password'),
+			 	'second_options' => array('label' => 'form.password_confirmation'),
 			 	'invalid_message' => 'fos_user.password.mismatch',
 			 ))
-			 ->add('name', null, array('label' => 'Prénom…'))
-			 ->add('surname', null, array('label' => 'Nom…'))
-			 ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'), array('label' => 'Adresse e-mail'))
-			 ->add('adress', null, array('label' => 'Adresse…'))
-			 ->add('region', null, array('label' => 'Région…'))
-			 ->add('city', null, array('label' => 'Ville…'))
-			 ->add('phone', null, array('label' => 'Téléphone… (optionnel)'))
-			 ->add('description', null, array('label' => 'Description…'));
+			 ->add('name', null, array(
+			 	'translation_domain' => false,
+			 	'label' => 'Prénom',
+			 ))
+			 ->add('surname', null, array(
+			 	'translation_domain' => false,
+			 	'label' => 'Nom',
+			 ))
+			 ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'),array(
+			 	'translation_domain' => 'FOSUserBundle',
+			 	'label' => 'form.email',
+			 ))
+			 ->add('adress', null, array(
+			 	'translation_domain' => false,
+			 	'label' => 'Adresse',
+			 ))
+			 ->add('region', null, array(
+			 	'translation_domain' => false,
+			 	'label' => 'Région',
+			 ))
+			 ->add('city', null, array(
+			 	'translation_domain' => false,
+			 	'label' => 'Ville',
+			 ))
+			 ->add('phone', null, array(
+			 	'translation_domain' => false,
+			 	'label' => 'Téléphone (optionnel)',
+			 ))
+			 ->add('description', null, array(
+			 	'translation_domain' => false,
+			 	'label' => 'Description',
+			 ));
 		}
 		
 		/**
