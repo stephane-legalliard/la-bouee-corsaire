@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!--Meta-->
+    <meta charset="utf-8" author="Annie-line" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>La Bouée Corsaire</title>
+
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="SCSS/font-awesome.min.css" media="screen" title="no title">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="SCSS/bootstrap.min.css" media="screen" title="no title">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="SCSS/style.css" media="screen" title="no title">
+
+
+</head>
+
+<body>
+
+    <!--Header-->
+    <header>
+        <!--Barre de navigation-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                    <a class="navbar-brand" href="#">La Bouée Corsaire</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--Connection/Inscription-->
+                        <li><button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-xs">S'inscrire/Se connecter</button></li>
+                        <!--Réseaux Sociaux-->
+                        <li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss-square fa-2x" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#besoins">BESOINS</a></li>
+            <li><a data-toggle="tab" href="#services">SERVICES</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="besoins" class="tab-pane fade in active">
+                <h3>BESOINS</h3>
+                <div class="row register-form">
+                    <div class="col-xs-10 col-xs-offset-1">
+
+                        <div class="form-group row">
+                            <h3>Creation d'un Besoin</h3>
+                        </div>
+                        <div class="form-group row">
+                            <label for="intitule-text-input" class="col-xs-2 col-form-label">Intitulé</label>
+                            <div class="col-xs-4">
+                                <input class="form-control" type="text" placeholder="Titre" id="intitule-text-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="lieu-text-input" class="col-xs-2 col-form-label">Lieu</label>
+                            <div class="col-xs-4">
+                                <input class="form-control" type="text" placeholder="Lieu" id="lieu-text-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Textarea" class="col-xs-2 col-form-label">Description</label>
+                            <div class="col-xs-4">
+                                <textarea class="form-control" type="text" placeholder="Description" id="Textarea" rows="7"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="services" class="tab-pane fade">
+                <h3>SERVICES</h3>
+                <!-- Creation d'un Service -->
+                <div class="row register-form">
+                    <div class="col-xs-10 col-xs-offset-1">
+
+                        <div class="form-group row">
+                            <h3>Creation d'un Service</h3>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="title-text-input" class="col-xs-2 col-form-label">Intitulé</label>
+                            <div class="col-xs-4">
+                                <input class="form-control" type="text" placeholder="Titre" id="title-text-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="place-text-input" class="col-xs-2 col-form-label">Lieu</label>
+                            <div class="col-xs-4">
+                                <input class="form-control" type="text" placeholder="Lieu" id="place-text-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="time-number-input" class="col-xs-2 col-form-label">Temps d'éxécution (heures)</label>
+                            <div class="col-xs-4">
+                                <input class="form-control" type="number" value="1" id="time-number-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="niv_exp-input" class="col-xs-2 col-form-label">Niveau d'expertise</label>
+                            <div class="col-xs-4">
+                                <select class="form-control" id="exampleSelect1">
+          <option>initié</option>
+          <option>avancé</option>
+          <option>expert</option>
+        </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="Area" class="col-xs-2 col-form-label">Description</label>
+                            <div class="col-xs-4">
+                                <textarea class="form-control" type="text" placeholder="Description" id="Area" rows="7"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <h3><a href="#">BrandName</a></h3>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Conditions générales d'utilisations</a></li>
+                        <li><a href="#">Copyright</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <ul>
+                        <h3>Nos services</h3>
+                        <li>Jardinerie</li>
+                        <li>Soutien scolaire</li>
+                        <li>Automobile</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+
+                    <h3>Contactez-nous</h3>
+
+                    <form class="contact" action="index.html" method="post">
+                        <input type="text" class="form-control" placeholder="Votre Nom Prénom" required>
+                        <input type="mail" class="form-control" placeholder="Votre e-mail" required>
+                        <button type="submit" class="btn btn-primary" name="button">Envoyer</button>
+                        <ul class="SocialMedia">
+                            <li><a href="#"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss-square fa-3x" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!--JavaScript-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
+
+
+</body>
+
+</html>

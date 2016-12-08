@@ -3,232 +3,226 @@
 <html lang="en">
 
 <head>
-  <!--Meta-->
-  <meta charset="utf-8" author="Annie-line"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Meta-->
+    <meta charset="utf-8" author="Annie-line, Antoine, Jean-Patrice et Stéphane" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>La Bouée Corsaire</title>
+    <title>La Bouée Corsaire</title>
 
-  <!--Google Font-->
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif" rel="stylesheet">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif" rel="stylesheet">
 
-  <!--Font Awesome-->
-  <link rel="stylesheet" href="SCSS/font-awesome.min.css" media="screen" title="no title">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="SCSS/font-awesome.min.css" media="screen" title="no title">
 
-  <!--Bootstrap-->
-  <link rel="stylesheet" href="SCSS/bootstrap.min.css" media="screen" title="no title">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="SCSS/bootstrap.min.css" media="screen" title="no title">
 
-  <!--CSS-->
-  <link rel="stylesheet" href="SCSS/style.css" media="screen" title="no title">
-  <link rel="stylesheet" href="SCSS/styles.css" media="screen" title="no title"> <!-- searchbox -->
+    <!--CSS-->
+    <link rel="stylesheet" href="SCSS/style.css" media="screen" title="no title">
 
 </head>
+
 <body>
 
-<!--Header-->
-<header>
-  <!--Barre de navigation-->
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <!--Header-->
+    <header>
+        <!--Barre de navigation-->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">La Bouée Corsaire</a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <!--Connection/Inscription-->
-          <li><button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-xs">Sign In/Register</button></li>
-          <!--Réseaux Sociaux-->
-          <li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
-          <li><a href="#"><i class="fa fa-rss-square fa-2x" aria-hidden="true"></i></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-<!-- Carousel -->
-<!-- Surround everything with a div with the class carousel slide -->
-<div id="theCarousel" class="carousel slide" data-ride="carousel">
-
-  <!-- Define how many slides to put in the carousel -->
-  <ol class="carousel-indicators">
-    <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
-    <li data-target="#theCarousel" data-slide-to="1"> </li>
-    <li data-target ="#theCarousel" data-slide-to="2"> </li>
-  </ol >
-
-  <!-- Define the text to place over the image -->
-  <div class="carousel-inner">
-    <div class="item active" >
-      <div class ="slide1"></div>
-        <div class="carousel-caption">
-
-
-          <h1>LA BOUEE CORSAIRE</h1>
-          <div class="container">
-            <div id="demo">
-              <form action="" method="get">
-                  <div class="search-box">
-                      <input type="text" value="" class="search-input" placeholder="search:" />
-                      <div class="search-filters">
-                        <label><input type="radio" name="filter" value="value" /> Besoins</label>
-                        <label><input type="radio" name="filter" value="value" /> Services</label>
-                      </div>
-                  </div>
-              </form>
-          </div>
-          </div>
-        <p></p>
-        </div>
-    </div>
-
-    <div class="item">
-      <div class="slide2"></div>
-      <div class="carousel-caption">
-        <h1></h1>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="slide3"></div>
-      <div class="carousel-caption">
-      <h1></h1>
-      <p></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Set the actions to take when the arrows are clicked -->
-  <a class="left carousel-control" href="#theCarousel" data-slide="prev">
-  <span class="glyphicon glyphicon-chevron-left"> </span>
-  </a>
-  <a class="right carousel-control" href="#theCarousel" data-slide="next">
-  <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
-</header>
-
-<!--Explications - Exemples-->
-<section class="example">
-  <div class="container">
-    <div class="row">
-      <h1 class="text-center">Le fonctionnement</h1>
-      <!--Illustration 1-->
-      <div class="col-md-3 text-center">
-        <img src="images/girl.png" alt="" />
-        <h3>Christine</h3>
-      </div>
-      <div class="col-md-6 text-center">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-
-        <img src="images/stopwatch.png" alt="" />
-        <img src="images/no-dollars-accepted.png" alt="" />
-        <img src="images/wrenches.png" alt="" />
-        <img src="images/hourglass.png" alt="" />
-      </div>
-      <div class="col-md-3 text-center">
-        <img src="images/student.png" class="image-responsive" alt="" />
-        <h3>Florent</h3>
-      </div>
-      <!--Illustration 2-->
-      <div class="col-md-3 text-center">
-        <img src="images/girl.png" alt="" />
-        <h3>Françoise</h3>
-      </div>
-      <div class="col-md-6 text-center">
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-
-        <img src="images/stopwatch.png" alt="" />
-        <img src="images/no-dollars-accepted.png" alt="" />
-        <img src="images/wrenches.png" alt="" />
-        <img src="images/hourglass.png" alt="" />
+                    <a class="navbar-brand" href="#">La Bouée Corsaire</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--Connection/Inscription-->
+                        <li><button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-xs">Se connecter/S'inscrire</button></li>
+                        <!--Réseaux Sociaux-->
+                        <li><a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss-square fa-2x" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-      <div class="col-md-3 text-center">
-        <img src="images/student.png" class="image-responsive" alt="" />
-        <h3>Christian</h3>
-      </div>
-    </div>
-  </div>
-</section>
-<!--Beesoins/Services en-cours-->
-<div class="container">
-  <h2 class="text-center">En ce moment</h2>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-1 list-group">
-      <h3>Nos besoins</h3>
-      <a href="#" class="list-group-item active">First item</a>
-      <a href="#" class="list-group-item">Second item</a>
-      <a href="#" class="list-group-item">Third item</a>
-    </div>
-    <div class="col-md-4 col-md-offset-1 list-group">
-      <h3>Nos services</h3>
-      <a href="#" class="list-group-item active">First item</a>
-      <a href="#" class="list-group-item">Second item</a>
-      <a href="#" class="list-group-item">Third item</a>
-    </div>
-  </div>
-</div>
+            <!-- /.container-fluid -->
+        </nav>
 
-<!--Footer-->
-    <footer>
-      <div class="container">
+        <!-- Carousel -->
+        <!-- Surround everything with a div with the class carousel slide -->
+        <div id="theCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Define how many slides to put in the carousel -->
+            <ol class="carousel-indicators">
+                <li data-target="#theCarousel" data-slide-to="0" class="active"> </li>
+                <li data-target="#theCarousel" data-slide-to="1"> </li>
+                <li data-target="#theCarousel" data-slide-to="2"> </li>
+            </ol>
+
+            <!-- Define the text to place over the image -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="slide1"></div>
+                    <div class="carousel-caption">
+
+
+                        <h1>LA BOUEE CORSAIRE</h1>
+                        <div class="container">
+
+
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="slide2"></div>
+                    <div class="carousel-caption">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="slide3"></div>
+                    <div class="carousel-caption">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Set the actions to take when the arrows are clicked -->
+            <a class="left carousel-control" href="#theCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"> </span>
+            </a>
+            <a class="right carousel-control" href="#theCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </header>
+
+    <!--Explications - Exemples-->
+    <section class="example">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center">Le fonctionnement</h2>
+                <!--Illustration 1-->
+                <div class="col-md-3 text-center">
+                    <img src="images/girl.png" alt="" />
+                    <h3>Christine</h3>
+                </div>
+                <div class="col-md-6 text-center">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+
+                    <img src="images/stopwatch.png" alt="" />
+                    <img src="images/no-dollars-accepted.png" alt="" />
+                    <img src="images/wrenches.png" alt="" />
+                    <img src="images/hourglass.png" alt="" />
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="images/man.png" class="image-responsive" alt="" />
+                    <h3>Florent</h3>
+                </div>
+                <!--Illustration 2-->
+                <div class="col-md-3 text-center">
+                    <img src="images/girl.png" alt="" />
+                    <h3>Françoise</h3>
+                </div>
+                <div class="col-md-6 text-center">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+
+                    <img src="images/stopwatch.png" alt="" />
+                    <img src="images/no-dollars-accepted.png" alt="" />
+                    <img src="images/wrenches.png" alt="" />
+                    <img src="images/hourglass.png" alt="" />
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="images/man.png" class="image-responsive" alt="" />
+                    <h3>Christian</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Beesoins/Services en-cours-->
+    <div class="container">
+        <h2 class="text-center">En ce moment</h2>
         <div class="row">
-            <div class="col-md-4">
-              <ul>
-                <h3><a href="#">BrandName</a></h3>
-                  <li><a href="#">Mentions légales</a></li>
-                  <li><a href="#">Conditions générales d'utilisations</a></li>
-                  <li><a href="#">Copyright</a></li>
-              </ul>
-          </div>
-
-            <div class="col-md-4">
-          <ul>
-              <h3>Nos services</h3>
-              <li>Jardinerie</li>
-              <li>Soutien scolaire</li>
-              <li>Automobile</li>
-          </ul>
+            <div class="col-md-4 col-md-offset-1 list-group">
+                <h3>Nos besoins</h3>
+                <a href="#" class="list-group-item active">First item</a>
+                <a href="#" class="list-group-item">Second item</a>
+                <a href="#" class="list-group-item">Third item</a>
             </div>
-
-          <div class="col-md-4">
-
-          <h3>Contactez-nous</h3>
-
-          <form class="contact" action="index.html" method="post">
-            <input type="text" class="form-control" placeholder="Votre Nom Prénom" required>
-            <input type="mail" class="form-control" placeholder="Votre e-mail" required>
-            <button type="submit" class="btn btn-primary" name="button">Envoyer</button>
-            <ul class="SocialMedia">
-              <li><a href="#"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-rss-square fa-3x" aria-hidden="true"></i></a></li>
-            </ul>
-          </form>
+            <div class="col-md-4 col-md-offset-1 list-group">
+                <h3>Nos services</h3>
+                <a href="#" class="list-group-item active">First item</a>
+                <a href="#" class="list-group-item">Second item</a>
+                <a href="#" class="list-group-item">Third item</a>
+            </div>
         </div>
+    </div>
 
+    <!--Footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <h3><a href="#">BrandName</a></h3>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Conditions générales d'utilisations</a></li>
+                        <li><a href="#">Copyright</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <ul>
+                        <h3>Nos services</h3>
+                        <li>Jardinerie</li>
+                        <li>Soutien scolaire</li>
+                        <li>Automobile</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+
+                    <h3>Contactez-nous</h3>
+
+                    <form class="contact" action="index.html" method="post">
+                        <input type="text" class="form-control" placeholder="Votre Nom Prénom" required>
+                        <input type="mail" class="form-control" placeholder="Votre e-mail" required>
+                        <button type="submit" class="btn btn-primary" name="button">Envoyer</button>
+                        <ul class="SocialMedia">
+                            <li><a href="#"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss-square fa-3x" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </form>
+                </div>
+
+            </div>
         </div>
-      </div>
     </footer>
 
-<!--JavaScript-->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
+    <!--JavaScript-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 
 
 
 </body>
+
 </html>

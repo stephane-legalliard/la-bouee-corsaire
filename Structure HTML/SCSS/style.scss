@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box; }
+  /*Déclaration variables couleurs*/
+  $navbar_fond:#93A567 ;
+  $body_fond: #D4CC8E;
+  $input_border:#CF6243;
 
 body{
   font-family: 'PT Sans', sans-serif;
@@ -11,22 +15,46 @@ body{
 
 .clearfix:after {
   clear: both; }*/
-
+  h2{
+    color: #CF6243;
+  }
 /*-------------HEADER----------------*/
 header{
-  .navbar{
+  .navbar-default{
+    /*Couleur barre de navigation*/
     margin-bottom: 0;
+    background-color: $navbar_fond;
+    border-radius: 0;
+    border:none;
+    color: white;
+    font-weight: 400;
   }
+ a.navbar-brand{
+    color: white;
+    font-weight: 400;
+  }
+  .navbar-default .navbar-brand {
+    color: #fff;
+}
+  .navbar-brand:hover{
+    color: white;
+  }
+    /*Hamburger*/
+    .navbar-toggle{
+      background-color: white;
+    }
+    /*Hamburger - Barre*/
+  .navbar-toggle .icon-bar{
+    background-color: $navbar_fond;
+    }
+    /*Liens navbar*/
+    .navbar-nav > li > a{
+      color: white;
+    }
+    /*Bouton Log In/Sign up*/
   .btn-primary{
-    color: gray;
-    padding: 15px 16px;
     background-color: transparent;
-    border:none ;
-  }
-  .btn-primary:hover{
-    color: gray;
-    background: none;
-    border: none ;
+    border-color: transparent;
   }
 
 }
@@ -76,19 +104,48 @@ section{
 
 /*----------FOOTER------------------*/
 footer{
+<<<<<<< HEAD
+   
+background-color: #F8F8F8;
+   
 .SocialMedia li{
   display: inline-block;
 }
+
   ul, ul h3{
+=======
+  background-color:$navbar_fond;
+  padding-bottom: 0;
+  .SocialMedia li{
+  display: inline-block;
+  }
+  h3{
+  color: white;
+  font-size: 20px;
+  font-weight:400;
+  }
+  ul, ul h3 a{
+>>>>>>> adb8ab9d432f63d5661eb938a36ee20f6fe72b10
     list-style-type: none;
-    color: currentColor;
+    color: white;
   }
   ul li a{
-    color: currentColor;
+    color: white;
     text-decoration: none;
   }
   ul li a:hover{
-  text-decoration: none;
-  color: currentColor;
+    color: white;
   }
-}
+  input[type="text"],input[type="mail"]{
+    margin-bottom: 0.5em;
+    height: 34px;
+    width: 65%;
+  }
+  button.btn{
+    background-color:$input_border;
+  }
+   button.btn:focus, button.btn:hover{
+    background-color:$input_border;
+    opacity: 1;
+  }
+  }
