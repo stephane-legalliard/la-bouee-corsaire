@@ -10,15 +10,15 @@ body{
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif;
 }
-/*.clearfix:before, .clearfix:after {
-  content: " ";
-  display: block; }
 
-.clearfix:after {
-  clear: both; }*/
   h2{
     color: #CF6243;
   }
+
+a:hover{
+  text-decoration: none;
+}
+
 /*-------------HEADER----------------*/
 header{
   .navbar-default{
@@ -30,21 +30,38 @@ header{
   }
 
   .navbar-default .navbar-brand {
+
     color: $text_color;
     font-weight: 400;
 }
   .navbar-brand:hover{
     color: $text_color;
+
+    color: white;
+}
+  .navbar-default .navbar-brand:hover{
+    color: white;
+
   }
     /*Hamburger*/
     .navbar-toggle{
       background-color: $text_color;
     }
+    /*Bouton Log In/Sign up*/
+  .btn-primary{
+    background-color: transparent;
+    border: none;
+  }
+  .btn-primary:hover,.btn-primary:focus, .btn-primary:active:focus,{
+    background-color: transparent;
+    border: none;
+  }
     /*Hamburger - Barre*/
   .navbar-toggle .icon-bar{
     background-color: $navbar_fond;
     }
     /*Liens navbar*/
+
     .navbar-default .navbar-nav > li > a{
      color: $text_color;
     }
@@ -67,6 +84,7 @@ header{
   }
 
 
+
 /*----------BACKGROUND FIXED------------------*/
 
   #image_background {
@@ -78,6 +96,7 @@ header{
   }
 }
 /*----------Explications-------------*/
+
 section{
   padding-top: 25px;
   h1{
@@ -86,12 +105,16 @@ section{
   .col-md-3 img{
     width: 50%;
   }
-
 }
-
-
-
-
+.list-group-item.active:hover, .list-group-item.active{
+  background-color:$navbar_fond;
+  border-color: $input_border;
+}
+a.list-group-item:hover{
+  background-color:$navbar_fond;
+  border-color: $input_border;
+  color: white;
+}
 
 /*----------FOOTER------------------*/
 footer{
@@ -105,8 +128,16 @@ footer{
   color: white;
   font-size: 20px;
   font-weight:400;
+a{
+  color: white;
+}
+a:hover{
+  color: white;
+}
   }
-  ul, ul h3 a{
+
+
+  ul  {
 
     list-style-type: none;
     color: white;
@@ -117,17 +148,25 @@ footer{
   }
   ul li a:hover{
     color: white;
+    text-decoration: none;
   }
   input[type="text"],input[type="mail"]{
     margin-bottom: 0.5em;
     height: 34px;
     width: 65%;
   }
-  button.btn{
+  /*button.btn{
     background-color:$input_border;
+    border: none;
   }
    button.btn:focus, button.btn:hover{
     background-color:$input_border;
     opacity: 1;
-  }
+  }*/
+
+.btn-primary,.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+      background-color:$input_border;
+      border:none;
+}
+
   }
