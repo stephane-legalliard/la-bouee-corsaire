@@ -4,6 +4,7 @@
   $navbar_fond:#93A567 ;
   $body_fond: #D4CC8E;
   $input_border:#CF6243;
+  $text_color: white;
 
 body{
   font-family: 'PT Sans', sans-serif;
@@ -26,37 +27,55 @@ header{
     background-color: $navbar_fond;
     border-radius: 0;
     border:none;
-    color: white;
-    font-weight: 400;
   }
- a.navbar-brand{
-    color: white;
-    font-weight: 400;
-  }
+
   .navbar-default .navbar-brand {
-    color: #fff;
+    color: $text_color;
+    font-weight: 400;
 }
   .navbar-brand:hover{
-    color: white;
+    color: $text_color;
   }
     /*Hamburger*/
     .navbar-toggle{
-      background-color: white;
+      background-color: $text_color;
     }
     /*Hamburger - Barre*/
   .navbar-toggle .icon-bar{
     background-color: $navbar_fond;
     }
     /*Liens navbar*/
-    .navbar-nav > li > a{
-      color: white;
+    .navbar-default .navbar-nav > li > a{
+     color: $text_color;
     }
+
+  .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+    color: $text_color;
+    }
+
     /*Bouton Log In/Sign up*/
-  .btn-primary{
+  .btn-default, .btn-default{
     background-color: transparent;
     border-color: transparent;
+    color: $text_color;
   }
 
+  .btn-default:hover, .btn-default:focus, .btn-default:active{
+    background-color: transparent;
+    border-color: transparent;
+    color: $text_color;
+  }
+
+
+/*----------BACKGROUND FIXED------------------*/
+
+  #image_background {
+    background-image: url('../images/colleagues.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 }
 /*----------Explications-------------*/
 section{
@@ -70,50 +89,24 @@ section{
 
 }
 
-/*----------CAROUSEL------------------*/
 
-  .slide1, .slide2, .slide3 {
-    background-image: url('../images/black-and-white.jpg');
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
 
-  .slide2 {
-    background-image: url('../images/colleagues.jpg');
-  }
 
-  .slide3 {
-    background-image: url('../images/woman-at-sunset.jpg');
-  }
-
-  .carousel-caption {
-
-    h1 {
-    font-size: 5.4em;
-    font-family: 'Pacifico', cursive;
-    padding-bottom: .4em;
-    }
-
-    p {
-    font-size: 2em;
-    }
-  }
+  //   h1 {
+  //   font-size: 5.4em;
+  //   font-family: 'Pacifico', cursive;
+  //   padding-bottom: .4em;
+  //   }
+  //
+  //   p {
+  //   font-size: 2em;
+  //   }
+  // }
 
 
 /*----------FOOTER------------------*/
 footer{
-<<<<<<< HEAD
-   
-background-color: #F8F8F8;
-   
-.SocialMedia li{
-  display: inline-block;
-}
 
-  ul, ul h3{
-=======
   background-color:$navbar_fond;
   padding-bottom: 0;
   .SocialMedia li{
@@ -125,7 +118,7 @@ background-color: #F8F8F8;
   font-weight:400;
   }
   ul, ul h3 a{
->>>>>>> adb8ab9d432f63d5661eb938a36ee20f6fe72b10
+
     list-style-type: none;
     color: white;
   }

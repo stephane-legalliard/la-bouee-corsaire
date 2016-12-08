@@ -21,31 +21,41 @@ header {
   /*Hamburger*/
   /*Hamburger - Barre*/
   /*Liens navbar*/
-  /*Bouton Log In/Sign up*/ }
+  /*Bouton Log In/Sign up*/
+  /*----------BACKGROUND FIXED------------------*/ }
   header .navbar-default {
     /*Couleur barre de navigation*/
     margin-bottom: 0;
     background-color: #93A567;
     border-radius: 0;
-    border: none;
-    color: white;
-    font-weight: 400; }
-  header a.navbar-brand {
-    color: white;
-    font-weight: 400; }
+    border: none; }
   header .navbar-default .navbar-brand {
-    color: #fff; }
+    color: white;
+    font-weight: 400; }
   header .navbar-brand:hover {
     color: white; }
   header .navbar-toggle {
     background-color: white; }
   header .navbar-toggle .icon-bar {
     background-color: #93A567; }
-  header .navbar-nav > li > a {
+  header .navbar-default .navbar-nav > li > a {
     color: white; }
-  header .btn-primary {
+  header .navbar-default .navbar-nav > li > a:focus, header .navbar-default .navbar-nav > li > a:hover {
+    color: white; }
+  header .btn-default, header .btn-default {
     background-color: transparent;
-    border-color: transparent; }
+    border-color: transparent;
+    color: white; }
+  header .btn-default:hover, header .btn-default:focus, header .btn-default:active {
+    background-color: transparent;
+    border-color: transparent;
+    color: white; }
+  header #image_background {
+    background-image: url("../images/colleagues.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
 
 /*----------Explications-------------*/
 section {
@@ -54,27 +64,6 @@ section {
     margin-bottom: 25px; }
   section .col-md-3 img {
     width: 50%; }
-
-/*----------CAROUSEL------------------*/
-.slide1, .slide2, .slide3 {
-  background-image: url("../images/black-and-white.jpg");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
-
-.slide2 {
-  background-image: url("../images/colleagues.jpg"); }
-
-.slide3 {
-  background-image: url("../images/woman-at-sunset.jpg"); }
-
-.carousel-caption h1 {
-  font-size: 5.4em;
-  font-family: 'Pacifico', cursive;
-  padding-bottom: .4em; }
-.carousel-caption p {
-  font-size: 2em; }
 
 /*----------FOOTER------------------*/
 footer {
