@@ -9,15 +9,13 @@ body{
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif;
 }
-/*.clearfix:before, .clearfix:after {
-  content: " ";
-  display: block; }
 
-.clearfix:after {
-  clear: both; }*/
   h2{
     color: #CF6243;
   }
+a:hover{
+  text-decoration: none;
+}
 /*-------------HEADER----------------*/
 header{
   .navbar-default{
@@ -34,86 +32,69 @@ header{
     font-weight: 400;
   }
   .navbar-default .navbar-brand {
-    color: #fff;
+    color: white;
 }
-  .navbar-brand:hover{
+  .navbar-default .navbar-brand:hover{
     color: white;
   }
     /*Hamburger*/
     .navbar-toggle{
       background-color: white;
     }
+    /*Bouton Log In/Sign up*/
+  .btn-primary{
+    background-color: transparent;
+    border: none;
+  }
+  .btn-primary:hover,.btn-primary:focus, .btn-primary:active:focus,{
+    background-color: transparent;
+    border: none;
+  }
     /*Hamburger - Barre*/
   .navbar-toggle .icon-bar{
     background-color: $navbar_fond;
     }
     /*Liens navbar*/
-    .navbar-nav > li > a{
+    .navbar-default .navbar-nav>li>a, .navbar-nav > li > a, .navbar-default .navbar-nav>li>a:hover{
       color: white;
     }
-    /*Bouton Log In/Sign up*/
-  .btn-primary{
-    background-color: transparent;
-    border-color: transparent;
-  }
+
+#image_background{
+  background-image: url('images/colleagues.jpg');
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 }
 /*----------Explications-------------*/
 section{
   padding-top: 25px;
-  h1{
+h1{
     margin-bottom: 25px;
   }
   .col-md-3 img{
     width: 50%;
   }
-
 }
 
-/*----------CAROUSEL------------------*/
+/*-----------Actualités des beoins/services---*/
+.list-group-item{
 
-  .slide1, .slide2, .slide3 {
-    background-image: url('../images/black-and-white.jpg');
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .slide2 {
-    background-image: url('../images/colleagues.jpg');
-  }
-
-  .slide3 {
-    background-image: url('../images/woman-at-sunset.jpg');
-  }
-
-  .carousel-caption {
-
-    h1 {
-    font-size: 5.4em;
-    font-family: 'Pacifico', cursive;
-    padding-bottom: .4em;
-    }
-
-    p {
-    font-size: 2em;
-    }
-  }
-
-
+    border:1px solid $input_border ;
+}
+.list-group-item.active:hover, .list-group-item.active{
+  background-color:$navbar_fond;
+  border-color: $input_border;
+}
+a.list-group-item:hover{
+  background-color:$navbar_fond;
+  border-color: $input_border;
+  color: white;
+}
 /*----------FOOTER------------------*/
 footer{
-<<<<<<< HEAD
-   
-background-color: #F8F8F8;
-   
-.SocialMedia li{
-  display: inline-block;
-}
-
-  ul, ul h3{
-=======
   background-color:$navbar_fond;
   padding-bottom: 0;
   .SocialMedia li{
@@ -123,9 +104,15 @@ background-color: #F8F8F8;
   color: white;
   font-size: 20px;
   font-weight:400;
+a{
+  color: white;
+}
+a:hover{
+  color: white;
+}
   }
-  ul, ul h3 a{
->>>>>>> adb8ab9d432f63d5661eb938a36ee20f6fe72b10
+
+  ul{
     list-style-type: none;
     color: white;
   }
@@ -135,17 +122,25 @@ background-color: #F8F8F8;
   }
   ul li a:hover{
     color: white;
+    text-decoration: none;
   }
   input[type="text"],input[type="mail"]{
     margin-bottom: 0.5em;
     height: 34px;
     width: 65%;
   }
-  button.btn{
+  /*button.btn{
     background-color:$input_border;
+    border: none;
   }
    button.btn:focus, button.btn:hover{
     background-color:$input_border;
     opacity: 1;
-  }
+  }*/
+
+.btn-primary,.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+      background-color:$input_border;
+      border:none;
+}
+
   }

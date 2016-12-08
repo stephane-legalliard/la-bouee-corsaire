@@ -7,21 +7,18 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif; }
 
-/*.clearfix:before, .clearfix:after {
-  content: " ";
-  display: block; }
-
-.clearfix:after {
-  clear: both; }*/
 h2 {
   color: #CF6243; }
+
+a:hover {
+  text-decoration: none; }
 
 /*-------------HEADER----------------*/
 header {
   /*Hamburger*/
+  /*Bouton Log In/Sign up*/
   /*Hamburger - Barre*/
-  /*Liens navbar*/
-  /*Bouton Log In/Sign up*/ }
+  /*Liens navbar*/ }
   header .navbar-default {
     /*Couleur barre de navigation*/
     margin-bottom: 0;
@@ -34,18 +31,27 @@ header {
     color: white;
     font-weight: 400; }
   header .navbar-default .navbar-brand {
-    color: #fff; }
-  header .navbar-brand:hover {
+    color: white; }
+  header .navbar-default .navbar-brand:hover {
     color: white; }
   header .navbar-toggle {
     background-color: white; }
-  header .navbar-toggle .icon-bar {
-    background-color: #93A567; }
-  header .navbar-nav > li > a {
-    color: white; }
   header .btn-primary {
     background-color: transparent;
-    border-color: transparent; }
+    border: none; }
+  header .btn-primary:hover, header .btn-primary:focus, header .btn-primary:active:focus {
+    background-color: transparent;
+    border: none; }
+  header .navbar-toggle .icon-bar {
+    background-color: #93A567; }
+  header .navbar-default .navbar-nav > li > a, header .navbar-nav > li > a, header .navbar-default .navbar-nav > li > a:hover {
+    color: white; }
+  header #image_background {
+    background-image: url("images/colleagues.jpg");
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
 
 /*----------Explications-------------*/
 section {
@@ -55,53 +61,56 @@ section {
   section .col-md-3 img {
     width: 50%; }
 
-/*----------CAROUSEL------------------*/
-.slide1, .slide2, .slide3 {
-  background-image: url("../images/black-and-white.jpg");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
+/*-----------Actualités des beoins/services---*/
+.list-group-item {
+  border: 1px solid #CF6243; }
 
-.slide2 {
-  background-image: url("../images/colleagues.jpg"); }
+.list-group-item.active:hover, .list-group-item.active {
+  background-color: #93A567;
+  border-color: #CF6243; }
 
-.slide3 {
-  background-image: url("../images/woman-at-sunset.jpg"); }
-
-.carousel-caption h1 {
-  font-size: 5.4em;
-  font-family: 'Pacifico', cursive;
-  padding-bottom: .4em; }
-.carousel-caption p {
-  font-size: 2em; }
+a.list-group-item:hover {
+  background-color: #93A567;
+  border-color: #CF6243;
+  color: white; }
 
 /*----------FOOTER------------------*/
 footer {
   background-color: #93A567;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  /*button.btn{
+    background-color:$input_border;
+    border: none;
+  }
+   button.btn:focus, button.btn:hover{
+    background-color:$input_border;
+    opacity: 1;
+  }*/ }
   footer .SocialMedia li {
     display: inline-block; }
   footer h3 {
     color: white;
     font-size: 20px;
     font-weight: 400; }
-  footer ul, footer ul h3 a {
+    footer h3 a {
+      color: white; }
+    footer h3 a:hover {
+      color: white; }
+  footer ul {
     list-style-type: none;
     color: white; }
   footer ul li a {
     color: white;
     text-decoration: none; }
   footer ul li a:hover {
-    color: white; }
+    color: white;
+    text-decoration: none; }
   footer input[type="text"], footer input[type="mail"] {
     margin-bottom: 0.5em;
     height: 34px;
     width: 65%; }
-  footer button.btn {
-    background-color: #CF6243; }
-  footer button.btn:focus, footer button.btn:hover {
+  footer .btn-primary, footer .btn-primary:hover, footer .btn-primary:focus, footer .btn-primary:active {
     background-color: #CF6243;
-    opacity: 1; }
+    border: none; }
 
 /*# sourceMappingURL=style.css.map */
