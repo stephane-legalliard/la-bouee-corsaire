@@ -51,47 +51,49 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  <div class="container">
-    <div class="row">
-        <div class="col-xs-7 col-xs-offset-3">
-          <div class="checkbox text-center">
-    <label><input type="checkbox" value="">Besoins</label>
-        <label><input type="checkbox" value="">Services</label>
+  <div id="image_background">
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-7 col-xs-offset-3">
+            <div class="checkbox text-center">
+      <label><input type="checkbox" value="">Besoins</label>
+          <label><input type="checkbox" value="">Services</label>
+    </div>
+  		    <div class="input-group">
+                  <div class="input-group-btn search-panel">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      	<span id="search_up">Catégories</span> <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#Soutien">Soutien</a></li>
+                        <li><a href="#Automobile">Automobile</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#Jardin">Jardin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#home">Service à domicile</a></li>
+                      </ul>
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      	<span id="search_under">Sous-catégories</span> <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#Soutien">Soutien</a></li>
+                        <li><a href="#Automobile">Automobile</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#Jardin">Jardin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#home">Service à domicile</a></li>
+                      </ul>
+                  </div>
+                  <input type="hidden" name="search_param" value="all" id="search_param">
+                  <input type="text" class="form-control" name="x" placeholder="Search term...">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+              </div>
+          </div>
+  	</div>
   </div>
-		    <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    	<span id="search_up">Catégories</span> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#Soutien">Soutien</a></li>
-                      <li><a href="#Automobile">Automobile</a></li>
-                      <li><a href="#"></a></li>
-                      <li><a href="#Jardin">Jardin</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#home">Service à domicile</a></li>
-                    </ul>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    	<span id="search_under">Sous-catégories</span> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#Soutien">Soutien</a></li>
-                      <li><a href="#Automobile">Automobile</a></li>
-                      <li><a href="#"></a></li>
-                      <li><a href="#Jardin">Jardin</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#home">Service à domicile</a></li>
-                    </ul>
-                </div>
-                <input type="hidden" name="search_param" value="all" id="search_param">
-                <input type="text" class="form-control" name="x" placeholder="Search term...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-            </div>
-        </div>
-	</div>
-</div>
+  </div>
 
 </header>
 

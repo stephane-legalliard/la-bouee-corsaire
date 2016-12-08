@@ -46,6 +46,12 @@ header {
     background-color: #93A567; }
   header .navbar-default .navbar-nav > li > a, header .navbar-nav > li > a, header .navbar-default .navbar-nav > li > a:hover {
     color: white; }
+  header #image_background {
+    background-image: url("images/colleagues.jpg");
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
 
 /*----------Explications-------------*/
 section {
