@@ -1,6 +1,8 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box; }
 
+/*Déclaration variables couleurs*/
 body {
   font-family: 'PT Sans', sans-serif;
   font-family: 'PT Serif', serif; }
@@ -11,18 +13,39 @@ body {
 
 .clearfix:after {
   clear: both; }*/
+h2 {
+  color: #CF6243; }
+
 /*-------------HEADER----------------*/
-header .navbar {
-  margin-bottom: 0; }
-header .btn-primary {
-  color: gray;
-  padding: 15px 16px;
-  background-color: transparent;
-  border: none; }
-header .btn-primary:hover {
-  color: gray;
-  background: none;
-  border: none; }
+header {
+  /*Hamburger*/
+  /*Hamburger - Barre*/
+  /*Liens navbar*/
+  /*Bouton Log In/Sign up*/ }
+  header .navbar-default {
+    /*Couleur barre de navigation*/
+    margin-bottom: 0;
+    background-color: #93A567;
+    border-radius: 0;
+    border: none;
+    color: white;
+    font-weight: 400; }
+  header a.navbar-brand {
+    color: white;
+    font-weight: 400; }
+  header .navbar-default .navbar-brand {
+    color: #fff; }
+  header .navbar-brand:hover {
+    color: white; }
+  header .navbar-toggle {
+    background-color: white; }
+  header .navbar-toggle .icon-bar {
+    background-color: #93A567; }
+  header .navbar-nav > li > a {
+    color: white; }
+  header .btn-primary {
+    background-color: transparent;
+    border-color: transparent; }
 
 /*----------Explications-------------*/
 section {
@@ -55,17 +78,30 @@ section {
 
 /*----------FOOTER------------------*/
 footer {
-  background-color: #F8F8F8; }
+  background-color: #93A567;
+  padding-bottom: 0; }
   footer .SocialMedia li {
     display: inline-block; }
-  footer ul, footer ul h3 {
+  footer h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400; }
+  footer ul, footer ul h3 a {
     list-style-type: none;
-    color: currentColor; }
+    color: white; }
   footer ul li a {
-    color: currentColor;
+    color: white;
     text-decoration: none; }
   footer ul li a:hover {
-    text-decoration: none;
-    color: currentColor; }
+    color: white; }
+  footer input[type="text"], footer input[type="mail"] {
+    margin-bottom: 0.5em;
+    height: 34px;
+    width: 65%; }
+  footer button.btn {
+    background-color: #CF6243; }
+  footer button.btn:focus, footer button.btn:hover {
+    background-color: #CF6243;
+    opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */
