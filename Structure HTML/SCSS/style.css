@@ -55,6 +55,19 @@ section {
   section .col-md-3 img {
     width: 50%; }
 
+/*-----------Actualités des beoins/services---*/
+.list-group-item {
+  border: 1px solid #CF6243; }
+
+.list-group-item.active:hover, .list-group-item.active {
+  background-color: #93A567;
+  border-color: #CF6243; }
+
+a.list-group-item:hover {
+  background-color: #93A567;
+  border-color: #CF6243;
+  color: white; }
+
 /*----------CAROUSEL------------------*/
 .slide1, .slide2, .slide3 {
   background-image: url("../images/black-and-white.jpg");
