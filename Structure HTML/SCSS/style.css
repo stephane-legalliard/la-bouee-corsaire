@@ -9,7 +9,7 @@ body {
 
 h2 {
   color: #CF6243;
-  padding: .5em; }
+  padding: 1em; }
 
 a:hover {
   text-decoration: none; }
@@ -20,7 +20,6 @@ header {
   /*Bouton Log In/Sign up*/
   /*Hamburger - Barre*/
   /*Liens navbar*/
-  /*Bouton Log In/Sign up*/
   /*----------BACKGROUND FIXED------------------*/ }
   header .navbar-default {
     /*Couleur barre de navigation*/
@@ -37,17 +36,16 @@ header {
     color: white; }
   header .navbar-toggle {
     background-color: white; }
+  header .btn-default {
+    background-color: transparent;
+    border-color: transparent;
+    color: white; }
   header .navbar-toggle .icon-bar {
     background-color: #93A567; }
   header .navbar-default .navbar-nav > li > a {
     color: white; }
   header .navbar-default .navbar-nav > li > a:focus,
   header .navbar-default .navbar-nav > li > a:hover {
-    color: white; }
-  header .btn-default,
-  header .btn-default {
-    background-color: transparent;
-    border-color: transparent;
     color: white; }
   header .btn-default:active,
   header .btn-default:focus,
@@ -57,10 +55,13 @@ header {
     color: white; }
   header #image_background {
     background-image: url("../images/colleagues.jpg");
-    height: 80vh;
+    height: 75vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
+  header .form-control, header .btn {
+    padding: 7px 15px;
+    height: 41px; }
 
 /*----------Explications-------------*/
 section {
@@ -71,8 +72,20 @@ section {
     margin-bottom: 25px; }
   section .col-md-3 img {
     width: 50%; }
+  section p {
+    margin-bottom: 2em; }
 
-.list-group-item.activ,
+hr {
+  width: 75%;
+  background-color: #CF6243;
+  height: 1px;
+  border: none; }
+
+/*-----------Actualités des besoins/services---*/
+.list-group-item {
+  border: 1px solid #CF6243; }
+
+.list-group-item.active,
 .list-group-item.active:hover {
   background-color: #93A567;
   border-color: #CF6243; }
@@ -99,6 +112,9 @@ footer {
   footer ul {
     list-style-type: none;
     color: white; }
+  footer .btn-primary, footer .btn-primary:hover, footer .btn-primary:focus, footer .btn-primary:active {
+    background-color: #CF6243;
+    border: none; }
   footer ul li a {
     color: white;
     text-decoration: none; }

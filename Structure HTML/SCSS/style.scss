@@ -14,7 +14,7 @@ body {
 
 h2 {
     color: #CF6243;
-    padding: .5em;
+    padding: 1em;
 }
 
 a:hover {
@@ -46,20 +46,20 @@ header {
     .navbar-toggle {
         background-color: $text_color;
     }
+
     /*Bouton Log In/Sign up*/
-    // .btn-primary{
-    //   background-color: transparent;
-    //   border: none;
-    // }
-    // .btn-primary:hover,.btn-primary:focus, .btn-primary:active:focus,{
-    //   background-color: transparent;
-    //   border: none;
-    // }
+    .btn-default{
+        background-color: transparent;
+        border-color: transparent;
+        // border: none;
+        color: $text_color;
+    }
 
     /*Hamburger - Barre*/
     .navbar-toggle .icon-bar {
         background-color: $navbar_fond;
     }
+
     /*Liens navbar*/
     .navbar-default .navbar-nav > li > a {
         color: $text_color;
@@ -67,13 +67,6 @@ header {
 
     .navbar-default .navbar-nav > li > a:focus,
     .navbar-default .navbar-nav > li > a:hover {
-        color: $text_color;
-    }
-    /*Bouton Log In/Sign up*/
-    .btn-default,
-    .btn-default {
-        background-color: transparent;
-        border-color: transparent;
         color: $text_color;
     }
 
@@ -85,13 +78,21 @@ header {
         color: $text_color;
     }
     /*----------BACKGROUND FIXED------------------*/
-    #image_background {
-        background-image: url('../images/colleagues.jpg');
-        height: 80vh;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+
+#image_background{
+  background-image: url('../images/colleagues.jpg');
+  height: 75vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  // display: flex;
+  // align-items: center;
+}
+.form-control, .btn{
+  padding: 7px 15px;
+  height: 41px;
+}
+
 }
 /*----------Explications-------------*/
 section {
@@ -105,13 +106,26 @@ section {
         margin-bottom: 25px;
     }
 
-
     .col-md-3 img {
         width: 50%;
     }
+
+    p{
+      margin-bottom: 2em;
+    }
+}
+    hr {
+      width: 75%;
+      background-color: #CF6243;
+      height: 1px;
+      border: none;
+      }
+/*-----------Actualités des besoins/services---*/
+.list-group-item{
+    border:1px solid $input_border;
 }
 
-.list-group-item.activ,
+.list-group-item.active,
 .list-group-item.active:hover {
     background-color: $navbar_fond;
     border-color: $input_border;
@@ -123,32 +137,39 @@ a.list-group-item:hover {
     color: $text_color;
 }
 /*----------FOOTER------------------*/
-footer {
-    background-color: $navbar_fond;
-    padding-bottom: 0;
 
-    .SocialMedia li {
-        display: inline-block;
-    }
+footer{
+  background-color:$navbar_fond;
+  padding-bottom: 0;
 
-    h3 {
-        color: $text_color;
-        font-size: 20px;
-        font-weight: 400;
+  .SocialMedia li{
+  display: inline-block;
+  }
 
-        a {
-            color: $text_color;
-        }
+  h3{
+  color: $text_color;
+  font-size: 20px;
+  font-weight:400;
 
-        a:hover {
-            color: $text_color;
-        }
-    }
+a{
+  color: $text_color;
+}
 
-    ul {
-        list-style-type: none;
-        color: $text_color;
-    }
+a:hover{
+  color: $text_color;
+}
+  }
+
+  ul{
+    list-style-type: none;
+    color: $text_color;
+  }
+
+
+.btn-primary,.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+      background-color:$input_border;
+      border:none;
+}
 
     ul li a {
         color: $text_color;
