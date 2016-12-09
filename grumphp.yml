@@ -1,0 +1,18 @@
+parameters:
+    parameters:
+        bin_dir: "./vendor/bin"
+        git_dir: "."
+        hooks_dir: ~
+        hooks_preset: local
+    tasks:
+        composer: ~
+        git_blacklist:
+            keywords:
+                - "die("
+                - "var_dump("
+                - "exit;"
+                - "echo "
+                - "echo("
+        git_conflict: ~
+        phplint: ~
+        phpunit: ~

@@ -1,4 +1,32 @@
 @font-face {
+	font-family: 'Pacifico';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Pacifico Regular'), local('Pacifico-Regular'), url(../fonts/Pacifico-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('PT Sans'), local('PTSans-Regular'), url(../fonts/PTSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local('PT Sans Bold'), local('PTSans-Bold'), url(../fonts/PTSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'PT Serif';
+	font-style: normal;
+	font-weight: 400;
+	src: local('PT Serif'), local('PTSerif-Regular'), url(../fonts/PTSerif-Regular.ttf) format('truetype');
+}
+
+@font-face {
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 100;
