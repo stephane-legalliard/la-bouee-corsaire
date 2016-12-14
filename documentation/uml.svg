@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="37cm" height="23cm" viewBox="230 -30 739 444" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="37cm" height="23cm" viewBox="230 -30 739 460" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g>
     <rect style="fill: #ffffff" x="409.752" y="310" width="135.713" height="68.0973"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="409.752" y="310" width="135.713" height="68.0973"/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="587" y="60" width="256.4" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="587" y="60" width="256.4" height="28"/>
-    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="715.2" y="79">User</text>
-    <rect style="fill: #ffffff" x="587" y="88" width="256.4" height="324"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="587" y="88" width="256.4" height="324"/>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="102">#id: int</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="118">#username: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="134">#username_canonical: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="150">#email: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="166">#email_canonical: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="182">#enabled: bool</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="198">#salt: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="214">#password: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="230">#last_login: datetime</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="246">#confirmation_token: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="262">#password_requested_at: datetime</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="278">#roles: array</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="294">#name: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="310">#surname: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="326">#adress: text</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="342">#description: text</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="358">#region: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="374">#city: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="390">#phone: int</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="406">#hours: float</text>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="587" y="60" width="256.4" height="28"/>
+    <text font-size="16" style="fill: #00ff00;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="715.2" y="79">User</text>
+    <rect style="fill: #ffffff" x="587" y="88" width="256.4" height="340"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="587" y="88" width="256.4" height="340"/>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="102">#id: int</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="118">#username: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="134">#username_canonical: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="150">#email: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="166">#email_canonical: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="182">#enabled: bool</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="198">#salt: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="214">#password: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="230">#last_login: datetime</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="246">#confirmation_token: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="262">#password_requested_at: datetime</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="278">#roles: array</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="294">#name: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="310">#surname: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="326">#adress: text</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="342">#description: text</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="358">#region: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="374">#city: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="390">#phone: int</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="406">#hours_credit: float</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="422">#hours_debit: float</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="480" y="250" width="76.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="480" y="250" width="76.55" height="28"/>
-    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="518.275" y="269">Service</text>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="480" y="250" width="76.55" height="28"/>
+    <text font-size="16" style="fill: #00ff00;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="518.275" y="269">Service</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="380" y="250" width="56.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="380" y="250" width="56.55" height="28"/>
-    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="408.275" y="269">Need</text>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="380" y="250" width="56.55" height="28"/>
+    <text font-size="16" style="fill: #00ff00;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="408.275" y="269">Need</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="879.476" y="60" width="88.85" height="28"/>
@@ -54,27 +55,27 @@
   </g>
   <g>
     <rect style="fill: #ffffff" x="387" y="60" width="148.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="387" y="60" width="148.6" height="28"/>
-    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="461.3" y="79">Task</text>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="387" y="60" width="148.6" height="28"/>
+    <text font-size="16" style="fill: #00ff00;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="461.3" y="79">Task</text>
     <rect style="fill: #ffffff" x="387" y="88" width="148.6" height="116"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="387" y="88" width="148.6" height="116"/>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="102">#id: int</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="118">#title: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="134">#description: text</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="150">#level: enum</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="166">#location: string</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="182">#status: enum</text>
-    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="198">#date: datetime</text>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x="387" y="88" width="148.6" height="116"/>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="102">#id: int</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="118">#title: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="134">#description: text</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="150">#level: enum</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="166">#location: string</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="182">#status: enum</text>
+    <text font-size="12.8" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="198">#date: datetime</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #0000ff" points="461.3,222.236 461.3,235 518.275,235 518.275,250 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #00ff00" points="461.3,222.236 461.3,235 518.275,235 518.275,250 "/>
     <polygon style="fill: #ffffff" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #0000ff" points="461.3,222.236 461.3,235 408.275,235 408.275,250 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #00ff00" points="461.3,222.236 461.3,235 408.275,235 408.275,250 "/>
     <polygon style="fill: #ffffff" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
   </g>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="714.93,-1 714.93,29.5 715.2,29.5 715.2,60 "/>
@@ -83,10 +84,10 @@
     <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="719.2" y="56">2..*</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="535.6,74 544,74 544,74 587,74 "/>
-    <text font-size="12.7998" style="fill: #0000ff;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="544" y="71"/>
-    <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="539.6" y="71">*</text>
-    <text font-size="12.7998" style="fill: #0000ff;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="583" y="71">1</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="535.6,74 544,74 544,74 587,74 "/>
+    <text font-size="12.7998" style="fill: #00ff00;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="544" y="71"/>
+    <text font-size="12.7998" style="fill: #00ff00;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="539.6" y="71">*</text>
+    <text font-size="12.7998" style="fill: #00ff00;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="583" y="71">1</text>
   </g>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="657.63,-15 461.3,-15 461.3,60 "/>
