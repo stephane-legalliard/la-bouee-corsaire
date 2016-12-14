@@ -9,6 +9,10 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
 services:
+    app.form.profile:
+        class: AppBundle\Form\ProfileType
+        tags:
+            - { name: form.type, alias: fos_user_profile }
     app.form.registration:
         class: AppBundle\Form\RegistrationType
         tags:
