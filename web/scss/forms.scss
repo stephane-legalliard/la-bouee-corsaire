@@ -8,21 +8,21 @@ body{
 }
 
 
-.col-sm-4{
-  button.btn{
-    background-color:$input_border;
-  }
-   button.btn:focus, button.btn:hover{
-    background-color:$input_border;
-    opacity: 1;
-  }
-  input[type="text"], input[type="password"], textarea.form-control, input[type="email"]{
-        border: 2px solid $input_border;
-  }
-  input[type="text"]:focus, input[type="password"]:focus{
-        border-color:$input_border;
-  }
+
+button.btn{
+  background-color:$input_border;
 }
+ button.btn:focus, button.btn:hover{
+  background-color:$input_border;
+  opacity: 1;
+}
+input[type="text"], input[type="password"], textarea.form-control, input[type="email"]{
+      border: 2px solid $input_border;
+}
+input[type="text"]:focus, input[type="password"]:focus{
+      border-color:$input_border;
+}
+
 /*----------AIDE---------*/
 .show-forms{ /*Couleur text/log in Sign up*/
   color: black;
