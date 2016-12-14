@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="37cm" height="9cm" viewBox="15 76 729 168" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #ffffff" cx="178" cy="220" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="178" cy="220" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="178" cy="220" rx="20" ry="20"/>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M 269.012 199.273 C 289.294,199.273 390.706,199.273 410.988,199.273 C 431.271,199.273 431.271,199.273 431.271,206.182 C 431.271,213.091 431.271,226.909 431.271,233.818 C 431.271,240.727 431.271,240.727 410.988,240.727 C 390.706,240.727 289.294,240.727 269.012,240.727 C 248.729,240.727 248.729,240.727 248.729,233.818 C 248.729,226.909 248.729,213.091 248.729,206.182 C 248.729,199.273 248.729,199.273 269.012,199.273z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 269.012 199.273 C 289.294,199.273 390.706,199.273 410.988,199.273 C 431.271,199.273 431.271,199.273 431.271,206.182 C 431.271,213.091 431.271,226.909 431.271,233.818 C 431.271,240.727 431.271,240.727 410.988,240.727 C 390.706,240.727 289.294,240.727 269.012,240.727 C 248.729,240.727 248.729,240.727 248.729,233.818 C 248.729,226.909 248.729,213.091 248.729,206.182 C 248.729,199.273 248.729,199.273 269.012,199.273"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 269.012 199.273 C 289.294,199.273 390.706,199.273 410.988,199.273 C 431.271,199.273 431.271,199.273 431.271,206.182 C 431.271,213.091 431.271,226.909 431.271,233.818 C 431.271,240.727 431.271,240.727 410.988,240.727 C 390.706,240.727 289.294,240.727 269.012,240.727 C 248.729,240.727 248.729,240.727 248.729,233.818 C 248.729,226.909 248.729,213.091 248.729,206.182 C 248.729,199.273 248.729,199.273 269.012,199.273"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="269.012" y1="240.727" x2="410.988" y2="240.727"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="431.271" y1="206.182" x2="431.271" y2="233.818"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="248.729" y1="206.182" x2="248.729" y2="233.818"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="269.012" y1="199.273" x2="410.988" y2="199.273"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="340" y="216">
+      <tspan x="340" y="216">désactivation d’une tâche</tspan>
+      <tspan x="340" y="232">(besoin ou service)</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="15" y="208">
+    <tspan x="15" y="208">utilisateur connecté</tspan>
+    <tspan x="15" y="224">créateur de la tâche</tspan>
+    <tspan x="15" y="240">ou adminstrateur</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="198" y1="220" x2="238.993" y2="220"/>
+    <polygon style="fill: #000000" points="246.493,220 236.493,225 238.993,220 236.493,215 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="246.493,220 236.493,225 238.993,220 236.493,215 "/>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="340" cy="97" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="340" cy="97" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="340" cy="97" rx="20" ry="20"/>
+    <ellipse style="fill: #ffffff" cx="340" cy="97" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="340" cy="97" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="340" cy="97" rx="17.1429" ry="17.1429"/>
+    <polygon style="fill: #000000" points="328.571,88.4286 337.143,97 328.571,105.571 331.429,108.429 340,99.8571 348.571,108.429 351.429,105.571 342.857,97 351.429,88.4286 348.571,85.5714 340,94.1429 331.429,85.5714 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="328.571,88.4286 337.143,97 328.571,105.571 331.429,108.429 340,99.8571 348.571,108.429 351.429,105.571 342.857,97 351.429,88.4286 348.571,85.5714 340,94.1429 331.429,85.5714 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" points="328.571,88.4286 337.143,97 328.571,105.571 331.429,108.429 340,99.8571 348.571,108.429 351.429,105.571 342.857,97 351.429,88.4286 348.571,85.5714 340,94.1429 331.429,85.5714 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="267" y="177">
+    <tspan x="267" y="177">annulation</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="340" y1="199.273" x2="340" y2="126.736"/>
+    <polygon style="fill: #000000" points="340,119.236 345,129.236 340,126.736 335,129.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="340,119.236 345,129.236 340,126.736 335,129.236 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="454" y="205.25">
+    <tspan x="454" y="205.25">validation</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #000000" cx="560" cy="220" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="560" cy="220" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="560" cy="220" rx="20" ry="20"/>
+    <ellipse style="fill: #ffffff" cx="560" cy="220" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="560" cy="220" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="560" cy="220" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: #000000" cx="560" cy="220" rx="11.4286" ry="11.4286"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="560" cy="220" rx="11.4286" ry="11.4286"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="560" cy="220" rx="11.4286" ry="11.4286"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="431.271" y1="220" x2="530.264" y2="220"/>
+    <polygon style="fill: #000000" points="537.764,220 527.764,225 530.264,220 527.764,215 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="537.764,220 527.764,225 530.264,220 527.764,215 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="596" y="214">
+    <tspan x="596" y="214">mise-à-jour de la tâche</tspan>
+    <tspan x="596" y="230">en base de données</tspan>
+  </text>
+</svg>
