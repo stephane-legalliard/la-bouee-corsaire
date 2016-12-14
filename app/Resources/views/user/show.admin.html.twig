@@ -11,7 +11,7 @@
 
 			<div class='panel panel-default'>
 
-				<div class="panel-heading">{{ user.name }} {{ user.surname }}</div>
+				<div class="panel-heading">{{ user.name }} {{ user.surname }} - <a href='/admin/user/edit/{{ user.id }}'>Modifier</a></div>
 				<div class="panel-body">
 					<p>Pseudo : {{ user.username }}</p>
 					<p>E-mail : {{ user.email }}</p>
