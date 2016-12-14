@@ -1,0 +1,34 @@
+{% extends 'default/form.html.twig' %}
+
+{% block title %}
+	Rédaction d’un nouveau Message
+{% endblock %}
+
+{% block body %}
+
+	{{ parent() }}
+
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+
+		{{ form_start(form, {'method': 'POST', 'attr': {
+			'class': 'r-form register-form'
+		}}) }}
+
+			<div class="form-group">
+				{{ form_label(form.content, null, {'label_attr': {
+					'class': 'sr-only'
+				}}) }}
+				{{ form_errors(form.content) }}
+				{{ form_widget(form.content, {'attr': {
+					'class': 'form-control',
+					'placeholder': form.content.vars.label
+				}}) }}
+			</div>
+		
+			<button type="submit" class="btn btn-default">Envoyer</button>
+
+		{{ form_end(form) }}
+
+	</div>
+
+{% endblock %}
