@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="25cm" height="3cm" viewBox="-13 78 499 44" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #ffffff" cx="82" cy="100" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="82" cy="100" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="82" cy="100" rx="20" ry="20"/>
+  </g>
+  <g>
+    <path style="fill: #ffffff" d="M 165.785 79.2728 C 176.132,79.2728 227.868,79.2728 238.215,79.2728 C 248.562,79.2728 248.562,79.2728 248.562,86.1819 C 248.562,93.091 248.562,106.909 248.562,113.818 C 248.562,120.727 248.562,120.727 238.215,120.727 C 227.868,120.727 176.132,120.727 165.785,120.727 C 155.438,120.727 155.438,120.727 155.438,113.818 C 155.438,106.909 155.438,93.091 155.438,86.1819 C 155.438,79.2728 155.438,79.2728 165.785,79.2728z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 165.785 79.2728 C 176.132,79.2728 227.868,79.2728 238.215,79.2728 C 248.562,79.2728 248.562,79.2728 248.562,86.1819 C 248.562,93.091 248.562,106.909 248.562,113.818 C 248.562,120.727 248.562,120.727 238.215,120.727 C 227.868,120.727 176.132,120.727 165.785,120.727 C 155.438,120.727 155.438,120.727 155.438,113.818 C 155.438,106.909 155.438,93.091 155.438,86.1819 C 155.438,79.2728 155.438,79.2728 165.785,79.2728"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" d="M 165.785 79.2728 C 176.132,79.2728 227.868,79.2728 238.215,79.2728 C 248.562,79.2728 248.562,79.2728 248.562,86.1819 C 248.562,93.091 248.562,106.909 248.562,113.818 C 248.562,120.727 248.562,120.727 238.215,120.727 C 227.868,120.727 176.132,120.727 165.785,120.727 C 155.438,120.727 155.438,120.727 155.438,113.818 C 155.438,106.909 155.438,93.091 155.438,86.1819 C 155.438,79.2728 155.438,79.2728 165.785,79.2728"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="165.785" y1="120.727" x2="238.215" y2="120.727"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="248.562" y1="86.1819" x2="248.562" y2="113.818"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="155.438" y1="86.1819" x2="155.438" y2="113.818"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x1="165.785" y1="79.2728" x2="238.215" y2="79.2728"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="202" y="104">
+      <tspan x="202" y="104">déconnexion</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="102" y1="100" x2="145.702" y2="100"/>
+    <polygon style="fill: #000000" points="153.202,100 143.202,105 145.702,100 143.202,95.0001 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="153.202,100 143.202,105 145.702,100 143.202,95.0001 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-13" y="96">
+    <tspan x="-13" y="96">utilisateur</tspan>
+    <tspan x="-13" y="112">connecté</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #000000" cx="340" cy="100" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="340" cy="100" rx="20" ry="20"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="340" cy="100" rx="20" ry="20"/>
+    <ellipse style="fill: #ffffff" cx="340" cy="100" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="340" cy="100" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="340" cy="100" rx="17.1429" ry="17.1429"/>
+    <ellipse style="fill: #000000" cx="340" cy="100" rx="11.4286" ry="11.4286"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="340" cy="100" rx="11.4286" ry="11.4286"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="340" cy="100" rx="11.4286" ry="11.4286"/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="248.562" y1="100" x2="310.264" y2="100"/>
+    <polygon style="fill: #000000" points="317.764,100 307.764,105 310.264,100 307.764,95 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="317.764,100 307.764,105 310.264,100 307.764,95 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="374" y="94">
+    <tspan x="374" y="94">terminaison de la</tspan>
+    <tspan x="374" y="110">session en cours</tspan>
+  </text>
+</svg>
