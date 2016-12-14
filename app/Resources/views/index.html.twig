@@ -1,0 +1,138 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+  <div id="image_background">
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-7 col-xs-offset-3">
+            <div class="checkbox text-center">
+      <label><input type="checkbox" value="">Besoins</label>
+          <label><input type="checkbox" value="">Services</label>
+    </div>
+  		    <div class="input-group">
+                  <div class="input-group-btn search-panel">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      	<span id="search_up">Catégories</span> <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#Soutien">Soutien</a></li>
+                        <li><a href="#Automobile">Automobile</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#Jardin">Jardin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#home">Service à domicile</a></li>
+                      </ul>
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      	<span id="search_under">Sous-catégories</span> <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#Soutien">Soutien</a></li>
+                        <li><a href="#Automobile">Automobile</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#Jardin">Jardin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#home">Service à domicile</a></li>
+                      </ul>
+                  </div>
+                  <input type="hidden" name="search_param" value="all" id="search_param">
+                  <input type="text" class="form-control" name="x" placeholder="Search term...">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+              </div>
+          </div>
+  	</div>
+  </div>
+  </div>
+
+<!--Explications - Exemples-->
+<section class="example">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center">Le fonctionnement</h2>
+      <!--Illustration 1-->
+      <div class="col-md-3 text-center">
+        <img src="images/man.png" alt="" />
+        <h3>Michael</h3>
+      </div>
+      <div class="col-md-6 text-center">
+        <p>
+          Michael est un étudiant vivant à Pacé.Il a déjà taillé la haie d'Anne pour une quota de deux heures. Mais les a déjà réutilisées pour un cours de théatre.
+          Il voit qu'Anne  a plusieurs besoins. Mais ne réponds pas à la plomberie car il ne s'y connait pas non plus.
+          Mais il peut proposer de réparer l'ordinateur pour une durée estimée à deux heures.  Certes il n'est pas expert dans le domaine, mais se juge être à un niveau avancé.
+        </p>
+
+        <img src="images/stopwatch.png" alt="" />
+        <img src="images/no-dollars-accepted.png" alt="" />
+        <img src="images/wrenches.png" alt="" />
+        <img src="images/hourglass.png" alt="" />
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="images/girl.png" class="image-responsive" alt="" />
+        <h3>Anne</h3>
+      </div>
+      <!--Illustration 2-->
+      <div class="col-md-3 text-center">
+        <img src="images/girl.png" alt="" />
+        <h3>Françoise</h3>
+      </div>
+      <div class="col-md-6 text-center">
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <img src="images/stopwatch.png" alt="" />
+        <img src="images/no-dollars-accepted.png" alt="" />
+        <img src="images/wrenches.png" alt="" />
+        <img src="images/hourglass.png" alt="" />
+            </div>
+      <div class="col-md-3 text-center">
+        <img src="images/man.png" class="image-responsive" alt="" />
+        <h3>Christian</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Beesoins/Services en-cours-->
+<div class="container">
+  <h2 class="text-center">En ce moment</h2>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1 list-group">
+      <h3>Nos besoins</h3>
+      <a href="#" class="list-group-item ">
+        <img src="images/Services_Needs/school-material.png" alt="Soutien scolaire" />
+        <h4>Cours d'anglais</h4><p>Pacé</p>
+      </a>
+      <a href="#" class="list-group-item">
+        <img src="images/Services_Needs/plumbing.png" alt="plomberie" />
+        <h4>Pomberie à rénover </h4><p>Nantes</p>
+      </a>
+      <a href="#" class="list-group-item">
+        <img src="images/Services_Needs/tv-screen.png" alt="Soutien scolaire" />
+        <h4>Réparation ordinateur</h4><p>Janzé</p>
+      </a>
+    </div>
+    <div class="col-md-4 col-md-offset-1 list-group">
+      <h3>Nos services</h3>
+      <a href="#" class="list-group-item">
+        <img src="images/Services_Needs/crochet.png" alt="Couture" />
+        <h4>Atelier Couture</h4><p>Rennes</p>
+      </a>
+      <a href="#" class="list-group-item">
+        <img src="images/Services_Needs/chef.png" alt="Cuisine" />
+        <h4>Cours cuisine végétariennne</h4><p>Rennes</p>
+      </a>
+      <a href="#" class="list-group-item">
+        <img src="images/Services_Needs/school-material.png" alt="Soutien scolaire" />
+        <h4>Cours d'anglais</h4><p>Rennes</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="js/script.js"></script>
+{% endblock %}
