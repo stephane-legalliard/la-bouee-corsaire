@@ -1,14 +1,30 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Administration - Utilisateurs{% endblock %}
+
 {% block body %}
-	
-	{% for user in users %}
-		
-		<div>
-			<p>pseudo : {{ user.username }}</p>
-			<p>e-mail : {{ user.email }}</p>
-		</div>
-		
-	{% endfor %}
-	
+
+	<h1>{{ block('title') }}</h1>
+
+	<div class="row">
+
+		{% for user in users %}
+
+			<div class='col-lg-3 col-md-4 col-sm-6'>
+				<a href='/admin/user/show/{{ user.id }}'>
+					<div class='panel panel-default'>
+						<div class="panel-heading">{{ user.username }}</div>
+						<div class="panel-body">
+							<p>{{ user.name }} {{ user.surname }}</p>
+							<p>{{ user.region }} - {{ user.city }}</p>
+							<p>Crédit : {{ user.hours }}h</p>
+						</div>
+					</div>
+				</a>
+			</div>
+
+		{% endfor %}
+
+	</div>
+
 {% endblock %}
