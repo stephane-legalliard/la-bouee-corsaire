@@ -1,10 +1,33 @@
 {% extends "base.html.twig" %}
 
+{% block title %}Mon profil{% endblock %}
+
 {% block body %}
-	
-	<div class="fos_user_user_show">
-		<p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-		<p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+
+	<h1>{{ block('title') }}</h1>
+
+	<div class="row">
+		<div class='col-lg-8 col-md-10 col-sm-12'>
+
+			<div class='panel panel-default fos_user_user_show'>
+
+				<div class="panel-heading">{{ user.username }} - <a href='/profile/edit'>Modifier mon profil</a></div>
+				<div class="panel-body">
+					<p>E-mail : {{ user.email }}</p>
+					<p>Prénom : {{ user.name }}</p>
+					<p>Nom : {{ user.surname }}</p>
+					<p>Adresse : {{ user.adress }}</p>
+					<p>Région : {{ user.region }}</p>
+					<p>Ville : {{ user.city }}</p>
+					<p>Téléphone : {{ user.phone }}</p>
+					<p>Crédit : {{ user.hours }}h</p>
+					<p>Dernière connexion : {{ user.lastLogin|localizeddate() }}</p>
+				</div>
+
+			</div>
+
+		</div>
 	</div>
-	
+
+
 {% endblock body %}
