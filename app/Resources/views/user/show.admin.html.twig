@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Administration - {{ user.username }}{% endblock %}
+
+{% block body %}
+
+	<h1>{{ block('title') }}</h1>
+
+	<div class="row">
+		<div class='col-lg-8 col-md-10 col-sm-12'>
+
+			<div class='panel panel-default'>
+
+				<div class="panel-heading">{{ user.name }} {{ user.surname }}</div>
+				<div class="panel-body">
+					<p>Pseudo : {{ user.username }}</p>
+					<p>E-mail : {{ user.email }}</p>
+					<p>Prénom : {{ user.name }}</p>
+					<p>Nom : {{ user.surname }}</p>
+					<p>Adresse : {{ user.adress }}</p>
+					<p>Région : {{ user.region }}</p>
+					<p>Ville : {{ user.city }}</p>
+					<p>Téléphone : {{ user.phone }}</p>
+					<p>Crédit : {{ user.hours }}h</p>
+					<p>Compte actif : {{ user.enabled }}</p>
+					<p>Dernière connexion : {{ user.lastLogin|localizeddate() }}</p>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<a href='/admin/users'>Retour à la liste des Utilisateurs</a>
+
+{% endblock body %}
