@@ -60,6 +60,14 @@
 				->add('description', null, array(
 					'translation_domain' => false,
 					'label' => 'Description',
+				))
+				->add('hoursCredit', null, array(
+					'translation_domain' => false,
+					'label' => 'Crédit horaire',
+				))
+				->add('hoursDebit', null, array(
+					'translation_domain' => false,
+					'label' => 'Débit horaire',
 				));
 		}
 

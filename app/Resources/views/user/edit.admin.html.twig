@@ -96,6 +96,24 @@
 				}}) }}
 			</div>
 
+			<div class="form-group">
+				{{ form_label(form.hoursCredit, null) }}
+				{{ form_errors(form.hoursCredit) }}
+				{{ form_widget(form.hoursCredit, {'attr': {
+					'class': 'form-control',
+					'placeholder': form.hoursCredit.vars.label
+				}}) }}
+			</div>
+
+			<div class="form-group">
+				{{ form_label(form.hoursDebit, null) }}
+				{{ form_errors(form.hoursDebit) }}
+				{{ form_widget(form.hoursDebit, {'attr': {
+					'class': 'form-control',
+					'placeholder': form.hoursDebit.vars.label
+				}}) }}
+			</div>
+
 			<button type="submit" class="btn">
 				{{ 'profile.edit.submit'|trans }}
 			</button>

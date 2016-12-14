@@ -169,7 +169,17 @@
 		 * @var    float
 		 * @access protected
 		 */
-		protected $hours = 0;
+		protected $hoursCredit = 0;
+		
+		/**
+		 * User hours debit
+		 *
+		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
+		 *
+		 * @var    float
+		 * @access protected
+		 */
+		protected $hoursDebit = 0;
 		
 		/**
 		 * Get name
@@ -221,11 +231,27 @@
 		public function getPhone() { return $this->phone; }
 		
 		/**
-		 * Get hours
+		 * Get hours credit
 		 *
 		 * @return float
 		 */
-		public function getHours() { return $this->hours; }
+		public function getHoursCredit() { return $this->hoursCredit; }
+		
+		/**
+		 * Get hours debit
+		 *
+		 * @return float
+		 */
+		public function getHoursDebit() { return $this->hoursDebit; }
+		
+		/**
+		 * Get hours total
+		 *
+		 * @return float
+		 */
+		public function getHours() { 
+			return ($this->hoursCredit - $this->hoursDebit);
+		}
 		
 		/**
 		 * Set username
@@ -412,18 +438,68 @@
 		}
 		
 		/**
-		 * Set hours
+		 * Set hours credit
 		 *
 		 * @param float $hours
 		 *
 		 * @return User
 		 */
-		public function setHours($hours)
-		{
+		public function setHoursCredit($hours) {
 			$hours = (float) $hours;
 			
 			if ($hours >= 0) {
-				$this->hours = $hours;
+				$this->hoursCredit = $hours;
+			}
+			
+			return $this;
+		}
+		
+		/**
+		 * Set hours debit
+		 *
+		 * @param float $hours
+		 *
+		 * @return User
+		 */
+		public function setHoursDebit($hours) {
+			$hours = (float) $hours;
+			
+			if ($hours >= 0) {
+				$this->hoursDebit = $hours;
+			}
+			
+			return $this;
+		}
+		
+		/**
+		 * Add hours
+		 *
+		 * @param float $hours
+		 *
+		 * @return User
+		 */
+		public function addHours($hours) {
+			$hours = (float) $hours;
+			
+			if ($hours >= 0) {
+				$this->hoursCredit += $hours;
+			}
+			
+			return $this;
+		}
+		
+		/**
+		 * Substract hours
+		 *
+		 * @param float $hours
+		 *
+		 * @return User
+		 */
+		public function subHours($hours) {
+			$hours = (float) $hours;
+			
+			if ($hours >= 0) {
+				$this->hoursDebit += $hours;
 			}
 			
 			return $this;
