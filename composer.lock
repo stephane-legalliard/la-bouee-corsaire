@@ -3113,16 +3113,16 @@
         },
         {
             "name": "phpro/grumphp",
-            "version": "v0.10.1",
+            "version": "v0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp.git",
-                "reference": "076f01380603a3aa197e0fd46a189170b7f1140b"
+                "reference": "d9e1561299c8079188ae96b7c8a47339b4b9ff08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp/zipball/076f01380603a3aa197e0fd46a189170b7f1140b",
-                "reference": "076f01380603a3aa197e0fd46a189170b7f1140b",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/d9e1561299c8079188ae96b7c8a47339b4b9ff08",
+                "reference": "d9e1561299c8079188ae96b7c8a47339b4b9ff08",
                 "shasum": ""
             },
             "require": {
@@ -3131,6 +3131,7 @@
                 "doctrine/collections": "~1.2",
                 "gitonomy/gitlib": "~1.0",
                 "monolog/monolog": "~1.17",
+                "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
                 "php": ">=5.6.0",
                 "seld/jsonlint": "~1.1",
                 "symfony/config": "~2.7|~3.0",
@@ -3201,7 +3202,7 @@
                 }
             ],
             "description": "A composer plugin that enables source code quality checks.",
-            "time": "2016-12-01 15:09:12"
+            "time": "2016-12-12 14:44:24"
         },
         {
             "name": "seld/cli-prompt",
