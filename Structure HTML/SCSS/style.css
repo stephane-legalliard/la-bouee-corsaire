@@ -58,7 +58,9 @@ header {
     height: 75vh;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; }
+    background-size: cover;
+    display: flex;
+    align-items: center; }
   header .form-control, header .btn {
     padding: 7px 15px;
     height: 41px; }

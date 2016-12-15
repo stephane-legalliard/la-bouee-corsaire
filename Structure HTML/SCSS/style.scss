@@ -85,8 +85,8 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  // display: flex;
-  // align-items: center;
+  display: flex;
+  align-items: center;
 }
 .form-control, .btn{
   padding: 7px 15px;
@@ -130,7 +130,7 @@ section {
     background-color: $navbar_fond;
     border-color: $input_border;
 }
-<<<<<<< HEAD
+
 
 a.list-group-item:hover {
     background-color: $navbar_fond;
