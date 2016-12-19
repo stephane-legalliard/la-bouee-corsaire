@@ -41,6 +41,7 @@
 			
 			return $this->render('need/show.html.twig', array(
 				'need' => $need,
+				'user' => $this->getUser(),
 			));
 		}
 		

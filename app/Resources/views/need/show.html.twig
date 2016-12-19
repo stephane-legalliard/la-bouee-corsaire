@@ -13,9 +13,15 @@
 	<h2>Description</h2>
 	<p>{{ need.description }}</p>
 
-	<p><a href='/user/message/new/{{ need.id }}'>
-		Se proposer pour remplir ce Besoin
-	</a></p>
+	{% if need.user == user %}
+		<p><a href='/user/need/edit/{{ need.id }}'>
+			Éditer ce Besoin
+		</a></p>
+	{% else %}
+		<p><a href='/user/message/new/{{ need.id }}'>
+			Se proposer pour remplir ce Besoin
+		</a></p>
+	{% endif %}
 
 	<p><a href='/need/list'>Retour à la liste des Besoins</a></p>
 {% endblock %}
