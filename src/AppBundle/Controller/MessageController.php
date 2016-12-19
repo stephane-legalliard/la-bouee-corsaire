@@ -26,7 +26,7 @@
 
 			$em = $this->getDoctrine()->getManager();
 
-			$user = $this->getUser();
+			$author = $this->getUser();
 
 			$need = $this
 				->getDoctrine()
@@ -45,7 +45,7 @@
 			$found = false;
 				if (count($transactions) > 0) {
 				foreach ($transactions as $transaction) {
-					if ($transaction->getUsers()->contains($user)) {
+					if ($transaction->getUsers()->contains($author)) {
 						$found = true;
 						break;
 					}
@@ -58,7 +58,7 @@
 				$transaction = new Transaction();
 				$transaction
 					->setNeed($need)
-					->addUser($user)
+					->addUser($author)
 					->addUser($need->getUser());
 				$em->persist($transaction);
 			}
@@ -70,15 +70,36 @@
 			$form->handleRequest($request);
 
 			if ($form->isSubmitted() && $form->isValid()) {
+
+				$dest = $need->getUser();
+
 				$message = $form->getData();
 				$now = new \DateTime();
 				$message
 					->setDate($now)
-					->setAuthor($user)
-					->setDest($need->getUser())
+					->setAuthor($author)
+					->setDest($dest)
 					->setTransaction($transaction);
 				$em->persist($message);
 				$em->flush();
+
+				// send an e-mail to the Message recipient
+				$email = \Swift_Message::newInstance()
+					->setSubject('La Bouée Corsaire - nouveau message')
+					->setFrom('contact@fondationface.org')
+					->setTo($dest->getEmail())
+					->setBody(
+						$this->renderView(
+							'message/email.txt.twig',
+							array(
+								'dest'    => $dest,
+								'author'  => $author,
+								'message' => $message,
+							)
+						),
+						'text/plain'
+					);
+				$this->get('mailer')->send($email);
 
 				//TODO sending confirmation page
 				return new Response('<p>Message with id '.$message->getId().' sent.</p>');
