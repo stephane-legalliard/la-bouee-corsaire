@@ -12,7 +12,8 @@ Lorsque la question vous est posée, renseignez le nom de la base de données et
 
 Configurez ensuite votre serveur de mail en donnant les identifiants d’un
  utilisateur du système autorisé à l’utiliser pour envoyer des messages à
- des serveurs distants.
+ des serveurs distants. Le champ 'postmaster_email' correspond à l’adresse qui
+ sera affiché en tant qu’expéditeur des messages envoyés par l’application.'
 
 ## Utilisation
 

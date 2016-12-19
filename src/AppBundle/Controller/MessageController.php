@@ -86,7 +86,7 @@
 				// send an e-mail to the Message recipient
 				$email = \Swift_Message::newInstance()
 					->setSubject('La Bouée Corsaire - nouveau message')
-					->setFrom('contact@fondationface.org')
+					->setFrom($this->getParameter('postmaster.email'))
 					->setTo($dest->getEmail())
 					->setBody(
 						$this->renderView(
