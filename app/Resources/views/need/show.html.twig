@@ -12,7 +12,11 @@
 	<p>{{ need.hours }} heures</p>
 	<h2>Description</h2>
 	<p>{{ need.description }}</p>
-	
-	<a href='/need/list'>Retour à la liste des Besoins</a>
+
+	<p><a href='/user/message/new/{{ need.id }}'>
+		Se proposer pour remplir ce Besoin
+	</a></p>
+
+	<p><a href='/need/list'>Retour à la liste des Besoins</a></p>
 {% endblock %}
 
