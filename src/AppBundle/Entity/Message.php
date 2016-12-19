@@ -2,6 +2,7 @@
 
 	namespace AppBundle\Entity;
 
+	use AppBundle\Entity\Transaction;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
 
@@ -64,6 +65,16 @@
 		protected $dest;
 
 		/**
+		 * Associated Transaction
+		 *
+		 * @ORM\ManyToOne(targetEntity="Transaction", inversedBy="message")
+		 *
+		 * @var    Transaction $transaction
+		 * @access private
+		 */
+		protected $transaction;
+
+		/**
 		 * Get id
 		 *
 		 * @return integer
@@ -87,16 +98,23 @@
 		/**
 		 * Get author
 		 *
-		 * @return \AppBundle\Entity\User
+		 * @return User
 		 */
 		public function getAuthor() { return $this->author; }
 
 		/**
 		 * Get dest
 		 *
-		 * @return \AppBundle\Entity\User
+		 * @return User
 		 */
 		public function getDest() { return $this->dest; }
+
+		/**
+		 * Get transaction
+		 *
+		 * @return Transaction
+		 */
+		public function getTransaction() { return $this->transaction; }
 
 		/**
 		* Set content
@@ -125,11 +143,11 @@
 		/**
 		* Set author
 		*
-		* @param \AppBundle\Entity\User $author
+		* @param User $author
 		*
 		* @return Message
 		*/
-		public function setAuthor(\AppBundle\Entity\User $author = null) {
+		public function setAuthor(User $author = null) {
 			$this->author = $author;
 			return $this;
 		}
@@ -137,12 +155,24 @@
 		/**
 		* Set dest
 		*
-		* @param \AppBundle\Entity\User $dest
+		* @param User $dest
 		*
 		* @return Message
 		*/
-		public function setDest(\AppBundle\Entity\User $dest = null) {
+		public function setDest(User $dest = null) {
 			$this->dest = $dest;
+			return $this;
+		}
+
+		/**
+		* Set transaction
+		*
+		* @param Transaction $transaction
+		*
+		* @return Message
+		*/
+		public function setTransaction(Transaction $transaction = null) {
+			$this->transaction = $transaction;
 			return $this;
 		}
 
