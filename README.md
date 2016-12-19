@@ -10,6 +10,10 @@ Installez les dépendances de l’application en lançant le script './install.s
 Lorsque la question vous est posée, renseignez le nom de la base de données et
  les identifiants d’un utilisateur autorisé à la modifier.
 
+Configurez ensuite votre serveur de mail en donnant les identifiants d’un
+ utilisateur du système autorisé à l’utiliser pour envoyer des messages à
+ des serveurs distants.
+
 ## Utilisation
 
 Lancez le script './run.sh' pour lancer une instance de l’application.
