@@ -140,7 +140,7 @@
 				$need = $form->getData();
 				$em = $this->getDoctrine()->getManager();
 				$em->flush();
-				return $this->redirectToRoute('need_show', array('id' => $id);
+				return $this->redirectToRoute('need_show', array('id' => $id));
 			}
 			
 			return $this->render('need/edit.html.twig', array(
