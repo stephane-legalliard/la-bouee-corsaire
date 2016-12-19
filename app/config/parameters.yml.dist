@@ -16,6 +16,7 @@ parameters:
     mailer_password:   ~
 
     postmaster_email: example@localhost
+    postmaster_name:  webmaster
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt

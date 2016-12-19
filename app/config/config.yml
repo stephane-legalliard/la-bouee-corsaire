@@ -8,6 +8,7 @@ imports:
 parameters:
     locale:           en
     postmaster.email: "%postmaster_email%"
+    postmaster.name:  "%postmaster_name%"
 
 framework:
     #esi:             ~
@@ -74,6 +75,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: AppBundle\Entity\User
+    from_email:
+        address:     "%postmaster_email%"
+        sender_name: "%postmaster_name%"
     profile:
         form:
             type: AppBundle\Form\ProfileType
