@@ -54,9 +54,12 @@
     <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="882.476" y="134">#date: datetime</text>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="657.63" y="-29" width="114.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x="657.63" y="-29" width="114.6" height="28"/>
-    <text font-size="16" style="fill: #ff0000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="714.93" y="-10">Transaction</text>
+    <rect style="fill: #ffffff" x="657.963" y="-29" width="114.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="657.963" y="-29" width="114.6" height="28"/>
+    <text font-size="16" style="fill: #0000ff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="715.263" y="-10">Transaction</text>
+    <rect style="fill: #ffffff" x="657.963" y="-1" width="114.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" x="657.963" y="-1" width="114.6" height="20"/>
+    <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="660.963" y="13">#id: int</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="387" y="60" width="148.6" height="28"/>
@@ -83,10 +86,10 @@
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="714.93,-1 714.93,29.5 715.2,29.5 715.2,60 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="715.065" y="26.5"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="718.93" y="11">*</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="719.2" y="56">2..*</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="715.263,19 715.263,29.5 715.2,29.5 715.2,60 "/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="715.232" y="26.5"/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="719.263" y="31">*</text>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="719.2" y="56">2..*</text>
   </g>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" points="535.6,74 544,74 544,74 587,74 "/>
@@ -95,10 +98,10 @@
     <text font-size="12.7998" style="fill: #008000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="583" y="71">1</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="657.63,-15 461.3,-15 461.3,60 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="559.465" y="-18"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="653.63" y="-18">0..1</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465.3" y="56">0..1</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="657.963,-15 461.3,-15 461.3,60 "/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="559.632" y="-18"/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="653.963" y="-18">0..1</text>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465.3" y="56">0..1</text>
   </g>
   <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="330">
     <tspan x="420" y="330">tâche non-réalisée</tspan>
@@ -116,10 +119,10 @@
     <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="847.4" y="71">2</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="942.226,60 942.226,-15 772.23,-15 "/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="857.228" y="-18"/>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="946.226" y="56">*</text>
-    <text font-size="12.7998" style="fill: #ff0000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="776.23" y="-18">1</text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="942.226,60 942.226,-15 772.563,-15 "/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="857.395" y="-18"/>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="946.226" y="56">*</text>
+    <text font-size="12.7998" style="fill: #0000ff;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="776.563" y="-18">1</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="232" y="60" width="91.85" height="28"/>
