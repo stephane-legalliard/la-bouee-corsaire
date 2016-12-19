@@ -13,9 +13,15 @@
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-				<a class="btn btn-primary btn-lg" href="/login">
-					Connexion/Inscription
-				</a>
+				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+					<a class="btn btn-primary btn-lg" href="/profile">
+						Mon Profil
+					</a>
+				{% else %}
+					<a class="btn btn-primary btn-lg" href="/login">
+						Connexion/Inscription
+					</a>
+				{% endif %}
 			</li>
 			<li>
 				<!--Facebook-->
