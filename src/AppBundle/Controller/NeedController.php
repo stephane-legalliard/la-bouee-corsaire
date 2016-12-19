@@ -140,8 +140,7 @@
 				$need = $form->getData();
 				$em = $this->getDoctrine()->getManager();
 				$em->flush();
-				//TODO edit confirmation page
-				return new Response('<p>Saved modifications to Need with id '.$need->getId()."</p>\n<pre>".var_export($need, true).'</pre>');
+				return $this->redirectToRoute('need_show', array('id' => $id);
 			}
 			
 			return $this->render('need/edit.html.twig', array(
