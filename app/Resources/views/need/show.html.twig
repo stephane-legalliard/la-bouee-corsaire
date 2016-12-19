@@ -14,15 +14,15 @@
 	<p>{{ need.description }}</p>
 
 	{% if need.user == user %}
-		<p><a href='/user/need/edit/{{ need.id }}'>
+		<p><a class='btn btn-default' href='/user/need/edit/{{ need.id }}'>
 			Éditer ce Besoin
 		</a></p>
 	{% else %}
-		<p><a href='/user/message/new/{{ need.id }}'>
+		<p><a class='btn btn-default' href='/user/message/new/{{ need.id }}'>
 			Se proposer pour remplir ce Besoin
 		</a></p>
 	{% endif %}
 
-	<p><a href='/need/list'>Retour à la liste des Besoins</a></p>
+	<p><a class='btn btn-default' href='/need/list'>Retour à la liste des Besoins</a></p>
 {% endblock %}
 
