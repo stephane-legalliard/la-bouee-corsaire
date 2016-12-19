@@ -95,6 +95,7 @@
 			$needs = $repository->findAll();
 			return $this->render('need/list.html.twig', array(
 				'needs' => $needs,
+				'user' => $this->getUser(),
 			));
 		}
 		

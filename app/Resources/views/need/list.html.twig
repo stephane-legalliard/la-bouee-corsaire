@@ -12,7 +12,12 @@
 			
 			<div class='col-lg-3 col-md-4 col-sm-6'>
 				<a href='/need/show/{{ need.id }}'>
-					<div class='panel panel-default'>
+					{% if need.user == user %}
+						{% set panel_class = 'panel-info' %}
+					{% else %}
+						{% set panel_class = 'panel-default' %}
+					{% endif %}
+					<div class='panel {{panel_class}}'>
 						<div class="panel-heading">{{ need.title }}</div>
 						<div class="panel-body">
 							<p>{{ need.description }}</p>
