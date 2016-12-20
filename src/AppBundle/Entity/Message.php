@@ -210,31 +210,12 @@
 
 		public static function fromArray($array) {
 			$message = new static();
-
-			if (isset($array['content'])) {
-				$message->setContent($array['content']);
+			foreach ($array as $key => $value) {
+				$method = 'set'.ucfirst($key);
+				if (method_exists($message, $method)) {
+					$message->$method($value);
+				}
 			}
-
-			if (isset($array['date'])) {
-				$message->setDate($array['date']);
-			}
-
-			if (isset($array['author'])) {
-				$message->setAuthor($array['author']);
-			}
-
-			if (isset($array['dest'])) {
-				$message->setDest($array['dest']);
-			}
-
-			if (isset($array['transaction'])) {
-				$message->setTransaction($array['transaction']);
-			}
-
-			if (isset($array['duration'])) {
-				$message->setDuration($array['duration']);
-			}
-
 			return $message;
 		}
 
