@@ -53,7 +53,8 @@ doctrine:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
         types:
-            TaskLevelType: AppBundle\DBAL\Types\TaskLevelType
+            TaskLevelType:         AppBundle\DBAL\Types\TaskLevelType
+            TransactionStatusType: AppBundle\DBAL\Types\TransactionStatusType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"

@@ -5,9 +5,11 @@
 	use AppBundle\Entity\Message;
 	use AppBundle\Entity\Task;
 	use AppBundle\Entity\User;
+	use AppBundle\DBAL\Types\TransactionStatusType;
 	use Doctrine\ORM\Mapping as ORM;
 	use Doctrine\Common\Collections\ArrayCollection;
 	use Doctrine\Common\Collections\Collection;
+	use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
 
 	/**
 	 * @ORM\Entity
@@ -58,6 +60,17 @@
 		protected $messages;
 
 		/**
+		 * Current status
+		 *
+		 * @ORM\Column(type="TransactionStatusType", nullable=false, options={"default"="0"})
+		 * @DoctrineAssert\Enum(entity="TransactionStatusType")
+		 *
+		 * @var    enum $status
+		 * @access protected
+		 */
+		protected $status;
+
+		/**
 		 * Constructor
 		 */
 		public function __construct() {
@@ -92,6 +105,13 @@
 		 * @return Collection
 		 */
 		public function getMessages() { return $this->messages; }
+
+		/**
+		 * Get current status
+		 *
+		 * @return string
+		 */
+		public function getStatus() { return $this->status; }
 
 		/**
 		 * Set task
@@ -145,6 +165,24 @@
 		 */
 		public function removeMessage(Message $message) {
 			$this->messages->removeElement($message);
+		}
+
+		/**
+		 * Set current status
+		 *
+		 * @param string
+		 *
+		 * @return Transaction
+		 */
+		public function setStatus($status) {
+			switch ($status) {
+				case TransactionStatusType::OPEN:
+				case TransactionStatusType::VALIDATED:
+				case TransactionStatusType::DONE:
+					$this->status = $status;
+					break;
+			}
+			return $this;
 		}
 
 	}

@@ -2,6 +2,7 @@
 
 	namespace AppBundle\Controller;
 
+	use AppBundle\DBAL\Types\TransactionStatusType;
 	use AppBundle\Entity\Message;
 	use AppBundle\Entity\Transaction;
 	use AppBundle\Entity\User;
@@ -63,6 +64,7 @@
 				$transaction = new Transaction();
 				$transaction
 					->setTask($task)
+					->setStatus(TransactionStatusType::OPEN)
 					->addUser($author)
 					->addUser($task->getUser());
 				$em->persist($transaction);
