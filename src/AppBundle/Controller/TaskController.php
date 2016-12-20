@@ -9,11 +9,16 @@
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
 	
+	/**
+	 * Task controller.
+	 *
+	 * @Route("/task")
+	 */
 	class TaskController extends Controller {
 		
 		/**
 		 *
-		 * @Route("/task/show/{id}", name="task_show")
+		 * @Route("/show/{id}", name="task_show")
 		 *
 		 */
 		public function showAction(Request $request, $id) {
@@ -42,7 +47,7 @@
 		
 		/**
 		 *
-		 * @Route("/user/task/new")
+		 * @Route("/new")
 		 *
 		 */
 		public function newAction(Request $request) {
@@ -77,7 +82,7 @@
 		
 		/**
 		 *
-		 * @Route("/task/list")
+		 * @Route("/list")
 		 *
 		 */
 		public function listAction() {
@@ -96,7 +101,7 @@
 		
 		/**
 		 *
-		 * @Route("/user/task/edit/{id}")
+		 * @Route("/edit/{id}")
 		 *
 		 */
 		public function editAction(Request $request, $id) {
@@ -145,7 +150,7 @@
 		
 		/**
 		 *
-		 * @Route("/user/task/disable/{id}")
+		 * @Route("/disable/{id}")
 		 *
 		 */
 		public function disableAction(Request $request, $id) {

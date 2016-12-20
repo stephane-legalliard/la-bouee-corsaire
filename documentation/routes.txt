@@ -1,17 +1,13 @@
 /                        : page d’accueil
 /admin/users             : liste des utilisateurs
 /login                   : page de connexion / création d’un compte utilisateur
-/need/list               : liste des besoins
-/need/show/{id}          : détails d’un besoin
+/task/list               : liste des besoins
+/task/new                : création d’un besoin
+/task/show/{id}          : détails d’un besoin
+/task/edit/{id}          : édition d’un besoin
 /profile                 : affichage du profil utilisateur
 /profile/change-password : modification du mot de passe
 /profile/edit            : modification du profil utilisateur
 /register/confirmed      : confirmation de création d’un compte utilisateur
 /resetting/check-email   : confirmation de la réinitialisation du mot de passe
 /resetting/request       : demande de réinitialisation du mot de passe
-/service/list            : liste des services
-/service/show/{id}       : détails d’un service
-/user/need/edit/{id}     : édition d’un besoin
-/user/need/new           : création d’un besoin
-/user/service/edit/{id}  : édition d’un service
-/user/service/new        : création d’un service

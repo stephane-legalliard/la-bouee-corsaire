@@ -11,11 +11,16 @@
 	use Symfony\Component\HttpFoundation\Response;
 	use Doctrine\Common\Collections\Criteria;
 
+	/**
+	 * Message controller.
+	 *
+	 * @Route("/message")
+	 */
 	class MessageController extends Controller {
 
 		/**
 		 *
-		 * @Route("/user/message/new/{id}")
+		 * @Route("/new/{id}")
 		 *
 		 */
 		public function newAction(Request $request, $id) {

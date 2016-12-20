@@ -12,11 +12,11 @@
 	<p>{{ task.description }}</p>
 
 	{% if task.user == user %}
-		<p><a class='btn btn-default' href='/user/task/edit/{{ task.id }}'>
+		<p><a class='btn btn-default' href='/task/edit/{{ task.id }}'>
 			Éditer ce Besoin
 		</a></p>
 	{% else %}
-		<p><a class='btn btn-default' href='/user/message/new/{{ task.id }}'>
+		<p><a class='btn btn-default' href='/message/new/{{ task.id }}'>
 			Se proposer pour remplir ce Besoin
 		</a></p>
 	{% endif %}
