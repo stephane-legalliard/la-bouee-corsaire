@@ -117,6 +117,42 @@
 			));
 		}
 
+		
+		/**
+		 *
+		 * @Route("/show/{id}", name="message_show")
+		 *
+		 */
+		public function showAction(Request $request, $id) {
+
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			$user = $this->getUser();
+
+			$message = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Message')
+				->find($id);
+
+			if (!$message) {
+				//TODO message not found page
+				throw $this->createNotFoundException(
+					'No Message found for id '.$id
+				);
+			}
+
+			if ($message->getAuthor() !== $user && $message->getDest() !== $user) {
+				//TODO message not owned by current user page
+				return new Response('<p>You are not allowed to see the Message with id '.$id.'</p>');
+			}
+
+			return $this->render('message/show.html.twig', array(
+				'message' => $message,
+			));
+
+		}
+
 	}
 
 ?>
