@@ -301,31 +301,12 @@
 		
 		public static function fromArray($array) {
 			$task = new static();
-			
-			if (isset($array['title'])) {
-				$task->setTitle($array['title']);
+			foreach ($array as $key => $value) {
+				$method = 'set'.ucfirst($key);
+				if (method_exists($task, $method)) {
+					$task->$method($value);
+				}
 			}
-			
-			if (isset($array['description'])) {
-				$task->setDescription($array['description']);
-			}
-			
-			if (isset($array['location'])) {
-				$task->setLocation($array['location']);
-			}
-			
-			if (isset($array['enabled'])) {
-				$task->setEnabled($array['enabled']);
-			}
-			
-			if (isset($array['level'])) {
-				$task->setLevel($array['level']);
-			}
-			
-			if (isset($array['hours'])) {
-				$task->setHours($array['hours']);
-			}
-			
 			return $task;
 		}
 		
