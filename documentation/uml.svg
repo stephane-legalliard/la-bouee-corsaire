@@ -2,8 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
 <svg width="39cm" height="23cm" viewBox="230 -30 775 460" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g>
-    <rect style="fill: #ffffff" x="409.752" y="310" width="135.713" height="68.0973"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="409.752" y="310" width="135.713" height="68.0973"/>
+    <rect style="fill: #ffffff" x="398.752" y="242" width="135.713" height="68.0973"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="398.752" y="242" width="135.713" height="68.0973"/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="587" y="60" width="256.4" height="28"/>
@@ -32,16 +32,6 @@
     <text font-size="12.8" style="fill: #008000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="390">#phone: int</text>
     <text font-size="12.8" style="fill: #008000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="406">#hours_credit: float</text>
     <text font-size="12.8" style="fill: #008000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="590" y="422">#hours_debit: float</text>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="480" y="250" width="76.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" x="480" y="250" width="76.55" height="28"/>
-    <text font-size="16" style="fill: #008000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="518.275" y="269">Service</text>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="380" y="250" width="56.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" x="380" y="250" width="56.55" height="28"/>
-    <text font-size="16" style="fill: #008000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="408.275" y="269">Need</text>
   </g>
   <g>
     <rect style="fill: #ffffff" x="879.476" y="60" width="125.5" height="28"/>
@@ -76,16 +66,6 @@
     <text font-size="12.8" style="fill: #008000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="390" y="198">#date: datetime</text>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #008000" points="461.3,222.236 461.3,235 518.275,235 518.275,250 "/>
-    <polygon style="fill: #ffffff" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #008000" points="461.3,222.236 461.3,235 408.275,235 408.275,250 "/>
-    <polygon style="fill: #ffffff" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" points="469.3,222.236 461.3,206.236 453.3,222.236 "/>
-  </g>
-  <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" points="715.264,19 715.264,29.5 715.2,29.5 715.2,60 "/>
     <text font-size="12.7998" style="fill: #008000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="715.232" y="26.5"/>
     <text font-size="12.7998" style="fill: #008000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="719.264" y="31">*</text>
@@ -103,14 +83,14 @@
     <text font-size="12.7998" style="fill: #008000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="653.964" y="-18">0..1</text>
     <text font-size="12.7998" style="fill: #008000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465.3" y="56">0..1</text>
   </g>
-  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="330">
-    <tspan x="420" y="330">tâche non-réalisée</tspan>
+  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="409" y="262">
+    <tspan x="409" y="262">tâche non-réalisée</tspan>
   </text>
-  <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="350">
-    <tspan x="420" y="350">tâche en cours</tspan>
+  <text font-size="12.8" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="409" y="282">
+    <tspan x="409" y="282">tâche en cours</tspan>
   </text>
-  <text font-size="12.8" style="fill: #008000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="370">
-    <tspan x="420" y="370">tâche réalisée</tspan>
+  <text font-size="12.8" style="fill: #008000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="409" y="302">
+    <tspan x="409" y="302">tâche réalisée</tspan>
   </text>
   <g>
     <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #008000" points="879.476,74 864,74 864,74 843.4,74 "/>
