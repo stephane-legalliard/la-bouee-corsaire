@@ -54,7 +54,6 @@ doctrine:
             collate: utf8mb4_unicode_ci
         types:
             TaskLevelType: AppBundle\DBAL\Types\TaskLevelType
-            TaskStatusType: AppBundle\DBAL\Types\TaskStatusType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"

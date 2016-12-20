@@ -3,7 +3,6 @@
 	namespace AppBundle\Entity;
 	
 	use AppBundle\DBAL\Types\TaskLevelType;
-	use AppBundle\DBAL\Types\TaskStatusType;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
 	use Symfony\Component\Validator\Constraints as Assert;
@@ -86,13 +85,12 @@
 		/**
 		 * Task status
 		 *
-		 * @ORM\Column(type="TaskStatusType", nullable=false, options={"default"="OP"})
-		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskStatusType")
+		 * @ORM\Column(type="boolean")
 		 *
-		 * @var    enum
+		 * @var    boolean
 		 * @access protected
 		 */
-		protected $status;
+		protected $enabled;
 		
 		/**
 		 * User who created the Task
@@ -176,7 +174,7 @@
 		 *
 		 * @return string
 		 */
-		public function getStatus() { return $this->status; }
+		public function getEnabled() { return $this->enabled; }
 		
 		/**
 		 * Get User
@@ -261,23 +259,14 @@
 		}
 		
 		/**
-		 * Set status
+		 * Set status (enabled/disabled)
 		 *
 		 * @param string
 		 *
 		 * @return Task
 		 */
-		public function setStatus($status) {
-			switch ($status) {
-				case 'OP':
-				case 'PE':
-				case 'VA':
-				case 'DO':
-				case 'DI':
-					$this->status = $status;
-					break;
-			}
-			
+		public function setEnabled($enabled) {
+			$this->enabled = $enabled;
 			return $this;
 		}
 		
@@ -342,7 +331,7 @@
 		}
 		
 		public function isDisabled() {
-			return ($this->getStatus() === 'DI');
+			return (!$this->getEnabled());
 		}
 		
 		public static function fromArray($array) {
@@ -360,8 +349,8 @@
 				$task->setLocation($array['location']);
 			}
 			
-			if (isset($array['status'])) {
-				$task->setStatus($array['status']);
+			if (isset($array['enabled'])) {
+				$task->setEnabled($array['enabled']);
 			}
 			
 			if (isset($array['level'])) {

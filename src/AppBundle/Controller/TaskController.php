@@ -34,11 +34,6 @@
 				return new Response('<p>Task with id '.$task->getId().' has been disabled.</p>');
 			}
 			
-			if ($task->getStatus() === 'DO') {
-				//TODO task already done page
-				return new Response('<p>Task with id '.$task->getId().' has already been done.</p>');
-			}
-			
 			return $this->render('task/show.html.twig', array(
 				'task' => $task,
 				'user' => $this->getUser(),
@@ -66,7 +61,7 @@
 				$user = $this->getUser();
 				$task = $form->getData()
 					->setDate(new \DateTime())
-					->setStatus('OP')
+					->setEnabled(true)
 					->setUser($user);
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($task);
@@ -88,8 +83,13 @@
 		public function listAction() {
 			$repository = $this->getDoctrine()->getRepository('AppBundle:Task');
 			$tasks = $repository->findAll();
+			
+			$enabled_tasks = array_filter($tasks, function($task) {
+				return (!$task->isDisabled());
+			});
+			
 			return $this->render('task/list.html.twig', array(
-				'tasks' => $tasks,
+				'tasks' => $enabled_tasks,
 				'user' => $this->getUser(),
 			));
 		}
@@ -125,11 +125,6 @@
 			if ($task->isDisabled()) {
 				//TODO task disabled page
 				return new Response('<p>Task with id '.$task->getId().' has been disabled.</p>');
-			}
-			
-			if ($task->getStatus() === 'DO') {
-				//TODO task already done page
-				return new Response('<p>Task with id '.$task->getId().' has already been done.</p>');
 			}
 			
 			$formFactory = $this->get('form.factory');
@@ -179,7 +174,7 @@
 				return new Response('<p>Task with id '.$task->getId().' has been disabled.</p>');
 			}
 			
-			$task->setStatus('DI');
+			$task->setEnabled(false);
 			
 			$em = $this->getDoctrine()->getManager();
 			$em->flush();
