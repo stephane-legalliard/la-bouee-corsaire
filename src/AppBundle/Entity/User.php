@@ -84,26 +84,6 @@
 		protected $adress;
 		
 		/**
-		 * User short text description
-		 *
-		 * @ORM\Column(type="text", length=255)
-		 *
-		 * @Assert\NotBlank(message="Veuillez entrer un court texte pour vous présenter.", groups={"Registration", "Profile"})
-		 *
-		 * @Assert\Length(
-		 * 	min=3,
-		 * 	max=255,
-		 * 	minMessage="La description est trop courte.",
-		 * 	maxMessage="La description est trop longue.",
-		 * 	groups={"Registration", "Profile"}
-		 * )
-		 *
-		 * @var    string
-		 * @access protected
-		 */
-		protected $description;
-		
-		/**
 		 * User region
 		 *
 		 * @ORM\Column(type="string", length=100)
@@ -201,13 +181,6 @@
 		 * @return string
 		 */
 		public function getAdress() { return $this->adress; }
-		
-		/**
-		 * Get description
-		 *
-		 * @return string
-		 */
-		public function getDescription() { return $this->description; }
 		
 		/**
 		 * Get region
@@ -359,25 +332,6 @@
 			if ($length >= 3 && $length <= 180 && preg_match('/.*@.*/', $email)) {
 				parent::setEmail($email);
 			}
-		}
-		
-		/**
-		 * Set description
-		 *
-		 * @param string $description
-		 *
-		 * @return User
-		 */
-		public function setDescription($description)
-		{
-			$description = (string) $description;
-			
-			$length = strlen($description);
-			if ($length >= 3 && $length <= 255) {
-				$this->description = $description;
-			}
-			
-			return $this;
 		}
 		
 		/**

@@ -64,10 +64,6 @@
 			 ->add('phone', null, array(
 			 	'translation_domain' => false,
 			 	'label' => 'Téléphone (optionnel)',
-			 ))
-			 ->add('description', null, array(
-			 	'translation_domain' => false,
-			 	'label' => 'Description',
 			 ));
 		}
 		

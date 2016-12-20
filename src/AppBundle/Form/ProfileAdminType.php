@@ -57,10 +57,6 @@
 					'translation_domain' => false,
 					'label' => 'Téléphone (optionnel)',
 				))
-				->add('description', null, array(
-					'translation_domain' => false,
-					'label' => 'Description',
-				))
 				->add('hoursCredit', null, array(
 					'translation_domain' => false,
 					'label' => 'Crédit horaire',

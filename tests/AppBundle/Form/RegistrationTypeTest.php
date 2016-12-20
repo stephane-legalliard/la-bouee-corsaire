@@ -25,7 +25,6 @@
 				'region'        => 'Bretagne',
 				'city'          => 'Rennes',
 				'phone'         => '0000000000',
-				'description'   => 'Hello World!',
 			);
 			$form->submit($formData);
 			
@@ -40,7 +39,6 @@
 			$this->assertSame('Bretagne', $user->getRegion());
 			$this->assertSame('Rennes', $user->getCity());
 			$this->assertSame('0000000000', $user->getPhone());
-			$this->assertSame('Hello World!', $user->getDescription());
 		}
 		
 		/**
