@@ -67,7 +67,7 @@
 		/**
 		 * Associated Transaction
 		 *
-		 * @ORM\ManyToOne(targetEntity="Transaction", inversedBy="message")
+		 * @ORM\ManyToOne(targetEntity="Transaction", inversedBy="messages")
 		 *
 		 * @var    Transaction $transaction
 		 * @access private

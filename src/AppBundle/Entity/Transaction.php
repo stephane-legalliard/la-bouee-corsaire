@@ -52,7 +52,7 @@
 		/**
 		 * Associated Messages
 		 *
-		 * @ORM\OneToMany(targetEntity="Message", mappedBy="message")
+		 * @ORM\OneToMany(targetEntity="Message", mappedBy="transaction")
 		 *
 		 * @var    Message[] $users
 		 * @access private
