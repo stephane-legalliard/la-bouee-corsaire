@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ task.title }}{% endblock %}
+
+{% block body %}
+	<h1>{{ block('title') }}</h1>
+	<h2>Lieu</h2>
+	<p>{{ task.location }}</p>
+	<h2>Durée estimée</h2>
+	<p>{{ task.hours }} heures</p>
+	<h2>Description</h2>
+	<p>{{ task.description }}</p>
+
+	{% if task.user == user %}
+		<p><a class='btn btn-default' href='/user/task/edit/{{ task.id }}'>
+			Éditer ce Besoin
+		</a></p>
+	{% else %}
+		<p><a class='btn btn-default' href='/user/message/new/{{ task.id }}'>
+			Se proposer pour remplir ce Besoin
+		</a></p>
+	{% endif %}
+
+	<p><a class='btn btn-default' href='/task/list'>Retour à la liste des Besoins</a></p>
+{% endblock %}
+

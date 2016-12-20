@@ -2,12 +2,12 @@
 	
 	namespace Tests\AppBundle\Form;
 	
-	use AppBundle\Form\NeedType;
-	use AppBundle\Entity\Need;
+	use AppBundle\Form\TaskType;
+	use AppBundle\Entity\Task;
 	use Symfony\Component\Form\PreloadedExtension;
 	use Symfony\Component\Form\Test\TypeTestCase;
 	
-	class NeedTypeTest extends TypeTestCase {
+	class TaskTypeTest extends TypeTestCase {
 		
 		private $entityManager;
 		
@@ -17,7 +17,7 @@
 		}
 		
 		protected function getExtensions() {
-			$type = new Need($this->entityManager);
+			$type = new Task($this->entityManager);
 			
 			return array(
 				new PreloadedExtension(array($type), array()),
@@ -35,14 +35,14 @@
 				'description' => 'Hello World!',
 			);
 			
-			$form = $this->factory->create(NeedType::class);
+			$form = $this->factory->create(TaskType::class);
 			
-			$need = Need::fromArray($formData);
+			$task = Task::fromArray($formData);
 			
 			$form->submit($formData);
 			
 			$this->assertTrue($form->isSynchronized());
-			$this->assertEquals($need, $form->getData());
+			$this->assertEquals($task, $form->getData());
 			
 			$view = $form->createView();
 			$children = $view->children;

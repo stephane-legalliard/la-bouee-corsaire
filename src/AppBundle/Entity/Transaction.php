@@ -3,7 +3,7 @@
 	namespace AppBundle\Entity;
 
 	use AppBundle\Entity\Message;
-	use AppBundle\Entity\Need;
+	use AppBundle\Entity\Task;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
 	use Doctrine\Common\Collections\ArrayCollection;
@@ -28,14 +28,14 @@
 		protected $id;
 
 		/**
-		 * Associated Need
+		 * Associated Task
 		 *
-		 * @ORM\ManyToOne(targetEntity="Need")
+		 * @ORM\ManyToOne(targetEntity="Task")
 		 *
-		 * @var    Need $need
+		 * @var    Task $task
 		 * @access private
 		 */
-		protected $need;
+		protected $task;
 
 		/**
 		 * Associated Users
@@ -73,11 +73,11 @@
 		public function getId() { return $this->id; }
 
 		/**
-		 * Get need
+		 * Get task
 		 *
-		 * @return Need
+		 * @return Task
 		 */
-		public function getNeed() { return $this->need; }
+		public function getTask() { return $this->task; }
 
 		/**
 		 * Get users
@@ -94,14 +94,14 @@
 		public function getMessages() { return $this->messages; }
 
 		/**
-		 * Set need
+		 * Set task
 		 *
-		 * @param Need $need
+		 * @param Task $task
 		 *
 		 * @return Transaction
 		 */
-		public function setNeed(Need $need = null) {
-			$this->need = $need;
+		public function setTask(Task $task = null) {
+			$this->task = $task;
 			return $this;
 		}
 

@@ -53,8 +53,7 @@ doctrine:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
         types:
-            NeedLevelType: AppBundle\DBAL\Types\NeedLevelType
-            ServiceLevelType: AppBundle\DBAL\Types\ServiceLevelType
+            TaskLevelType: AppBundle\DBAL\Types\TaskLevelType
             TaskStatusType: AppBundle\DBAL\Types\TaskStatusType
 
     orm:

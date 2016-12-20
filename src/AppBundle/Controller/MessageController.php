@@ -28,17 +28,17 @@
 
 			$author = $this->getUser();
 
-			$need = $this
+			$task = $this
 				->getDoctrine()
-				->getRepository('AppBundle:Need')
+				->getRepository('AppBundle:Task')
 				->find($id);
 
-			// find all Transactions associated with current Need
+			// find all Transactions associated with current Task
 			$transactions = $this
 				->getDoctrine()
 				->getRepository('AppBundle:Transaction')
 				->findBy(array(
-					'need' => $need,
+					'task' => $task,
 				));
 
 			// find Transaction associated with current User (from previous list)
@@ -52,14 +52,14 @@
 				}
 			}
 
-			// if no Transaction is associated with both the current Need and User,
+			// if no Transaction is associated with both the current Task and User,
 			// create a new one
 			if (! $found) {
 				$transaction = new Transaction();
 				$transaction
-					->setNeed($need)
+					->setTask($task)
 					->addUser($author)
-					->addUser($need->getUser());
+					->addUser($task->getUser());
 				$em->persist($transaction);
 			}
 
@@ -71,7 +71,7 @@
 
 			if ($form->isSubmitted() && $form->isValid()) {
 
-				$dest = $need->getUser();
+				$dest = $task->getUser();
 
 				$message = $form->getData();
 				$now = new \DateTime();

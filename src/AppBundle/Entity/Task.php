@@ -2,6 +2,7 @@
 	
 	namespace AppBundle\Entity;
 	
+	use AppBundle\DBAL\Types\TaskLevelType;
 	use AppBundle\DBAL\Types\TaskStatusType;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
@@ -9,7 +10,8 @@
 	use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
 	
 	/**
-	 * @ORM\MappedSuperclass
+	 * @ORM\Entity
+	 * @ORM\Table(name="tasks")
 	 */
 	class Task {
 		/**
@@ -121,6 +123,27 @@
 		protected $date;
 		
 		/**
+		 * Level of the User providing the service
+		 *
+		 * @ORM\Column(type="TaskLevelType", nullable=false, options={"default"="0"})
+		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskLevelType")
+		 *
+		 * @var    enum $level
+		 * @access protected
+		 */
+		protected $level;
+		
+		/**
+		 * Number of hours tasked to fullfil the Task
+		 *
+		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
+		 *
+		 * @var    float
+		 * @access protected
+		 */
+		protected $hours = 0;
+		
+		/**
 		 * Get id
 		 *
 		 * @return integer
@@ -168,6 +191,20 @@
 		 * @return Category
 		 */
 		public function getCategory() { return $this->category; }
+		
+		/**
+		 * Get level
+		 *
+		 * @return string
+		 */
+		public function getLevel() { return $this->level; }
+		
+		/**
+		 * Get hours
+		 *
+		 * @return float
+		 */
+		public function getHours() { return $this->hours; }
 		
 		/**
 		 * Set title
@@ -266,6 +303,44 @@
 			return $this;
 		}
 		
+		/**
+		 * Set level
+		 *
+		 * @param string
+		 *
+		 * @return Task
+		 */
+		public function setLevel($level) {
+			switch ($level) {
+				case '0':
+				case '1':
+				case '2':
+				case '3':
+					$this->level = $level;
+					break;
+			}
+			
+			return $this;
+		}
+		
+		/**
+		 * Set hours
+		 *
+		 * @param float $hours
+		 *
+		 * @return User
+		 */
+		public function setHours($hours)
+		{
+			$hours = (float) $hours;
+			
+			if ($hours >= 0) {
+				$this->hours = $hours;
+			}
+			
+			return $this;
+		}
+		
 		public function isDisabled() {
 			return ($this->getStatus() === 'DI');
 		}
@@ -287,6 +362,14 @@
 			
 			if (isset($array['status'])) {
 				$task->setStatus($array['status']);
+			}
+			
+			if (isset($array['level'])) {
+				$task->setLevel($array['level']);
+			}
+			
+			if (isset($array['hours'])) {
+				$task->setHours($array['hours']);
 			}
 			
 			return $task;
