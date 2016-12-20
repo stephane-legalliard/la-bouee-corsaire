@@ -75,6 +75,16 @@
 		protected $transaction;
 
 		/**
+		 * Estimated duration of the associated Task
+		 *
+		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
+		 *
+		 * @var    float $duration
+		 * @access protected
+		 */
+		protected $duration;
+
+		/**
 		 * Get id
 		 *
 		 * @return integer
@@ -115,6 +125,13 @@
 		 * @return Transaction
 		 */
 		public function getTransaction() { return $this->transaction; }
+
+		/**
+		 * Get estimated duration of the associated Task
+		 *
+		 * @return float
+		 */
+		public function getDuration() { return $this->duration; }
 
 		/**
 		* Set content
@@ -173,6 +190,21 @@
 		*/
 		public function setTransaction(Transaction $transaction = null) {
 			$this->transaction = $transaction;
+			return $this;
+		}
+
+		/**
+		 * Set estimated duration of the associated Task
+		 *
+		 * @param float
+		 *
+		 * @return Transaction
+		 */
+		public function setDuration($duration) {
+			$duration = (float) $duration;
+			if ($duration >= 0) {
+				$this->duration = $duration;
+			}
 			return $this;
 		}
 

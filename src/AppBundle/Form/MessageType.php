@@ -5,6 +5,7 @@
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\FormBuilderInterface;
 	use Symfony\Component\OptionsResolver\OptionsResolver;
+	use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 	
 	class MessageType extends AbstractType {
 		
@@ -25,6 +26,11 @@
 		 */
 		public function buildForm(FormBuilderInterface $builder, array $options) {
 			$builder
+				->add('duration', IntegerType::class, array(
+					'translation_domain' => false,
+					'label' => 'Durée estimée (en heures)',
+					'empty_data' => 0
+				))
 				->add('content', null, array(
 					'translation_domain' => false,
 					'label' => 'Rédigez votre message…'

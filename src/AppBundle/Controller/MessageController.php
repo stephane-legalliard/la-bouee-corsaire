@@ -65,6 +65,7 @@
 				$transaction
 					->setTask($task)
 					->setStatus(TransactionStatusType::OPEN)
+					->setDuration(0)
 					->addUser($author)
 					->addUser($task->getUser());
 				$em->persist($transaction);
@@ -81,6 +82,14 @@
 				$dest = $task->getUser();
 
 				$message = $form->getData();
+
+				// If the duration is not a valid value, set it to 0
+				$duration = (float) $message->getDuration();
+				if (!$duration >= 0) {
+					$duration = 0;
+					$message->setDuration($duration);
+				}
+
 				$now = new \DateTime();
 				$message
 					->setDate($now)
@@ -88,6 +97,12 @@
 					->setDest($dest)
 					->setTransaction($transaction);
 				$em->persist($message);
+
+				// If the duration is not 0, store it in the Transaction
+				if ($duration != 0) {
+					$transaction->setDuration($duration);
+				}
+
 				$em->flush();
 
 				// send an e-mail to the Message recipient
