@@ -163,6 +163,7 @@
 
 			return $this->render('message/show.html.twig', array(
 				'message' => $message,
+				'user' => $user,
 			));
 
 		}
