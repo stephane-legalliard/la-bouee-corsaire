@@ -132,16 +132,6 @@
 		protected $level;
 		
 		/**
-		 * Number of hours tasked to fullfil the Task
-		 *
-		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
-		 *
-		 * @var    float
-		 * @access protected
-		 */
-		protected $hours = 0;
-		
-		/**
 		 * Get id
 		 *
 		 * @return integer
@@ -196,13 +186,6 @@
 		 * @return string
 		 */
 		public function getLevel() { return $this->level; }
-		
-		/**
-		 * Get hours
-		 *
-		 * @return float
-		 */
-		public function getHours() { return $this->hours; }
 		
 		/**
 		 * Set title
@@ -307,24 +290,6 @@
 				case '3':
 					$this->level = $level;
 					break;
-			}
-			
-			return $this;
-		}
-		
-		/**
-		 * Set hours
-		 *
-		 * @param float $hours
-		 *
-		 * @return User
-		 */
-		public function setHours($hours)
-		{
-			$hours = (float) $hours;
-			
-			if ($hours >= 0) {
-				$this->hours = $hours;
 			}
 			
 			return $this;

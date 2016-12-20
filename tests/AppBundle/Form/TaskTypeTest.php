@@ -29,7 +29,6 @@
 			$formData = array(
 				'title'       => 'Test',
 				'location'    => 'Rennes',
-				'hours'       => 0,
 				'level'       => '0',
 				'description' => 'Hello World!',
 			);
