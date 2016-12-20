@@ -123,8 +123,7 @@
 					);
 				$this->get('mailer')->send($email);
 
-				//TODO sending confirmation page
-				return new Response('<p>Message with id '.$message->getId().' sent.</p>');
+				return $this->redirectToRoute('message_show', array('id' => $message->getId()));
 			}
 
 			return $this->render('message/new.html.twig', array(
