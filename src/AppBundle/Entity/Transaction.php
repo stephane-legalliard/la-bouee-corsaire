@@ -71,6 +71,16 @@
 		protected $status;
 
 		/**
+		 * Estimated duration of the associated Task
+		 *
+		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
+		 *
+		 * @var    float $duration
+		 * @access protected
+		 */
+		protected $duration;
+
+		/**
 		 * Constructor
 		 */
 		public function __construct() {
@@ -112,6 +122,13 @@
 		 * @return string
 		 */
 		public function getStatus() { return $this->status; }
+
+		/**
+		 * Get estimated duration of the associated Task
+		 *
+		 * @return float
+		 */
+		public function getDuration() { return $this->duration; }
 
 		/**
 		 * Set task
@@ -181,6 +198,21 @@
 				case TransactionStatusType::DONE:
 					$this->status = $status;
 					break;
+			}
+			return $this;
+		}
+
+		/**
+		 * Set estimated duration of the associated Task
+		 *
+		 * @param float
+		 *
+		 * @return Transaction
+		 */
+		public function setDuration($duration) {
+			$duration = (float) $duration;
+			if ($duration >= 0) {
+				$this->duration = $duration;
 			}
 			return $this;
 		}
