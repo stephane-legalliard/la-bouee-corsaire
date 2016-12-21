@@ -2,143 +2,123 @@
 
 {% extends "default/form.html.twig" %}
 
-{# {% block title %}Connexion/Inscription{% endblock %} #}
+{% block title %}Connexion/Inscription{% endblock %}
 
 {% block body %}
 
-    {{ parent() }}
+	{{ parent() }}
 
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	{% if error %}
+		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
 
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-4 show-forms" style="text-align: center;">
-            <span class="show-login-form active">Connexion</span>
-            <span class="show-forms-divider">/</span>
-            <span class="show-register-form">Inscription</span>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4 show-forms" style="text-align: center;">
+			<span class="show-login-form active">Connexion</span>
+			<span class="show-forms-divider">/</span>
+			<span class="show-register-form">Inscription</span>
+		</div>
+	</div>
 
-        <div class="col-sm-4 col-sm-offset-4">
-            <form action="{{ path("fos_user_security_check") }}" method="post" class="l-form login-form" style="display: block;">
+	<div class="col-sm-4 col-sm-offset-4">
+		<form action="{{ path("fos_user_security_check") }}" method="post"
+			class="l-form login-form"
+			style="display: block;"
+		>
 
-                {% if csrf_token %}
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
-                {% endif %}
+			{% if csrf_token %}
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+			{% endif %}
 
-			                <div class="form-box">
-                    <div class="form-top">
-                        <div class="form-top-left">
-                            <h3>Login to our site</h3>
-                            <p>Enter username and password to log on:</p>
-                        </div>
-                        <div class="form-top-right">
-                            <i class="fa fa-lock"></i>
-                        </div>
-                    </div>
-                    <div class="form-bottom">
-                        <div class="form-group">
-                            <label class="sr-only" for="username">{{ 'security.login.username'|trans }}</label>
-                            <input class="form-control" type="text" id="username" name="_username" value="" required="required" placeholder="{{ 'security.login.username'|trans }}"/>
-                        </div>
+			<div class="form-group">
+				<label class="sr-only" for="username">{{ 'security.login.username'|trans }}</label>
+				<input class="form-control" type="text" id="username" name="_username" value="" required="required" placeholder="{{ 'security.login.username'|trans }}" />
+			</div>
 
-                        <div class="form-group">
-                            <label class="sr-only" for="password">{{ 'security.login.password'|trans }}</label>
-                            <input class="form-control" type="password" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans }}"/>
-                        </div>
+			<div class="form-group">
+				<label class="sr-only" for="password">{{ 'security.login.password'|trans }}</label>
+				<input class="form-control" type="password" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans }}"/>
+			</div>
 
-                        <div class="form-group">
-                            <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
-                            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-                        </div>
+			<div class="form-group">
+				<input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+				<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+			</div>
 
-                        <button type="submit" class="btn btn-default" id="_submit" name="_submit">
-                            {{ 'security.login.submit'|trans }}
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+			<button type="submit" class="btn btn-default" id="_submit" name="_submit">
+				{{ 'security.login.submit'|trans }}
+			</button>
 
+		</form>
+	</div>
 
-            <div class="col-sm-4 col-sm-offset-4">
-                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {
+	<div class="col-sm-4 col-sm-offset-4">
+		{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {
 			'class': 'fos_user_registration_register r-form register-form',
 			'style': 'display: none;'
 		}}) }}
-                <div class="form-box">
-                    <div class="form-top">
-                        <div class="form-top-left">
-                            <h3>Sign up now</h3>
-                            <p>Fill in the form below to get instant access:</p>
-                        </div>
-                        <div class="form-top-right">
-                            <i class="fa fa-pencil"></i>
-                        </div>
-                    </div>
-                    <div class="form-bottom">
-                        <div class="form-group step-0">
-                            {{ form_label(form.username, null, {'label_attr': {
+			
+			<div class="form-group step-0">
+				{{ form_label(form.username, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.username) }}
-                            {{ form_widget(form.username, {'attr': {
+				{{ form_errors(form.username) }}
+				{{ form_widget(form.username, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.username.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-0">
-                            {{ form_label(form.email, null, {'label_attr': {
+			</div>
+			
+			<div class="form-group step-0">
+				{{ form_label(form.email, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.email) }}
-                            {{ form_widget(form.email, {'attr': {
+				{{ form_errors(form.email) }}
+				{{ form_widget(form.email, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.email.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-0">
-                            {{ form_label(form.plainPassword.first, null, {'label_attr': {
+			</div>
+			
+			<div class="form-group step-0">
+				{{ form_label(form.plainPassword.first, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.plainPassword.first) }}
-                            {{ form_widget(form.plainPassword.first, {'attr': {
+				{{ form_errors(form.plainPassword.first) }}
+				{{ form_widget(form.plainPassword.first, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.plainPassword.first.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-0">
-                            {{ form_label(form.plainPassword.second, null, {'label_attr': {
+			</div>
+			
+			<div class="form-group step-0">
+				{{ form_label(form.plainPassword.second, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.plainPassword.second) }}
-                            {{ form_widget(form.plainPassword.second, {'attr': {
+				{{ form_errors(form.plainPassword.second) }}
+				{{ form_widget(form.plainPassword.second, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.plainPassword.second.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-1" style="display: none;">
-                            {{ form_label(form.name, null, {'label_attr': {
+			</div>
+			
+			<div class="form-group step-1" style="display: none;">
+				{{ form_label(form.name, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.name) }}
-                            {{ form_widget(form.name, {'attr': {
+				{{ form_errors(form.name) }}
+				{{ form_widget(form.name, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.name.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-1" style="display: none;">
-                            {{ form_label(form.surname, null, {'label_attr': {
+			</div>
+			
+			<div class="form-group step-1" style="display: none;">
+				{{ form_label(form.surname, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.surname) }}
-                            {{ form_widget(form.surname, {'attr': {
+				{{ form_errors(form.surname) }}
+				{{ form_widget(form.surname, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.surname.vars.label
 				}}) }}
@@ -148,60 +128,59 @@
 				{{ form_label(form.adress, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.adress) }}
-                            {{ form_widget(form.adress, {'attr': {
+				{{ form_errors(form.adress) }}
+				{{ form_widget(form.adress, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.adress.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-2" style="display: none;">
-                            {{ form_label(form.region, null, {'label_attr': {
+			</div>
+			
+			<div class="form-group step-2" style="display: none;">
+				{{ form_label(form.region, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.region) }}
-                            {{ form_widget(form.region, {'attr': {
+				{{ form_errors(form.region) }}
+				{{ form_widget(form.region, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.region.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-2" style="display: none;">
-                            {{ form_label(form.city, null, {'label_attr': {
+			</div>
+		
+			<div class="form-group step-2" style="display: none;">
+				{{ form_label(form.city, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.city) }}
-                            {{ form_widget(form.city, {'attr': {
+				{{ form_errors(form.city) }}
+				{{ form_widget(form.city, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.city.vars.label
 				}}) }}
-                        </div>
-
-                        <div class="form-group step-2" style="display: none;">
-                            {{ form_label(form.phone, null, {'label_attr': {
+			</div>
+			
+			<div class="form-group step-2" style="display: none;">
+				{{ form_label(form.phone, null, {'label_attr': {
 					'class': 'sr-only'
 				}}) }}
-                            {{ form_errors(form.phone) }}
-                            {{ form_widget(form.phone, {'attr': {
+				{{ form_errors(form.phone) }}
+				{{ form_widget(form.phone, {'attr': {
 					'class': 'form-control',
 					'placeholder': form.phone.vars.label
 				}}) }}
-                        </div>
+			</div>
+			
+			<button type="button" class="register-submit btn btn-default">
+				{{ 'registration.submit'|trans }}
+			</button>
+			
+		{{ form_end(form) }}
+	</div>
 
-                        <button type="button" class="register-submit btn btn-default">
-                            {{ 'registration.submit'|trans }}
-                        </button>
+{% endblock %}
 
-                        {{ form_end(form) }}
-                    </div>
-                </div>
-            </div>
-        {% endblock %}
+{% block javascripts %}
 
-        {% block javascripts %}
+	{{ parent() }}
 
-            {{ parent() }}
+	<script src="{{ asset('js/login.js') }}"></script>
 
-            <script src="{{ asset('js/login.js') }}"></script>
-
-        {% endblock %}
+{% endblock %}
