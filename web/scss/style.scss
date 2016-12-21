@@ -1,17 +1,29 @@
-/*Déclaration variables couleurs*/
-$navbar_fond: #fff ;
-// $body_fond: #D4CC8E;
+/* global colors */
+$navbar_fond: #fff;
 $input_border:#19b9e7;
 $text_color: #000;
 
 /* default value for box-shadow */
 $shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 
-body{
-  background-color: $navbar_fond;
+/* background image for top part of home page */
+$home-background: url('../images/colleagues.jpg');
+
+/* search bar on home page */
+.home-search {
+	background-image: $home-background;
+	height: 75vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
 }
-.container-fluid{
-  padding-bottom: 25px;
+
+body {
+	background-color: $navbar_fond;
 }
 
 /* top navigation bar */
@@ -46,6 +58,7 @@ body{
 /*----------FOOTER------------------*/
 footer{
   background-color:$navbar_fond;
+  margin-top: 25px;
   padding-bottom: 0;
 .SocialMedia li{
   display: inline-block;

@@ -33,10 +33,22 @@
 	<body>
 
 		<div class="container-fluid">
-			{% block navbar %}{% include "navbar.html.twig" %}{% endblock %}
-			{% block body %}{% endblock %}
-			{% block fos_user_content %}{% endblock %}
-			{% block footer %}{% include "footer.html.twig" %}{% endblock %}
+			<div class="row">
+				<div class="col-lg-12">
+					{% block navbar %}{% include "navbar.html.twig" %}{% endblock %}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					{% block body %}{% endblock %}
+					{% block fos_user_content %}{% endblock %}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					{% block footer %}{% include "footer.html.twig" %}{% endblock %}
+				</div>
+			</div>
 		</div>
 
 		{% block javascripts %}
