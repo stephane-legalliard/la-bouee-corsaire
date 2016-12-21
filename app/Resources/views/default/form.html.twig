@@ -4,7 +4,7 @@
 
 	{{ parent() }}
 
-	{% stylesheets filter="scssphp" output="css/forms.css" combine=true
+	{% stylesheets filter="cssrewrite,scssphp" output="css/forms.css" combine=true
 		'css/bootstrap-login-register-forms/form-elements.css'
 		'css/bootstrap-login-register-forms/style.css'
 		'scss/forms.scss'

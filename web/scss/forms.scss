@@ -3,9 +3,12 @@ $navbar_fond:#93A567;
 $body_fond: #D4CC8E;
 $input_border:#19b9e7;
 
-body{
-  // background-color:white;
-  background-image: url('../images/1.jpg');
+/* background image URI */
+$background-image: url('../images/1.jpg');
+
+body {
+	background-image: $background-image;
+	background-size: cover;
 }
 
 /*----------RESTYLISATION---------*/
