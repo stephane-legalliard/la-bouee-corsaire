@@ -6,7 +6,7 @@ $input_border:#19b9e7;
 /* background image URI */
 $background-image: url('../images/1.jpg');
 
-body {
+.container-fluid {
 	background-image: $background-image;
 	background-size: cover;
 }
