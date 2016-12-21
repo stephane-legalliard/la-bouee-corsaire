@@ -4,42 +4,44 @@ $navbar_fond: #fff ;
 $input_border:#19b9e7;
 $text_color: #000;
 
+/* default value for box-shadow */
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
 body{
   background-color: $navbar_fond;
 }
 .container-fluid{
   padding-bottom: 25px;
 }
+
+/* top navigation bar */
 .navbar-default{
-  /*Couleur barre de navigation*/
-  background-color: $navbar_fond;
-  border-radius: 0;
-  border:none;
-  /*Hamburger*/
-  .navbar-toggle{
-    background-color: $input_border;
-  }
-  /*Hamburger - Barre*/
-.navbar-toggle .icon-bar{
-  background-color: $navbar_fond;
-  }
-  .navbar-brand{
-    color: $text_color;
-    font-weight: 400;
-  }
-  .navbar-brand:hover{
-    color: $input_border;
-  }
-  /*Liens navbar*/
-  .navbar-nav > li > a{
-    color: $input_border;
-  }
-  /*Bouton Log In/Sign up*/
-.btn-primary{
-  background-color: transparent;
-  border-color: transparent;
+	background-color: $navbar_fond;
+	border-radius: 0;
+	border:none;
+	box-shadow: $shadow;
+	.navbar-toggle {
+		background-color: $input_border;
+	}
+	.navbar-toggle .icon-bar {
+		background-color: $navbar_fond;
+	}
+	.navbar-brand {
+		color: $text_color;
+		font-weight: 400;
+	}
+	.navbar-brand:hover {
+		color: $input_border;
+	}
+	.navbar-nav > li > a {
+		color: $input_border;
+	}
+	.btn-primary {
+		background-color: transparent;
+		border-color: transparent;
+	}
 }
-}
+
 /*----------FOOTER------------------*/
 footer{
   background-color:$navbar_fond;
