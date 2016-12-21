@@ -131,7 +131,6 @@
 			));
 		}
 
-		
 		/**
 		 *
 		 * @Route("/show/{id}", name="message_show")
@@ -164,6 +163,41 @@
 			return $this->render('message/show.html.twig', array(
 				'message' => $message,
 				'user' => $user,
+			));
+
+		}
+
+		/**
+		 *
+		 * @Route("/list", name="message_list")
+		 *
+		 */
+		public function listAction() {
+
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			$user = $this->getUser();
+
+			$messages = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Message')
+				->findBy(array(), array('date' => 'DESC'));
+
+			$messages_sent = [];
+			$messages_received = [];
+			foreach ($messages as $message) {
+				if ($message->getAuthor() == $user) {
+					$messages_sent[] = $message;
+				}
+				if ($message->getDest() == $user) {
+					$messages_received[] = $message;
+				}
+			}
+
+			return $this->render('message/list.html.twig', array(
+				'messages_sent' => $messages_sent,
+				'messages_received' => $messages_received,
 			));
 
 		}
