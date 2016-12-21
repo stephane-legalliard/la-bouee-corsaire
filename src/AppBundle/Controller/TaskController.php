@@ -86,15 +86,16 @@
 		 *
 		 */
 		public function listAction() {
-			$repository = $this->getDoctrine()->getRepository('AppBundle:Task');
-			$tasks = $repository->findAll();
-			
-			$enabled_tasks = array_filter($tasks, function($task) {
-				return (!$task->isDisabled());
-			});
+			$tasks = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Task')
+				->findBy(
+					array('enabled' => true),
+					array('date' => 'DESC')
+				);
 			
 			return $this->render('task/list.html.twig', array(
-				'tasks' => $enabled_tasks,
+				'tasks' => $tasks,
 				'user' => $this->getUser(),
 			));
 		}
