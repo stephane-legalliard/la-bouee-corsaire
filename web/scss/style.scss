@@ -1,10 +1,11 @@
 /*Déclaration variables couleurs*/
-$navbar_fond:#93A567 ;
-$body_fond: #D4CC8E;
-$input_border:#CF6243;
+$navbar_fond: #fff ;
+// $body_fond: #D4CC8E;
+$input_border:#19b9e7;
+$text_color: #000;
 
 body{
-  background-color: white;
+  background-color: $navbar_fond;
 }
 .container-fluid{
   padding-bottom: 25px;
@@ -16,22 +17,22 @@ body{
   border:none;
   /*Hamburger*/
   .navbar-toggle{
-    background-color: white;
+    background-color: $input_border;
   }
   /*Hamburger - Barre*/
 .navbar-toggle .icon-bar{
   background-color: $navbar_fond;
   }
   .navbar-brand{
-    color: white;
+    color: $text_color;
     font-weight: 400;
   }
   .navbar-brand:hover{
-    color: white;
+    color: $input_border;
   }
   /*Liens navbar*/
   .navbar-nav > li > a{
-    color: white;
+    color: $input_border;
   }
   /*Bouton Log In/Sign up*/
 .btn-primary{
@@ -47,28 +48,33 @@ footer{
   display: inline-block;
 }
 h3{
-  color: white;
+  color: $text_color;
   font-size: 20px;
   font-weight:400;
 }
   ul, ul h3 a{
     list-style-type: none;
-    color: white;
+    color:$text_color;
   }
   ul li a{
-    color: white;
+    color: $text_color;
     text-decoration: none;
   }
   ul li a:hover{
-    color: white;
+    color: $text_color;
   }
   input[type="text"],input[type="mail"]{
     margin-bottom: 0.5em;
     height: 34px;
     width: 65%;
   }
+
+  input.form-control{
+    margin-left: 60px;
+  }
   button.btn{
     background-color:$input_border;
+    width: 65%;
   }
    button.btn:focus, button.btn:hover{
     background-color:$input_border;
