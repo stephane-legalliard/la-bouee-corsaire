@@ -14,5 +14,8 @@ parameters:
                 - "echo "
                 - "echo("
         git_conflict: ~
+        phpcpd:
+            directory: 'src'
+            fuzzy:     true
         phplint: ~
         phpunit: ~
