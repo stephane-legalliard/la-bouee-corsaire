@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Messagerie{% endblock %}
+{% block title %}{{ message.transaction.task.title }}{% endblock %}
 
 {% block body %}
 
-	<h1>{{ block('title') }}</h1>
+	<a href="/task/show/{{ message.transaction.task.id }}">
+		<h1>{{ block('title') }}</h1>
+	</a>
 
 	<div class='panel panel-default'>
 		<div class="panel-heading">Message envoyé à {{ message.dest }} par {{ message.author }}</div>
