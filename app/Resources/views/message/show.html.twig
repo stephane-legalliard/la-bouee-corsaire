@@ -14,10 +14,9 @@
 	</div>
 
 	{% if user == message.dest %}
-		<a class='btn btn-default' href='/message/new/{{ message.transaction.task.id }}'>Répondre</a>
+		<a class='btn btn-default' href='/message/answer/{{ message.id }}'>Répondre</a>
 	{% endif %}
 
 	<a href="/message/list" class="btn btn-default">Messagerie</a>
 
 {% endblock %}
-

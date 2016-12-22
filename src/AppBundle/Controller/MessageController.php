@@ -19,6 +19,82 @@
 	 */
 	class MessageController extends Controller {
 
+		protected function generateForm(
+			Request $request,
+			User $author,
+			User $dest, 
+			Transaction $transaction
+		) {
+
+			$em = $this->getDoctrine()->getManager();
+
+			$formFactory = $this->get('form.factory');
+
+			$message = new Message();
+			$message
+				->setAuthor($author)
+				->setDest($dest)
+				->setTransaction($transaction);
+
+			$form = $formFactory->createNamed(
+				'new_message',
+				'AppBundle\Form\MessageType',
+				$message
+			);
+			$form->handleRequest($request);
+
+			if ($form->isSubmitted() && $form->isValid()) {
+
+				$message = $form->getData();
+
+				// If the duration is not a valid value, set it to 0
+				$duration = (float) $message->getDuration();
+				if ($duration < 0) {
+					$duration = 0;
+					$message->setDuration($duration);
+				}
+
+				$now = new \DateTime();
+				$message->setDate($now);
+				$em->persist($message);
+
+				// If the duration is not 0, store it in the Transaction
+				if ($duration != 0) {
+					$transaction->setDuration($duration);
+				}
+
+				$em->flush();
+
+				// send an e-mail to the Message recipient
+				$email = \Swift_Message::newInstance()
+					->setSubject('La Bouée Corsaire - nouveau message')
+					->setFrom($this->getParameter('postmaster.email'))
+					->setTo($dest->getEmail())
+					->setBody(
+						$this->renderView(
+							'message/email.txt.twig',
+							array(
+								'dest'    => $dest,
+								'author'  => $author,
+								'message' => $message,
+							)
+						),
+						'text/plain'
+					);
+				$this->get('mailer')->send($email);
+
+				return $this->redirectToRoute('message_show', array(
+					'id' => $message->getId()
+				));
+			}
+
+			return $this->render('message/new.html.twig', array(
+				'form' => $form->createView(),
+				'message' => $message,
+			));
+
+		}
+
 		/**
 		 *
 		 * @Route("/new/{id}")
@@ -73,64 +149,36 @@
 				$em->persist($transaction);
 			}
 
-			$formFactory = $this->get('form.factory');
+			return $this->generateForm($request, $author, $dest, $transaction);
 
-			$message = new Message();
-			$message
-				->setAuthor($author)
-				->setDest($dest)
-				->setTransaction($transaction);
+		}
 
-			$form = $formFactory->createNamed('new_message', 'AppBundle\Form\MessageType', $message);
-			$form->handleRequest($request);
+		/**
+		 *
+		 * @Route("/answer/{id}")
+		 *
+		 */
+		public function answerAction(Request $request, $id) {
 
-			if ($form->isSubmitted() && $form->isValid()) {
-
-				$message = $form->getData();
-
-				// If the duration is not a valid value, set it to 0
-				$duration = (float) $message->getDuration();
-				if (!$duration >= 0) {
-					$duration = 0;
-					$message->setDuration($duration);
-				}
-
-				$now = new \DateTime();
-				$message->setDate($now);
-				$em->persist($message);
-
-				// If the duration is not 0, store it in the Transaction
-				if ($duration != 0) {
-					$transaction->setDuration($duration);
-				}
-
-				$em->flush();
-
-				// send an e-mail to the Message recipient
-				$email = \Swift_Message::newInstance()
-					->setSubject('La Bouée Corsaire - nouveau message')
-					->setFrom($this->getParameter('postmaster.email'))
-					->setTo($dest->getEmail())
-					->setBody(
-						$this->renderView(
-							'message/email.txt.twig',
-							array(
-								'dest'    => $dest,
-								'author'  => $author,
-								'message' => $message,
-							)
-						),
-						'text/plain'
-					);
-				$this->get('mailer')->send($email);
-
-				return $this->redirectToRoute('message_show', array('id' => $message->getId()));
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
 			}
 
-			return $this->render('message/new.html.twig', array(
-				'form' => $form->createView(),
-				'message' => $message,
-			));
+			$em = $this->getDoctrine()->getManager();
+
+			$author = $this->getUser();
+
+			$parent_message = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Message')
+				->find($id);
+
+			$dest = $parent_message->getAuthor();
+
+			$transaction = $parent_message->getTransaction();
+
+			return $this->generateForm($request, $author, $dest, $transaction);
+
 		}
 
 		/**
