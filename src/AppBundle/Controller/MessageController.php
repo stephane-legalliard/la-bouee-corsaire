@@ -39,6 +39,8 @@
 				->getRepository('AppBundle:Task')
 				->find($id);
 
+			$dest = $task->getUser();
+
 			// find all Transactions associated with current Task
 			$transactions = $this
 				->getDoctrine()
@@ -73,13 +75,16 @@
 
 			$formFactory = $this->get('form.factory');
 
-			$message = new Message;
+			$message = new Message();
+			$message
+				->setAuthor($author)
+				->setDest($dest)
+				->setTransaction($transaction);
+
 			$form = $formFactory->createNamed('new_message', 'AppBundle\Form\MessageType', $message);
 			$form->handleRequest($request);
 
 			if ($form->isSubmitted() && $form->isValid()) {
-
-				$dest = $task->getUser();
 
 				$message = $form->getData();
 
@@ -91,11 +96,7 @@
 				}
 
 				$now = new \DateTime();
-				$message
-					->setDate($now)
-					->setAuthor($author)
-					->setDest($dest)
-					->setTransaction($transaction);
+				$message->setDate($now);
 				$em->persist($message);
 
 				// If the duration is not 0, store it in the Transaction
@@ -128,6 +129,7 @@
 
 			return $this->render('message/new.html.twig', array(
 				'form' => $form->createView(),
+				'message' => $message,
 			));
 		}
 
