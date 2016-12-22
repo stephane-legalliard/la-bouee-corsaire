@@ -8,53 +8,36 @@
 
 	<div class="row">
 
-		<div class="col-md-6">
+		{% for thread in threads %}
 
-			<h2>Messages reçus</h2>
-			{% for message in messages_received %}
+			<section class="col-md-4">
+				<a href="/task/show/{{ thread.transaction.task.id }}"><h2>
+					{{ thread.transaction.task.title }}
+				</h2></a>
 
-				<div class='panel panel-default'>
-					<div class="panel-heading">
-						<a href='/task/show/{{ message.transaction.task.id }}'>
-							{{ message.transaction.task.title }}
-						</a>
-						-
-						envoyé par {{ message.author.username }} le {{ message.date.format('j/m/Y') }}
-					</div>
-					<a href='/message/show/{{ message.id }}'>
+				{% for message in thread.messages %}
+
+					<article class="panel panel-default">
+
+						<div class="panel-heading">
+							<a href="/message/show/{{ message.id }}">
+								Message envoyé par {{ message.author }}
+								à {{ message.dest }}
+								le {{ message.date.format('j/m/Y') }}
+							</a>
+						</div>
+
 						<div class="panel-body">
 							<p>{{ message.content }}</p>
 						</div>
-					</a>
-				</div>
 
-			{% endfor %}
+					</article>
 
-		</div>
+				{% endfor %}
 
-		<div class="col-md-6">
+			</section>
 
-			<h2>Messages Envoyés</h2>
-			{% for message in messages_sent %}
-
-				<div class='panel panel-default'>
-					<div class="panel-heading">
-						<a href='/task/show/{{ message.transaction.task.id }}'>
-							{{ message.transaction.task.title }}
-						</a>
-						-
-						envoyé à {{ message.dest.username }} le {{ message.date.format('j/m/Y') }}
-					</div>
-					<a href='/message/show/{{ message.id }}'>
-						<div class="panel-body">
-							<p>{{ message.content }}</p>
-						</div>
-					</a>
-				</div>
-
-			{% endfor %}
-
-		</div>
+		{% endfor %}
 
 	</div>
 

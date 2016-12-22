@@ -229,26 +229,35 @@
 			}
 			$user = $this->getUser();
 
-			$messages = $this
-				->getDoctrine()
-				->getRepository('AppBundle:Message')
-				->findBy(array(), array('date' => 'DESC'));
+			$em = $this->getDoctrine();
 
-			$messages_sent = [];
-			$messages_received = [];
-			foreach ($messages as $message) {
-				if ($message->getAuthor() == $user) {
-					$messages_sent[] = $message;
-				}
-				if ($message->getDest() == $user) {
-					$messages_received[] = $message;
+			// Get all Transactions, newest first
+			$all_transactions = $em
+				->getRepository('AppBundle:Transaction')
+				->findBy([], ['id' => 'DESC']);
+
+			// Keep only Transactions involving the current User
+			$transactions = [];
+			foreach ($all_transactions as $transaction) {
+				if ($transaction->getUsers()->contains($user)) {
+					$transactions[] = $transaction;
 				}
 			}
 
-			return $this->render('message/list.html.twig', array(
-				'messages_sent' => $messages_sent,
-				'messages_received' => $messages_received,
-			));
+			// Generate a list of Transactions with associated Messages sorted by date
+			$messages_repo = $em->getRepository('AppBundle:Message');
+			$threads = [];
+			foreach ($transactions as $transaction) {
+				$threads[] = [
+					'transaction' => $transaction,
+					'messages' => $messages_repo->findBy(
+						['transaction' => $transaction],
+						['date' => 'DESC']
+					)
+				];
+			}
+
+			return $this->render('message/list.html.twig', ['threads' => $threads]);
 
 		}
 
