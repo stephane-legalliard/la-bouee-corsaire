@@ -75,9 +75,10 @@
 				return $this->redirectToRoute('task_show', array('id' => $task->getId()));
 			}
 			
-			return $this->render('task/new.html.twig', array(
+			return $this->render('task/new.html.twig', [
 				'form' => $form->createView(),
-			));
+				'task' => $task,
+			]);
 		}
 		
 		/**
@@ -146,6 +147,7 @@
 			
 			return $this->render('task/edit.html.twig', array(
 				'form' => $form->createView(),
+				'task' => $task,
 			));
 		}
 		

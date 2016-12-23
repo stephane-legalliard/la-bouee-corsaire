@@ -120,6 +120,7 @@
 
 			return $this->render('admin/user/edit.html.twig', [
 				'form' => $form->createView(),
+				'user' => $user,
 			]);
 		}
 
