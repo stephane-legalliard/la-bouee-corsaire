@@ -43,6 +43,15 @@
 
 		/**
 		 *
+		 * @Route("/")
+		 *
+		 */
+		public function indexAction() {
+			return $this->render('admin/index.html.twig');
+		}
+
+		/**
+		 *
 		 * @Route("/user/show/{id}", name="user_show")
 		 *
 		 */
