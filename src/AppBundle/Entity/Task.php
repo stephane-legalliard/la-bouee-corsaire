@@ -298,7 +298,17 @@
 		public function isDisabled() {
 			return (!$this->getEnabled());
 		}
-		
+
+		public function disable() {
+			$this->setEnabled(false);
+			return $this;
+		}
+
+		public function enable() {
+			$this->setEnabled(true);
+			return $this;
+		}
+
 		public static function fromArray($array) {
 			$task = new static();
 			foreach ($array as $key => $value) {
