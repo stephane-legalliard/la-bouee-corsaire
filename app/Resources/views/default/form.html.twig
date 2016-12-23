@@ -5,8 +5,6 @@
 	{{ parent() }}
 
 	{% stylesheets filter="cssrewrite,scssphp" output="css/forms.css" combine=true
-		'css/bootstrap-login-register-forms/form-elements.css'
-		'css/bootstrap-login-register-forms/style.css'
 		'scss/forms.scss'
 	%}
 		<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />

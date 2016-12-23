@@ -10,7 +10,7 @@
 		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 	{% endif %}
 
-	<div class="show-forms" style="text-align: center;">
+	<div class="show-forms">
 		<span class="show-login-form active">Connexion</span>
 		<span class="show-forms-divider">/</span>
 		<span class="show-register-form">Inscription</span>
@@ -18,7 +18,6 @@
 
 	<form action="{{ path("fos_user_security_check") }}" method="post"
 		class="l-form login-form"
-		style="display: block;"
 	>
 
 		<div class="form-box">
@@ -68,8 +67,7 @@
 	</form>
 
 	{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {
-		'class': 'fos_user_registration_register r-form register-form',
-		'style': 'display: none;'
+		'class': 'fos_user_registration_register r-form register-form'
 	}}) }}
 
 		<div class="form-box">
