@@ -87,7 +87,7 @@
 		/**
 		 * Tells whether the associated Transaction should be validated
 		 *
-		 * @ORM\Column(type="boolean")
+		 * @ORM\Column(type="boolean", options={"default"=false})
 		 *
 		 * @var    boolean
 		 * @access protected

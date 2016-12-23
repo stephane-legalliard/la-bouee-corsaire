@@ -19,6 +19,21 @@
 	 */
 	class MessageController extends Controller {
 
+		protected function getMessageById($id) {
+			$message = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Message')
+				->find($id);
+
+			if (!$message) {
+				throw $this->createNotFoundException(
+					'No Message found for id '.$id
+				);
+			}
+
+			return $message;
+		}
+
 		protected function generateForm(
 			Request $request,
 			User $author,
@@ -56,6 +71,9 @@
 
 				$now = new \DateTime();
 				$message->setDate($now);
+				if ($message->getValidation() === null) {
+					$message->setValidation(false);
+				}
 				$em->persist($message);
 
 				// If the duration is not 0, store it in the Transaction
@@ -168,10 +186,7 @@
 
 			$author = $this->getUser();
 
-			$parent_message = $this
-				->getDoctrine()
-				->getRepository('AppBundle:Message')
-				->find($id);
+			$parent_message = $this->getMessageById($id);
 
 			$dest = $parent_message->getAuthor();
 
@@ -193,17 +208,7 @@
 			}
 			$user = $this->getUser();
 
-			$message = $this
-				->getDoctrine()
-				->getRepository('AppBundle:Message')
-				->find($id);
-
-			if (!$message) {
-				//TODO message not found page
-				throw $this->createNotFoundException(
-					'No Message found for id '.$id
-				);
-			}
+			$message = $this->getMessageById($id);
 
 			if ($message->getAuthor() !== $user && $message->getDest() !== $user) {
 				//TODO message not owned by current user page
