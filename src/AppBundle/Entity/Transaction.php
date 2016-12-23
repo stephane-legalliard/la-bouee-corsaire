@@ -217,6 +217,21 @@
 			return $this;
 		}
 
+		public function validate() {
+			$this->setStatus(TransactionStatusType::VALIDATED);
+			return $this;
+		}
+
+		public function close() {
+			$this->setStatus(TransactionStatusType::DONE);
+			return $this;
+		}
+
+		public function open() {
+			$this->setStatus(TransactionStatusType::OPEN);
+			return $this;
+		}
+
 	}
 
 ?>
