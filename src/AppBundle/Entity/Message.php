@@ -85,6 +85,16 @@
 		protected $duration;
 
 		/**
+		 * Tells whether the associated Transaction should be validated
+		 *
+		 * @ORM\Column(type="boolean")
+		 *
+		 * @var    boolean
+		 * @access protected
+		 */
+		protected $validation;
+
+		/**
 		 * Get id
 		 *
 		 * @return integer
@@ -132,6 +142,13 @@
 		 * @return float
 		 */
 		public function getDuration() { return $this->duration; }
+
+		/**
+		 * Get whether the associated Transaction should be validated
+		 *
+		 * @return boolean
+		 */
+		public function getValidation() { return $this->validation; }
 
 		/**
 		* Set content
@@ -205,6 +222,18 @@
 			if ($duration >= 0) {
 				$this->duration = $duration;
 			}
+			return $this;
+		}
+
+		/**
+		 * Get whether the associated Transaction should be validated
+		 *
+		 * @param boolean
+		 *
+		 * @return Message
+		 */
+		public function setValidation($validation) {
+			$this->validation = $validation;
 			return $this;
 		}
 
