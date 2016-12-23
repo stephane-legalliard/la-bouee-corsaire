@@ -58,7 +58,7 @@
 		public function showAction(Request $request, $id) {
 			$user = $this->getUserById($id);
 
-			return $this->render('user/show.admin.html.twig', [
+			return $this->render('admin/user/show.html.twig', [
 				'user' => $user,
 			]);
 		}
@@ -73,7 +73,7 @@
 				->get('fos_user.user_manager')
 				->findUsers();
 
-			return $this->render('user/list.html.twig', [
+			return $this->render('admin/user/list.html.twig', [
 				'users' => $users,
 			]);
 		}
@@ -133,7 +133,7 @@
 				return $response;
 			}
 
-			return $this->render('user/edit.admin.html.twig', [
+			return $this->render('admin/user/edit.html.twig', [
 				'form' => $form->createView(),
 			]);
 		}
