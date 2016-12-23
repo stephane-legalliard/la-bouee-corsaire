@@ -6,6 +6,23 @@
 
 	<h1>{{ block('title') }}</h1>
 
-	<p><a href="users">Utilisateurs</a></p>
+	<div class="row">
+
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Administration</div>
+				<div class="panel-body">
+					<p><a href="users">Utilisateurs</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<p><a href="/profile" class="btn btn-default">Profil du compte</a></p>
+			<p><a href="/message/list" class="btn btn-default">Messagerie</a></p>
+			<p><a href="/logout" class="btn btn-default">Déconnexion</a></p>
+		</div>
+
+	</div>
 
 {% endblock %}
