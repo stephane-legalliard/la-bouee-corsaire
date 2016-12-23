@@ -1,37 +1,101 @@
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+
+	{{ parent() }}
+
+	{% stylesheets filter="scssphp" output="css/profile.css" combine=true
+		"scss/profile.scss"
+	%}
+	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+	{% endstylesheets %}
+
+{% endblock %}
+
 {% block title %}Mon profil{% endblock %}
 
 {% block body %}
 
-	<h1>{{ block('title') }}</h1>
-
 	<div class="row">
-		<div class='col-lg-8 col-md-10 col-sm-12'>
 
-			<div class='panel panel-default fos_user_user_show'>
+		<div class="col-md-6 col-md-offset-3 toppad">
 
-				<div class="panel-heading">{{ user.username }} - <a href='/profile/edit'>Modifier mon profil</a></div>
+			<div class="panel panel-info fos_user_user_show">
+
+				<div class="panel-heading">
+					<h1 class="panel-title text-center">{{ user.username | upper}}</h1>
+				</div>
+
 				<div class="panel-body">
-					<p>E-mail : {{ user.email }}</p>
-					<p>Prénom : {{ user.name }}</p>
-					<p>Nom : {{ user.surname }}</p>
-					<p>Adresse : {{ user.adress }}</p>
-					<p>Région : {{ user.region }}</p>
-					<p>Ville : {{ user.city }}</p>
-					<p>Téléphone : {{ user.phone }}</p>
-					<p>Crédit : {{ user.hours }}h</p>
-					<p>Dernière connexion : {{ user.lastLogin|localizeddate() }}</p>
+					<div class="row">
+						<div class="col-md-3" align="center">
+							<img alt="avatar" src="../../../../images/man.png"
+							 class="avatar img-circle img-responsive">
+							<a href="/profile/edit" data-original-title="Edition du profil"
+							 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
+								<i class="glyphicon glyphicon-edit"></i>
+								Édition
+							</a>
+						</div>
+						<div class="col-md-9">
+							<table class="table table-user-information">
+								<tbody>
+									<tr>
+										<td>E-mail :</td>
+										<td>{{ user.email }}</td>
+									</tr>
+									<tr>
+										<td>Prénom :</td>
+										<td>{{ user.name }}</td>
+									</tr>
+									<tr>
+										<td>Nom :</td>
+										<td>{{ user.surname }}</td>
+									</tr>
+									<tr>
+										<td>Adresse :</td>
+										<td>{{ user.adress }}</td>
+									</tr>
+									<tr>
+										<td>Région :</td>
+										<td>{{ user.region }}</td>
+									</tr>
+									<tr>
+										<td>Ville :</td>
+										<td>{{ user.city }}</td>
+									</tr>
+									<tr>
+										<td>Téléphone :</td>
+										<td>{{ user.phone }}</td>
+									</tr>
+									<tr>
+										<td>Solde :</td>
+										<td>{{ user.hours }}h</td>
+									</tr>
+									<tr>
+										<td>Dernière connexion :</td>
+										<td>{{ user.lastLogin|localizeddate() }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel-footer">
+					<a href="/task/list-owned" class="btn btn-default">Mes Besoins</a>
+					<a href="/transaction/list" class="btn btn-default">Mes Transactions</a>
+					<span class="pull-right">
+						<a href="/logout" data-original-title="Deconnexion"
+						 data-toggle="tooltip" type="button" class="btn btn-info btn-md">
+							<i class="glyphicon glyphicon-log-out"></i>
+							Déconnexion
+						</a>
+					</span>
 				</div>
 
 			</div>
-
-			<a href="/task/list-owned" class="btn btn-default">Mes Besoins</a>
-			<a href="/transaction/list" class="btn btn-default">Mes Transactions</a>
-			<a href="/logout" class="btn btn-default">Déconnexion</a>
-
 		</div>
 	</div>
-
 
 {% endblock body %}
