@@ -24,39 +24,49 @@
 	 * @Route("/admin")
 	 */
 	class AdminController extends Controller {
-		/**
-		 *
-		 * @Route("/user/show/{id}", name="user_show")
-		 *
-		 */
-		public function showAction(Request $request, $id) {
-			$user = $this->getDoctrine()
-			             ->getRepository('AppBundle:User')
-			             ->find($id);
-			
+
+		protected function getUserById($id) {
+			$user = $this
+				->getDoctrine()
+				->getRepository('AppBundle:User')
+				->find($id);
+
 			if (!$user) {
 				//TODO user not found page
 				throw $this->createNotFoundException(
 					'No User found for id '.$id
 				);
 			}
-			
-			return $this->render('user/show.admin.html.twig', array(
-				'user' => $user,
-			));
+
+			return $user;
 		}
-		
+
+		/**
+		 *
+		 * @Route("/user/show/{id}", name="user_show")
+		 *
+		 */
+		public function showAction(Request $request, $id) {
+			$user = $this->getUserById($id);
+
+			return $this->render('user/show.admin.html.twig', [
+				'user' => $user,
+			]);
+		}
+
 		/**
 		 *
 		 * @Route("/users")
 		 *
 		 */
 		public function listAction() {
-			$users = $this->get('fos_user.user_manager')
-			              ->findUsers();
-			return $this->render('user/list.html.twig', array(
+			$users = $this
+				->get('fos_user.user_manager')
+				->findUsers();
+
+			return $this->render('user/list.html.twig', [
 				'users' => $users,
-			));
+			]);
 		}
 
 		/**
@@ -69,56 +79,54 @@
 		 * @return Response
 		 */
 		public function editAction(Request $request, $id) {
-			$user = $this->getDoctrine()
-			             ->getRepository('AppBundle:User')
-			             ->find($id);
+			$user = $this->getUserById($id);
 
-			if (!is_object($user) || !$user instanceof UserInterface) {
-				//TODO user not found page
-				throw $this->createNotFoundException(
-					'No User found for id '.$id
-				);
-			}
-
-			/** @var $dispatcher EventDispatcherInterface */
 			$dispatcher = $this->get('event_dispatcher');
 
 			$event = new GetResponseUserEvent($user, $request);
-			$dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_INITIALIZE, $event);
+			$dispatcher->dispatch(
+				FOSUserEvents::PROFILE_EDIT_INITIALIZE,
+				$event
+			);
+			$response = $event->getResponse();
 
-			if (null !== $event->getResponse()) {
-				return $event->getResponse();
+			if ($response !== null) {
+				return $response;
 			}
 
-			/** @var $formFactory FactoryInterface */
-			$formFactory = $this->get('fos_user.profile.form.factory');
+			$form = $this
+				->get('form.factory')
+				->createNamed('edit_user', 'AppBundle\Form\ProfileAdminType', $user);
 
-			$formFactory = $this->get('form.factory');
-			$form = $formFactory->createNamed('edit_user', 'AppBundle\Form\ProfileAdminType', $user);
 			$form->handleRequest($request);
 
 			if ($form->isSubmitted() && $form->isValid()) {
-				/** @var $userManager UserManagerInterface */
-				$userManager = $this->get('fos_user.user_manager');
-
 				$event = new FormEvent($form, $request);
-				$dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_SUCCESS, $event);
+				$dispatcher->dispatch(
+					FOSUserEvents::PROFILE_EDIT_SUCCESS,
+					$event
+				);
+				$this->get('fos_user.user_manager')->updateUser($user);
+				$response = $event->getResponse();
 
-				$userManager->updateUser($user);
-
-				if (null === $response = $event->getResponse()) {
-					$url = $this->generateUrl('user_show', array('id' => $id));
+				if ($response === null) {
+					$url = $this->generateUrl('user_show', [
+						'id' => $id
+					]);
 					$response = new RedirectResponse($url);
 				}
 
-				$dispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
+				$dispatcher->dispatch(
+					FOSUserEvents::PROFILE_EDIT_COMPLETED,
+					new FilterUserResponseEvent($user, $request, $response)
+				);
 
 				return $response;
 			}
 
-			return $this->render('user/edit.admin.html.twig', array(
+			return $this->render('user/edit.admin.html.twig', [
 				'form' => $form->createView(),
-			));
+			]);
 		}
 
 	}
