@@ -75,9 +75,16 @@
 				}
 				$em->persist($message);
 
-				// If the duration is not 0, store it in the Transaction
-				if ($duration != 0) {
-					$transaction->setDuration($duration);
+				// Validate the Transaction if asked to do so
+				if ($message->getValidation()) {
+					$message->getTransaction()->validate();
+				}
+				// Do not change the Transaction duration if it should be validated
+				else {
+					// If the duration is not 0, store it in the Transaction
+					if ($duration != 0) {
+						$transaction->setDuration($duration);
+					}
 				}
 
 				$em->flush();
