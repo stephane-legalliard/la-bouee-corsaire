@@ -219,6 +219,8 @@
 
 		public function validate() {
 			$this->setStatus(TransactionStatusType::VALIDATED);
+			// Disable associated Task on Transaction validation
+			$this->getTask()->disable();
 			return $this;
 		}
 
