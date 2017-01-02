@@ -6,16 +6,16 @@
 	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 	/**
-	 * Admin controller.
+	 * Administration tasks
 	 *
 	 * @Route("/admin")
 	 */
 	class AdminController extends Controller {
 
 		/**
+		 * Renders summary of administration tasks
 		 *
 		 * @Route("/")
-		 *
 		 */
 		public function indexAction() {
 			return $this->render('admin/index.html.twig');
