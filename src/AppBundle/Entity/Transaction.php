@@ -68,7 +68,7 @@
 		 * @var    enum $status
 		 * @access protected
 		 */
-		protected $status;
+		protected $status = TransactionStatusType::OPEN;
 
 		/**
 		 * Estimated duration of the associated Task
