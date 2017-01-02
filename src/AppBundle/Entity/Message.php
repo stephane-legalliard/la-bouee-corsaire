@@ -92,7 +92,7 @@
 		 * @var    boolean
 		 * @access protected
 		 */
-		protected $validation;
+		protected $validation = false;
 
 		/**
 		 * Get id
