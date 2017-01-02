@@ -6,10 +6,20 @@
 	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 	use Symfony\Component\HttpFoundation\Request;
 
+	/**
+	 * Home page
+	 */
 	class HomeController extends Controller {
+
 		/**
-		* @Route("/", name="homepage")
-		*/
+		 * Show home page
+		 *
+		 * @Route("/", name="homepage")
+		 *
+		 * @param Request $request
+		 *
+		 * @return Response
+		 */
 		public function indexAction(Request $request) {
 
 			$repository = $this->getDoctrine()->getRepository('AppBundle:Task');
