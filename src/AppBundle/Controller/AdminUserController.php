@@ -13,12 +13,19 @@
 	use Symfony\Component\HttpFoundation\Response;
 
 	/**
-	 * Admin Users controller.
+	 * Administration tasks related to Users
 	 *
 	 * @Route("/admin/user")
 	 */
 	class AdminUserController extends Controller {
 
+		/**
+		 * Return the User instance identified by the given ID
+		 *
+		 * @param int $id
+		 *
+		 * @return User
+		 */
 		protected function getUserById($id) {
 			$user = $this
 				->getDoctrine()
@@ -26,7 +33,6 @@
 				->find($id);
 
 			if (!$user) {
-				//TODO user not found page
 				throw $this->createNotFoundException(
 					'No User found for id '.$id
 				);
@@ -36,9 +42,14 @@
 		}
 
 		/**
+		 * Show details of the User identified by the given ID
 		 *
 		 * @Route("/show/{id}", name="admin_user_show")
 		 *
+		 * @param Request $request
+		 * @param int     $id
+		 *
+		 * @return Response
 		 */
 		public function showAction(Request $request, $id) {
 			$user = $this->getUserById($id);
@@ -49,9 +60,11 @@
 		}
 
 		/**
+		 * Show full list of registered Users
 		 *
 		 * @Route("/list", name="admin_user_list")
 		 *
+		 * @return Response
 		 */
 		public function listAction() {
 			$users = $this
@@ -64,11 +77,12 @@
 		}
 
 		/**
-		 * Edit the user.
+		 * Show a form allowing edition of the User identified by the given ID
 		 *
 		 * @Route("/edit/{id}", name="admin_user_edit")
 		 *
 		 * @param Request $request
+		 * @param int     $id
 		 *
 		 * @return Response
 		 */
