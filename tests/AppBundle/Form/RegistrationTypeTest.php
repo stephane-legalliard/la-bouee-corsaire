@@ -1,16 +1,16 @@
 <?php
-	
+
 	namespace Tests\AppBundle\Form\Type;
-	
-	use Tests\AppBundle\Entity\UserTest;
+
+	use AppBundle\Entity\User;
 	use AppBundle\Form\RegistrationType;
 	use FOS\UserBundle\Tests\Form\Type\ValidatorExtensionTypeTestCase;
 	use FOS\UserBundle\Util\LegacyFormHelper;
-	
+
 	class RegistrationTypeTest extends ValidatorExtensionTypeTestCase {
 		public function testSubmit() {
-			$user = new UserTest();
-			
+			$user = new User();
+
 			$form = $this->factory->create(LegacyFormHelper::getType('AppBundle\Form\RegistrationType'), $user);
 			$formData = array(
 				'username'      => 'bar',
@@ -27,7 +27,7 @@
 				'phone'         => '0000000000',
 			);
 			$form->submit($formData);
-			
+
 			$this->assertTrue($form->isSynchronized());
 			$this->assertSame($user, $form->getData());
 			$this->assertSame('bar', $user->getUsername());
@@ -40,15 +40,15 @@
 			$this->assertSame('Rennes', $user->getCity());
 			$this->assertSame('0000000000', $user->getPhone());
 		}
-		
+
 		/**
 		 * @return array
 		 */
 		protected function getTypes() {
 			return array_merge(parent::getTypes(), array(
-				new RegistrationType('Tests\AppBundle\Entity\UserTest'),
+				new RegistrationType('AppBundle\Entity\User'),
 			));
 		}
 	}
-	
+
 ?>
