@@ -12,12 +12,19 @@
 	use Symfony\Component\HttpFoundation\Response;
 
 	/**
-	 * Message controller.
+	 * Message-related tasks
 	 *
 	 * @Route("/message")
 	 */
 	class MessageController extends Controller {
 
+		/**
+		 * Return the Message instance identified by the given ID
+		 *
+		 * @param int $id
+		 *
+		 * @return Message
+		 */
 		protected function getMessageById($id) {
 			$message = $this
 				->getDoctrine()
@@ -33,6 +40,18 @@
 			return $message;
 		}
 
+		/**
+		 * Generate a form allowing creation or edition of a Message
+		 *
+		 * @Route("/edit/{id}", name="admin_user_edit")
+		 *
+		 * @param Request     $request
+		 * @param User        $author
+		 * @param User        $dest
+		 * @param Transaction $transaction
+		 *
+		 * @return Response
+		 */
 		protected function generateForm(
 			Request $request,
 			User $author,
@@ -70,9 +89,6 @@
 
 				$now = new \DateTime();
 				$message->setDate($now);
-				if ($message->getValidation() === null) {
-					$message->setValidation(false);
-				}
 				$em->persist($message);
 
 				// Validate the Transaction if asked to do so
@@ -120,9 +136,13 @@
 		}
 
 		/**
+		 * Show a form allowing creation of a new Message associated to the Task identified by the given ID
 		 *
 		 * @Route("/new/{id}")
 		 *
+		 * @param int $id ID of the associated Task
+		 *
+		 * @return Response
 		 */
 		public function newAction(Request $request, $id) {
 
@@ -166,8 +186,6 @@
 				$transaction = new Transaction();
 				$transaction
 					->setTask($task)
-					->setStatus(TransactionStatusType::OPEN)
-					->setDuration(0)
 					->addUser($author)
 					->addUser($task->getUser());
 				$em->persist($transaction);
@@ -178,9 +196,13 @@
 		}
 
 		/**
+		 * Show a form allowing creation of a new Message in answer to an existing one
 		 *
 		 * @Route("/answer/{id}")
 		 *
+		 * @param int $id ID of the existing Message
+		 *
+		 * @return Response
 		 */
 		public function answerAction(Request $request, $id) {
 
@@ -203,9 +225,13 @@
 		}
 
 		/**
+		 * Show Message identified by the given ID
 		 *
 		 * @Route("/show/{id}", name="message_show")
 		 *
+		 * @param int $id
+		 *
+		 * @return Response
 		 */
 		public function showAction(Request $request, $id) {
 
@@ -229,9 +255,11 @@
 		}
 
 		/**
+		 * Show full list of Messages associated with the current User
 		 *
 		 * @Route("/list", name="message_list")
 		 *
+		 * @return Response
 		 */
 		public function listAction() {
 
