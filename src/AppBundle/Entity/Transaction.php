@@ -80,7 +80,7 @@
 		 * @var    float $duration
 		 * @access protected
 		 */
-		protected $duration;
+		protected $duration = 0;
 
 		/**
 		 * Constructor, set Doctrine Collections
