@@ -7,13 +7,15 @@
 	use Doctrine\ORM\Mapping as ORM;
 
 	/**
+	 * Messages sent between Users
+	 *
 	 * @ORM\Entity
 	 * @ORM\Table(name="messages")
 	 */
 	class Message {
 
 		/**
-		 * Message ID
+		 * ID
 		 *
 		 * @ORM\Column(type="integer", options={"unsigned"=true})
 		 * @ORM\Id
@@ -25,7 +27,7 @@
 		protected $id;
 
 		/**
-		 * Message content
+		 * Content
 		 *
 		 * @ORM\Column(type="text", length=65535)
 		 *
@@ -35,7 +37,7 @@
 		protected $content;
 
 		/**
-		 * Date of Message creation
+		 * Creation date
 		 *
 		 * @ORM\Column(type="datetimetz")
 		 *
@@ -95,56 +97,56 @@
 		protected $validation = false;
 
 		/**
-		 * Get id
+		 * Return ID
 		 *
 		 * @return integer
 		 */
 		public function getId() { return $this->id; }
 
 		/**
-		 * Get content
+		 * Return content
 		 *
 		 * @return string
 		 */
 		public function getContent() { return $this->content; }
 
 		/**
-		 * Get date
+		 * Return creation date
 		 *
 		 * @return \DateTime
 		 */
 		public function getDate() { return $this->date; }
 
 		/**
-		 * Get author
+		 * Return author
 		 *
 		 * @return User
 		 */
 		public function getAuthor() { return $this->author; }
 
 		/**
-		 * Get dest
+		 * Return recipient
 		 *
 		 * @return User
 		 */
 		public function getDest() { return $this->dest; }
 
 		/**
-		 * Get transaction
+		 * Return associated Transaction
 		 *
 		 * @return Transaction
 		 */
 		public function getTransaction() { return $this->transaction; }
 
 		/**
-		 * Get estimated duration of the associated Task
+		 * Return estimated duration for the associated Task
 		 *
 		 * @return float
 		 */
 		public function getDuration() { return $this->duration; }
 
 		/**
-		 * Get whether the associated Transaction should be validated
+		 * Return whether the associated Transaction should be validated
 		 *
 		 * @return boolean
 		 */
@@ -163,7 +165,7 @@
 		}
 
 		/**
-		* Set date
+		* Set creation date
 		*
 		* @param \DateTime $date
 		*
@@ -187,7 +189,7 @@
 		}
 
 		/**
-		* Set dest
+		* Set recipient
 		*
 		* @param User $dest
 		*
@@ -199,7 +201,7 @@
 		}
 
 		/**
-		* Set transaction
+		* Set associated Transaction
 		*
 		* @param Transaction $transaction
 		*
@@ -211,7 +213,7 @@
 		}
 
 		/**
-		 * Set estimated duration of the associated Task
+		 * Set estimated duration for the associated Task
 		 *
 		 * @param float
 		 *
@@ -226,7 +228,7 @@
 		}
 
 		/**
-		 * Get whether the associated Transaction should be validated
+		 * Set whether the associated Transaction should be validated
 		 *
 		 * @param boolean
 		 *
@@ -237,6 +239,13 @@
 			return $this;
 		}
 
+		/**
+		 * Build a new Message instance from parameters given in an array
+		 *
+		 * @param array
+		 *
+		 * @return Message
+		 */
 		public static function fromArray($array) {
 			$message = new static();
 			foreach ($array as $key => $value) {
