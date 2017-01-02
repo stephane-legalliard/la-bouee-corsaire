@@ -15,7 +15,7 @@ parameters:
                 - "echo("
         git_conflict: ~
         phpcpd:
-            directory: 'src'
-            fuzzy:     true
+            exclude: ['var','vendor']
+            fuzzy:   true
         phplint: ~
         phpunit: ~
