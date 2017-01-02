@@ -7,6 +7,9 @@
 	use FOS\UserBundle\Util\LegacyFormHelper;
 	use AppBundle\Form\UserType;
 
+	/**
+	 * Form used for User creation
+	 */
 	class RegistrationType extends UserType {
 
 		/**
@@ -29,7 +32,9 @@
 		}
 
 		/**
-		 * {@inheritdoc}
+		 * Configures the options for this type.
+		 *
+		 * @param OptionsResolver $resolver The resolver for the options
 		 */
 		public function configureOptions(OptionsResolver $resolver)
 		{
@@ -37,13 +42,6 @@
 				'data_class' => $this->class,
 				'csrf_token_id' => 'registration',
 			));
-		}
-
-		/**
-		 * {@inheritdoc}
-		 */
-		public function getBlockPrefix() {
-			return 'app_user_registration';
 		}
 
 	}
