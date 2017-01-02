@@ -101,15 +101,7 @@
 		 * @access private
 		 */
 		protected $user;
-		
-		/**
-		 * Category of the Task
-		 *
-		 * @var    Category
-		 * @access private
-		 */
-		protected $category;
-		
+
 		/**
 		 * Date of Task creation
 		 *
@@ -172,13 +164,6 @@
 		 * @return User
 		 */
 		public function getUser() { return $this->user; }
-		
-		/**
-		 * Get Category
-		 *
-		 * @return Category
-		 */
-		public function getCategory() { return $this->category; }
 
 		/**
 		 * Get date
