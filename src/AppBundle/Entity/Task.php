@@ -90,7 +90,7 @@
 		 * @var    boolean
 		 * @access protected
 		 */
-		protected $enabled;
+		protected $enabled = true;
 		
 		/**
 		 * User who created the Task
@@ -129,7 +129,7 @@
 		 * @var    enum $level
 		 * @access protected
 		 */
-		protected $level;
+		protected $level = TaskLevelType::NONE;
 		
 		/**
 		 * Get id
@@ -179,7 +179,14 @@
 		 * @return Category
 		 */
 		public function getCategory() { return $this->category; }
-		
+
+		/**
+		 * Get date
+		 *
+		 * @return \DateTime
+		 */
+		public function getDate() { return $this->date; }
+
 		/**
 		 * Get level
 		 *
@@ -284,10 +291,10 @@
 		 */
 		public function setLevel($level) {
 			switch ($level) {
-				case '0':
-				case '1':
-				case '2':
-				case '3':
+				case TaskLevelType::NONE:
+				case TaskLevelType::INITIE:
+				case TaskLevelType::AVANCE:
+				case TaskLevelType::EXPERT:
 					$this->level = $level;
 					break;
 			}
