@@ -2,23 +2,25 @@
 
 	namespace AppBundle\Entity;
 
+	use AppBundle\DBAL\Types\TransactionStatusType;
 	use AppBundle\Entity\Message;
 	use AppBundle\Entity\Task;
 	use AppBundle\Entity\User;
-	use AppBundle\DBAL\Types\TransactionStatusType;
-	use Doctrine\ORM\Mapping as ORM;
+	use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
 	use Doctrine\Common\Collections\ArrayCollection;
 	use Doctrine\Common\Collections\Collection;
-	use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
+	use Doctrine\ORM\Mapping as ORM;
 
 	/**
+	 * Ongoing and past Transactions between Users
+	 *
 	 * @ORM\Entity
 	 * @ORM\Table(name="transactions")
 	 */
 	class Transaction {
 
 		/**
-		 * Transaction ID
+		 * ID
 		 *
 		 * @ORM\Column(type="integer", options={"unsigned"=true})
 		 * @ORM\Id
@@ -71,7 +73,7 @@
 		protected $status = TransactionStatusType::OPEN;
 
 		/**
-		 * Estimated duration of the associated Task
+		 * Associated Task estimated duration
 		 *
 		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
 		 *
@@ -81,7 +83,7 @@
 		protected $duration;
 
 		/**
-		 * Constructor
+		 * Constructor, set Doctrine Collections
 		 */
 		public function __construct() {
 			$this->users = new ArrayCollection();
@@ -89,49 +91,49 @@
 		}
 
 		/**
-		 * Get id
+		 * Return ID
 		 *
 		 * @return integer
 		 */
 		public function getId() { return $this->id; }
 
 		/**
-		 * Get task
+		 * Return associated Task
 		 *
 		 * @return Task
 		 */
 		public function getTask() { return $this->task; }
 
 		/**
-		 * Get users
+		 * Return associated Users
 		 *
 		 * @return Collection
 		 */
 		public function getUsers() { return $this->users; }
 
 		/**
-		 * Get messages
+		 * Return associated Messages
 		 *
 		 * @return Collection
 		 */
 		public function getMessages() { return $this->messages; }
 
 		/**
-		 * Get current status
+		 * Return current status
 		 *
 		 * @return string
 		 */
 		public function getStatus() { return $this->status; }
 
 		/**
-		 * Get estimated duration of the associated Task
+		 * Return associated Task estimated duration
 		 *
 		 * @return float
 		 */
 		public function getDuration() { return $this->duration; }
 
 		/**
-		 * Set task
+		 * Set associated Task
 		 *
 		 * @param Task $task
 		 *
@@ -143,7 +145,7 @@
 		}
 
 		/**
-		 * Add user
+		 * Add an User to the list of associated Users
 		 *
 		 * @param User $user
 		 *
@@ -155,16 +157,19 @@
 		}
 
 		/**
-		 * Remove user
+		 * Remove an User from the list of associated Users
 		 *
 		 * @param User $user
+		 *
+		 * @return Transaction
 		 */
 		public function removeUser(User $user) {
 			$this->users->removeElement($user);
+			return $this;
 		}
 
 		/**
-		 * Add message
+		 * Add a Message to the list of associated Messages
 		 *
 		 * @param Message $message
 		 *
@@ -176,12 +181,15 @@
 		}
 
 		/**
-		 * Remove message
+		 * Remove a Message from the list of associated Messages
 		 *
 		 * @param Message $message
+		 *
+		 * @return Transaction
 		 */
 		public function removeMessage(Message $message) {
 			$this->messages->removeElement($message);
+			return $this;
 		}
 
 		/**
@@ -203,7 +211,7 @@
 		}
 
 		/**
-		 * Set estimated duration of the associated Task
+		 * Set associated Task estimated duration
 		 *
 		 * @param float
 		 *
@@ -217,6 +225,11 @@
 			return $this;
 		}
 
+		/**
+		 * Set current status to VALIDATED
+		 *
+		 * @return Transaction
+		 */
 		public function validate() {
 			$this->setStatus(TransactionStatusType::VALIDATED);
 			// Disable associated Task on Transaction validation
@@ -224,11 +237,21 @@
 			return $this;
 		}
 
+		/**
+		 * Set current status to DONE
+		 *
+		 * @return Transaction
+		 */
 		public function close() {
 			$this->setStatus(TransactionStatusType::DONE);
 			return $this;
 		}
 
+		/**
+		 * Set current status to OPEN
+		 *
+		 * @return Transaction
+		 */
 		public function open() {
 			$this->setStatus(TransactionStatusType::OPEN);
 			return $this;
