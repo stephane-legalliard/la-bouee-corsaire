@@ -71,7 +71,7 @@
 		/**
 		 * Generate a form allowing creation or edition of a Message
 		 *
-		 * @Route("/edit/{id}", name="admin_user_edit")
+		 * @Route("/edit/{id}")
 		 *
 		 * @param Request     $request
 		 * @param User        $author
