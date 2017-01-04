@@ -8,7 +8,7 @@
 	use FOS\UserBundle\Event\FormEvent;
 	use FOS\UserBundle\FOSUserEvents;
 	use FOS\UserBundle\Model\UserManagerInterface;
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 	use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 	use Symfony\Component\Form\FormInterface;
 	use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -19,7 +19,7 @@
 	/**
 	 * Users creation and connection
 	 */
-	class SecurityController extends Controller {
+	class SecurityController extends BaseController {
 
 		/**
 		 * Show forms allowing to connect an existing User or create a new one

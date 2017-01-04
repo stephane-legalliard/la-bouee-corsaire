@@ -6,14 +6,14 @@
 	use FOS\UserBundle\Event\FormEvent;
 	use FOS\UserBundle\Event\GetResponseUserEvent;
 	use FOS\UserBundle\FOSUserEvents;
-	use FOS\UserBundle\Controller\ProfileController as Controller;
+	use FOS\UserBundle\Controller\ProfileController as BaseController;
 	use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 	use Symfony\Component\HttpFoundation\RedirectResponse;
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
 	use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-	class ProfileController extends Controller {
+	class ProfileController extends BaseController {
 
 		/**
 		 * Edit the user.

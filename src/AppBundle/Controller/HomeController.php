@@ -3,13 +3,13 @@
 	namespace AppBundle\Controller;
 
 	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 	use Symfony\Component\HttpFoundation\Request;
 
 	/**
 	 * Home page
 	 */
-	class HomeController extends Controller {
+	class HomeController extends BaseController {
 
 		/**
 		 * Show home page
