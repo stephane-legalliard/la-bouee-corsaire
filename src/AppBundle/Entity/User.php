@@ -459,6 +459,15 @@
 			return $this;
 		}
 
+		/**
+		 * Return whether the User is disabled
+		 *
+		 * @return boolean
+		 */
+		public function isDisabled() {
+			return (!$this->isEnabled());
+		}
+
 	}
 
 ?>

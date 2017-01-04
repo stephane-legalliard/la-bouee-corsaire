@@ -7,7 +7,6 @@
 	use FOS\UserBundle\Event\GetResponseUserEvent;
 	use FOS\UserBundle\FOSUserEvents;
 	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 	use Symfony\Component\HttpFoundation\RedirectResponse;
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
@@ -18,29 +17,6 @@
 	 * @Route("/admin/user")
 	 */
 	class AdminUserController extends Controller {
-
-		/**
-		 * Return the User instance identified by the given ID
-		 *
-		 * @param int $id
-		 *
-		 * @return User
-		 */
-		protected function getUserById($id) {
-			$user = $this
-				->getDoctrine()
-				->getRepository('AppBundle:User')
-				->find($id);
-
-			if (!$user) {
-				throw $this->createNotFoundException(
-					'No User found for id '.$id
-				);
-			}
-
-			return $user;
-		}
-
 		/**
 		 * Show details of the User identified by the given ID
 		 *
@@ -52,7 +28,7 @@
 		 * @return Response
 		 */
 		public function showAction(Request $request, $id) {
-			$user = $this->getUserById($id);
+			$user = $this->getById('User', $id);
 
 			return $this->render('admin/user/show.html.twig', [
 				'user' => $user,
@@ -87,7 +63,7 @@
 		 * @return Response
 		 */
 		public function editAction(Request $request, $id) {
-			$user = $this->getUserById($id);
+			$user = $this->getById('User', $id);
 
 			$dispatcher = $this->get('event_dispatcher');
 

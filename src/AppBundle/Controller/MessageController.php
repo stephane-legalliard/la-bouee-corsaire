@@ -7,7 +7,6 @@
 	use AppBundle\Entity\Transaction;
 	use AppBundle\Entity\User;
 	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
 
@@ -17,55 +16,22 @@
 	 * @Route("/message")
 	 */
 	class MessageController extends Controller {
-
 		/**
-		 * Return the current User
-		 *
-		 * @return User
+		 * @{inheritdoc}
 		 */
-		protected function getAuthenticatedUser() {
-			if (
-				! $this
-					->get('security.authorization_checker')
-					->isGranted('IS_AUTHENTICATED_FULLY')
-			) {
-				throw $this->createAccessDeniedException();
-			}
-
-			return $this->getUser();
-		}
-
-		/**
-		 * Return the Message instance identified by the given ID
-		 *
-		 * @param int $id
-		 *
-		 * @return Message
-		 */
-		protected function getMessageById($id) {
+		protected function getById($class, $id) {
 			$user = $this->getAuthenticatedUser();
-
-			$message = $this
-				->getDoctrine()
-				->getRepository('AppBundle:Message')
-				->find($id);
-
-			if (!$message) {
-				throw $this->createNotFoundException(
-					'No Message found for id '.$id
-				);
-			}
-
+			$entity = parent::getById($class, $id);
 			if (
-				$user !== $message->getAuthor() &&
-				$user !== $message->getDest()
+				$user !== $entity->getAuthor() &&
+				$user !== $entity->getDest()
 			) {
 				throw $this->createAccessDeniedException(
-					'You are not allowed to see the Message with id '.$id
+					'You are not allowed to see the '.$class.' with id '.$id
 				);
 			}
 
-			return $message;
+			return $entity;
 		}
 
 		/**
@@ -224,7 +190,7 @@
 		 * @return Response
 		 */
 		public function answerAction(Request $request, $id) {
-			$message = $this->getMessageById($id);
+			$message = $this->getById('Message', $id);
 
 			return $this->generateForm(
 				$request,
@@ -245,7 +211,7 @@
 		 */
 		public function showAction(Request $request, $id) {
 			$user = $this->getAuthenticatedUser();
-			$message = $this->getMessageById($id);
+			$message = $this->getById('Message', $id);
 
 			return $this->render('message/show.html.twig', [
 				'message' => $message,
