@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "548400151b70eb96d914dac2cad817a3",
+    "content-hash": "2c5f0b97de50d0bbf39c9132ba480b0f",
     "packages": [
         {
             "name": "components/jquery",
@@ -3167,16 +3167,16 @@
         },
         {
             "name": "phpro/grumphp",
-            "version": "v0.10.2",
+            "version": "v0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp.git",
-                "reference": "d9e1561299c8079188ae96b7c8a47339b4b9ff08"
+                "reference": "bf66083408d533e54d468492373546e32a0a0b15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp/zipball/d9e1561299c8079188ae96b7c8a47339b4b9ff08",
-                "reference": "d9e1561299c8079188ae96b7c8a47339b4b9ff08",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/bf66083408d533e54d468492373546e32a0a0b15",
+                "reference": "bf66083408d533e54d468492373546e32a0a0b15",
                 "shasum": ""
             },
             "require": {
@@ -3203,8 +3203,8 @@
                 "friendsofphp/php-cs-fixer": "~1|~2",
                 "jakub-onderka/php-parallel-lint": "^0.9.2",
                 "nikic/php-parser": "~2.1",
-                "phpspec/phpspec": "~3.0",
-                "phpspec/prophecy": "~1.6",
+                "phpspec/phpspec": "^3.2",
+                "phpspec/prophecy": "^1.6.2",
                 "phpunit/phpunit": "^4.8",
                 "sensiolabs/security-checker": "^3.0",
                 "squizlabs/php_codesniffer": "~2.3"
@@ -3256,7 +3256,7 @@
                 }
             ],
             "description": "A composer plugin that enables source code quality checks.",
-            "time": "2016-12-12T14:44:24+00:00"
+            "time": "2016-12-18T13:21:57+00:00"
         },
         {
             "name": "phpunit/php-timer",
