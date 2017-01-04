@@ -149,6 +149,11 @@ form {
 	textarea.form-control::-webkit-input-placeholder {
 		color: #888;
 	}
+	input[type="checkbox"] {
+		width: inherit;
+		display: inline;
+		cursor: pointer;
+	}
 	button.btn {
 		width: 100%;
 		height: 44px;

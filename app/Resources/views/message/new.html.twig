@@ -51,6 +51,18 @@
 					}}) }}
 				</div>
 
+				{% if (message.transaction.task.user == message.author) and (message.transaction.duration != 0) %}
+					<div class="form-group">
+						{{ form_label(form.validation, null) }}
+						{{ form_errors(form.validation) }}
+						{{ form_widget(form.validation, {'attr': {
+							'class': 'form-control'
+						}}) }}
+					</div>
+				{% else %}
+					{% do form.validation.setRendered %}
+				{% endif %}
+
 				<button type="submit" class="btn btn-default">Envoyer</button>
 
 			</div>

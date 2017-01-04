@@ -5,6 +5,7 @@
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\FormBuilderInterface;
 	use Symfony\Component\OptionsResolver\OptionsResolver;
+	use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 	use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 	use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -49,6 +50,10 @@
 				->add('content', TextareaType::class, [
 					'translation_domain' => false,
 					'label' => 'Rédigez votre message…'
+				])
+				->add('validation', CheckboxType::class, [
+					'translation_domain' => false,
+					'label' => 'Valider la transaction'
 				]);
 		}
 
