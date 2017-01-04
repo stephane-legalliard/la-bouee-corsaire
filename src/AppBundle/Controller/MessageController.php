@@ -17,7 +17,7 @@
 	 */
 	class MessageController extends Controller {
 		/**
-		 * @{inheritdoc}
+		 * {@inheritdoc}
 		 */
 		protected function getById($class, $id) {
 			$user = $this->getAuthenticatedUser();
