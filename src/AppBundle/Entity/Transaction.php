@@ -19,6 +19,8 @@
 	 */
 	class Transaction {
 
+		use StatusTrait;
+
 		/**
 		 * ID
 		 *

@@ -14,6 +14,8 @@
 	 */
 	class Message {
 
+		use StatusTrait;
+
 		/**
 		 * ID
 		 *
