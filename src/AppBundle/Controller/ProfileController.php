@@ -13,10 +13,13 @@
 	use Symfony\Component\HttpFoundation\Response;
 	use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
+	/**
+	 * User profile edition
+	 */
 	class ProfileController extends BaseController {
 
 		/**
-		 * Edit the user.
+		 * Show a form allowing to edit the current User
 		 *
 		 * @param Request $request
 		 *
@@ -25,9 +28,7 @@
 		public function editAction(Request $request) {
 			$user = $this->getUser();
 			if (!$user) {
-				throw new AccessDeniedException(
-					'Vous n’êtes pas autorisé à accéder à cette page.'
-				);
+				throw new AccessDeniedException();
 			}
 
 			/** @var $dispatcher EventDispatcherInterface */
@@ -58,8 +59,9 @@
 					$event
 				);
 
-				$this->get('fos_user.user_manager')
-				     ->updateUser($user);
+				$this
+					->get('fos_user.user_manager')
+					->updateUser($user);
 
 				$response = $event->getResponse();
 				if ($response === null) {
