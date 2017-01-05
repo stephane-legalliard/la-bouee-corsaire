@@ -3,13 +3,23 @@
 	namespace AppBundle\Controller;
 
 	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 	use Symfony\Component\HttpFoundation\Request;
 
-	class HomeController extends Controller {
+	/**
+	 * Home page
+	 */
+	class HomeController extends BaseController {
+
 		/**
-		* @Route("/", name="homepage")
-		*/
+		 * Show home page
+		 *
+		 * @Route("/", name="homepage")
+		 *
+		 * @param Request $request
+		 *
+		 * @return Response
+		 */
 		public function indexAction(Request $request) {
 
 			$repository = $this->getDoctrine()->getRepository('AppBundle:Task');

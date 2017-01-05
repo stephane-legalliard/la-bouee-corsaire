@@ -1,18 +1,21 @@
 <?php
-	
+
 	namespace AppBundle\Entity;
-	
-	use FOS\UserBundle\Model\User as BaseUser;
+
 	use Doctrine\ORM\Mapping as ORM;
+	use FOS\UserBundle\Model\User as BaseUser;
 	use Symfony\Component\Validator\Constraints as Assert;
-	
+
 	/**
+	 * Registered Users
+	 *
 	 * @ORM\Entity
 	 * @ORM\Table(name="users")
 	 */
 	class User extends BaseUser {
+
 		/**
-		 * User ID
+		 * ID
 		 *
 		 * @ORM\Column(type="integer", options={"unsigned"=true})
 		 * @ORM\Id
@@ -22,9 +25,9 @@
 		 * @access protected
 		 */
 		protected $id;
-		
+
 		/**
-		 * User name, only shown during transactions
+		 * Name
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
@@ -42,9 +45,9 @@
 		 * @access protected
 		 */
 		protected $name;
-		
+
 		/**
-		 * User surname, only shown during transactions
+		 * Surname
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
@@ -62,9 +65,9 @@
 		 * @access protected
 		 */
 		protected $surname;
-		
+
 		/**
-		 * User physical adress, visible only by the administrator
+		 * Physical address
 		 *
 		 * @ORM\Column(type="text", length=255)
 		 *
@@ -82,9 +85,9 @@
 		 * @access protected
 		 */
 		protected $adress;
-		
+
 		/**
-		 * User region
+		 * Region
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
@@ -102,9 +105,9 @@
 		 * @access protected
 		 */
 		protected $region;
-		
+
 		/**
-		 * User city
+		 * City
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
@@ -122,9 +125,9 @@
 		 * @access protected
 		 */
 		protected $city;
-		
+
 		/**
-		 * User phone number (optional)
+		 * Phone number (optional)
 		 *
 		 * @ORM\Column(type="string", length=20, nullable=true, options={"default"=null})
 		 *
@@ -140,9 +143,9 @@
 		 * @access protected
 		 */
 		protected $phone;
-		
+
 		/**
-		 * User hours credit
+		 * Hours credit
 		 *
 		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
 		 *
@@ -150,9 +153,9 @@
 		 * @access protected
 		 */
 		protected $hoursCredit = 0;
-		
+
 		/**
-		 * User hours debit
+		 * Hours debit
 		 *
 		 * @ORM\Column(type="float", scale=2, nullable=false, options={"unsigned"=true, "default"=0})
 		 *
@@ -160,72 +163,72 @@
 		 * @access protected
 		 */
 		protected $hoursDebit = 0;
-		
+
 		/**
-		 * Get name
+		 * Return name
 		 *
 		 * @return string
 		 */
 		public function getName() { return $this->name; }
-		
+
 		/**
-		 * Get surname
+		 * Return surname
 		 *
 		 * @return string
 		 */
 		public function getSurname() { return $this->surname; }
-		
+
 		/**
-		 * Get adress
+		 * Return address
 		 *
 		 * @return string
 		 */
 		public function getAdress() { return $this->adress; }
-		
+
 		/**
-		 * Get region
+		 * Return region
 		 *
 		 * @return string
 		 */
 		public function getRegion() { return $this->region; }
-		
+
 		/**
-		 * Get city
+		 * Return city
 		 *
 		 * @return string
 		 */
 		public function getCity() { return $this->city; }
-		
+
 		/**
-		 * Get phone
+		 * Return phone number
 		 *
 		 * @return integer
 		 */
 		public function getPhone() { return $this->phone; }
-		
+
 		/**
-		 * Get hours credit
+		 * Return hours credit
 		 *
 		 * @return float
 		 */
 		public function getHoursCredit() { return $this->hoursCredit; }
-		
+
 		/**
-		 * Get hours debit
+		 * Return hours debit
 		 *
 		 * @return float
 		 */
 		public function getHoursDebit() { return $this->hoursDebit; }
-		
+
 		/**
-		 * Get hours total
+		 * Return hours total
 		 *
 		 * @return float
 		 */
 		public function getHours() { 
 			return ($this->hoursCredit - $this->hoursDebit);
 		}
-		
+
 		/**
 		 * Set username
 		 *
@@ -233,16 +236,17 @@
 		 *
 		 * @return User
 		 */
-		public function setUsername($username)
-		{
+		public function setUsername($username) {
 			$username = (string) $username;
-			
+
 			$length = strlen($username);
 			if ($length >= 3 && $length <= 180) {
 				parent::setUsername($username);
 			}
+
+			return $this;
 		}
-		
+
 		/**
 		 * Set password (encrypted)
 		 *
@@ -250,16 +254,17 @@
 		 *
 		 * @return User
 		 */
-		public function setPassword($password)
-		{
+		public function setPassword($password) {
 			$username = (string) $password;
-			
+
 			$length = strlen($password);
 			if ($length >= 3 && $length <= 255) {
 				parent::setPassword($password);
 			}
+
+			return $this;
 		}
-		
+
 		/**
 		 * Set name
 		 *
@@ -267,18 +272,17 @@
 		 *
 		 * @return User
 		 */
-		public function setName($name)
-		{
+		public function setName($name) {
 			$name = (string) $name;
-			
+
 			$length = strlen($name);
 			if ($length >= 3 && $length <= 100) {
 				$this->name = $name;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
 		 * Set surname
 		 *
@@ -286,54 +290,53 @@
 		 *
 		 * @return User
 		 */
-		public function setSurname($surname)
-		{
+		public function setSurname($surname) {
 			$surname = (string) $surname;
-			
+
 			$length = strlen($surname);
 			if ($length >= 3 && $length <= 100) {
 				$this->surname = $surname;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
-		 * Set adress
+		 * Set address
 		 *
 		 * @param string $adress
 		 *
 		 * @return User
 		 */
-		public function setAdress($adress)
-		{
+		public function setAdress($adress) {
 			$adress = (string) $adress;
-			
+
 			$length = strlen($adress);
 			if ($length >= 3 && $length <= 255) {
 				$this->adress = $adress;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
-		 * Set email
+		 * Set e-mail address
 		 *
 		 * @param string $email
 		 *
 		 * @return User
 		 */
-		public function setEmail($email)
-		{
+		public function setEmail($email) {
 			$email = (string) $email;
-			
+
 			$length = strlen($email);
 			if ($length >= 3 && $length <= 180 && preg_match('/.*@.*/', $email)) {
 				parent::setEmail($email);
 			}
+
+			return $this;
 		}
-		
+
 		/**
 		 * Set region
 		 *
@@ -341,18 +344,17 @@
 		 *
 		 * @return User
 		 */
-		public function setRegion($region)
-		{
+		public function setRegion($region) {
 			$region = (string) $region;
-			
+
 			$length = strlen($region);
 			if ($length >= 3 && $length <= 100) {
 				$this->region = $region;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
 		 * Set city
 		 *
@@ -360,37 +362,35 @@
 		 *
 		 * @return User
 		 */
-		public function setCity($city)
-		{
+		public function setCity($city) {
 			$city = (string) $city;
-			
+
 			$length = strlen($city);
 			if ($length >= 3 && $length <= 100) {
 				$this->city = $city;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
-		 * Set phone
+		 * Set phone number
 		 *
 		 * @param integer $phone
 		 *
 		 * @return User
 		 */
-		public function setPhone($phone)
-		{
+		public function setPhone($phone) {
 			$phone = (string) $phone;
-			
+
 			$length = strlen($phone);
 			if ($length >= 3 && $length <= 20) {
 				$this->phone = $phone;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
 		 * Set hours credit
 		 *
@@ -400,14 +400,14 @@
 		 */
 		public function setHoursCredit($hours) {
 			$hours = (float) $hours;
-			
+
 			if ($hours >= 0) {
 				$this->hoursCredit = $hours;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
 		 * Set hours debit
 		 *
@@ -417,14 +417,14 @@
 		 */
 		public function setHoursDebit($hours) {
 			$hours = (float) $hours;
-			
+
 			if ($hours >= 0) {
 				$this->hoursDebit = $hours;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
 		 * Add hours
 		 *
@@ -434,14 +434,14 @@
 		 */
 		public function addHours($hours) {
 			$hours = (float) $hours;
-			
+
 			if ($hours >= 0) {
 				$this->hoursCredit += $hours;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
 		 * Substract hours
 		 *
@@ -451,12 +451,23 @@
 		 */
 		public function subHours($hours) {
 			$hours = (float) $hours;
-			
+
 			if ($hours >= 0) {
 				$this->hoursDebit += $hours;
 			}
-			
+
 			return $this;
 		}
-	
-}
+
+		/**
+		 * Return whether the User is disabled
+		 *
+		 * @return boolean
+		 */
+		public function isDisabled() {
+			return (!$this->isEnabled());
+		}
+
+	}
+
+?>

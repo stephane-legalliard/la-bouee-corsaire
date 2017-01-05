@@ -7,45 +7,71 @@
 	use AppBundle\Entity\Transaction;
 	use AppBundle\Entity\User;
 	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 	use Symfony\Component\HttpFoundation\Request;
 	use Symfony\Component\HttpFoundation\Response;
-	use Doctrine\Common\Collections\Criteria;
 
 	/**
-	 * Message controller.
+	 * Message-related tasks
 	 *
 	 * @Route("/message")
 	 */
 	class MessageController extends Controller {
+		/**
+		 * {@inheritdoc}
+		 */
+		protected function getById($class, $id) {
+			$user = $this->getAuthenticatedUser();
+			$entity = parent::getById($class, $id);
+			if (
+				$user !== $entity->getAuthor() &&
+				$user !== $entity->getDest()
+			) {
+				throw $this->createAccessDeniedException(
+					'You are not allowed to see the '.$class.' with id '.$id
+				);
+			}
 
+			return $entity;
+		}
+
+		/**
+		 * Generate a form allowing creation or edition of a Message
+		 *
+		 * @Route("/edit/{id}")
+		 *
+		 * @param Request     $request
+		 * @param User        $author
+		 * @param User        $dest
+		 * @param Transaction $transaction
+		 *
+		 * @return Response
+		 */
 		protected function generateForm(
 			Request $request,
 			User $author,
 			User $dest, 
 			Transaction $transaction
 		) {
-
-			$em = $this->getDoctrine()->getManager();
-
-			$formFactory = $this->get('form.factory');
-
 			$message = new Message();
 			$message
 				->setAuthor($author)
 				->setDest($dest)
 				->setTransaction($transaction);
 
-			$form = $formFactory->createNamed(
-				'new_message',
-				'AppBundle\Form\MessageType',
-				$message
-			);
+			$form = $this
+				->get('form.factory')
+				->createNamed(
+					'new_message',
+					'AppBundle\Form\MessageType',
+					$message
+				);
 			$form->handleRequest($request);
 
 			if ($form->isSubmitted() && $form->isValid()) {
 
-				$message = $form->getData();
+				$message = $form
+					->getData()
+					->setDate(new \DateTime());
 
 				// If the duration is not a valid value, set it to 0
 				$duration = (float) $message->getDuration();
@@ -54,13 +80,19 @@
 					$message->setDuration($duration);
 				}
 
-				$now = new \DateTime();
-				$message->setDate($now);
+				$em = $this->getDoctrine()->getManager();
 				$em->persist($message);
 
-				// If the duration is not 0, store it in the Transaction
-				if ($duration != 0) {
-					$transaction->setDuration($duration);
+				// Validate the Transaction if asked to do so
+				if ($message->getValidation()) {
+					$message->getTransaction()->validate();
+				}
+				// Do not change the Transaction duration if it should be validated
+				else {
+					// If the duration is not 0, store it in the Transaction
+					if ($duration != 0) {
+						$transaction->setDuration($duration);
+					}
 				}
 
 				$em->flush();
@@ -73,42 +105,39 @@
 					->setBody(
 						$this->renderView(
 							'message/email.txt.twig',
-							array(
+							[
 								'dest'    => $dest,
 								'author'  => $author,
 								'message' => $message,
-							)
+							]
 						),
 						'text/plain'
 					);
 				$this->get('mailer')->send($email);
 
-				return $this->redirectToRoute('message_show', array(
+				return $this->redirectToRoute('message_show', [
 					'id' => $message->getId()
-				));
+				]);
 			}
 
-			return $this->render('message/new.html.twig', array(
+			return $this->render('message/new.html.twig', [
 				'form' => $form->createView(),
 				'message' => $message,
-			));
+			]);
 
 		}
 
 		/**
+		 * Show a form allowing creation of a new Message associated to the Task identified by the given ID
 		 *
 		 * @Route("/new/{id}")
 		 *
+		 * @param int $id ID of the associated Task
+		 *
+		 * @return Response
 		 */
 		public function newAction(Request $request, $id) {
-
-			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-				throw $this->createAccessDeniedException();
-			}
-
-			$em = $this->getDoctrine()->getManager();
-
-			$author = $this->getUser();
+			$author = $this->getAuthenticatedUser();
 
 			$task = $this
 				->getDoctrine()
@@ -121,13 +150,13 @@
 			$transactions = $this
 				->getDoctrine()
 				->getRepository('AppBundle:Transaction')
-				->findBy(array(
+				->findBy([
 					'task' => $task,
-				));
+				]);
 
 			// find Transaction associated with current User (from previous list)
 			$found = false;
-				if (count($transactions) > 0) {
+			if (count($transactions) > 0) {
 				foreach ($transactions as $transaction) {
 					if ($transaction->getUsers()->contains($author)) {
 						$found = true;
@@ -142,11 +171,9 @@
 				$transaction = new Transaction();
 				$transaction
 					->setTask($task)
-					->setStatus(TransactionStatusType::OPEN)
-					->setDuration(0)
 					->addUser($author)
-					->addUser($task->getUser());
-				$em->persist($transaction);
+					->addUser($dest);
+				$this->getDoctrine()->getManager()->persist($transaction);
 			}
 
 			return $this->generateForm($request, $author, $dest, $transaction);
@@ -154,87 +181,63 @@
 		}
 
 		/**
+		 * Show a form allowing creation of a new Message in answer to an existing one
 		 *
 		 * @Route("/answer/{id}")
 		 *
+		 * @param int $id ID of the existing Message
+		 *
+		 * @return Response
 		 */
 		public function answerAction(Request $request, $id) {
+			$message = $this->getById('Message', $id);
 
-			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-				throw $this->createAccessDeniedException();
-			}
-
-			$em = $this->getDoctrine()->getManager();
-
-			$author = $this->getUser();
-
-			$parent_message = $this
-				->getDoctrine()
-				->getRepository('AppBundle:Message')
-				->find($id);
-
-			$dest = $parent_message->getAuthor();
-
-			$transaction = $parent_message->getTransaction();
-
-			return $this->generateForm($request, $author, $dest, $transaction);
-
+			return $this->generateForm(
+				$request,
+				$this->getAuthenticatedUser(),
+				$message->getAuthor(),
+				$message->getTransaction()
+			);
 		}
 
 		/**
+		 * Show Message identified by the given ID
 		 *
 		 * @Route("/show/{id}", name="message_show")
 		 *
+		 * @param int $id
+		 *
+		 * @return Response
 		 */
 		public function showAction(Request $request, $id) {
+			$user = $this->getAuthenticatedUser();
+			$message = $this->getById('Message', $id);
 
-			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-				throw $this->createAccessDeniedException();
-			}
-			$user = $this->getUser();
-
-			$message = $this
-				->getDoctrine()
-				->getRepository('AppBundle:Message')
-				->find($id);
-
-			if (!$message) {
-				//TODO message not found page
-				throw $this->createNotFoundException(
-					'No Message found for id '.$id
-				);
-			}
-
-			if ($message->getAuthor() !== $user && $message->getDest() !== $user) {
-				//TODO message not owned by current user page
-				return new Response('<p>You are not allowed to see the Message with id '.$id.'</p>');
-			}
-
-			return $this->render('message/show.html.twig', array(
+			return $this->render('message/show.html.twig', [
 				'message' => $message,
 				'user' => $user,
-			));
+			]);
 
 		}
 
 		/**
+		 * Show full list of Messages associated with the current User
 		 *
 		 * @Route("/list", name="message_list")
 		 *
+		 * @return Response
 		 */
 		public function listAction() {
-
-			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-				throw $this->createAccessDeniedException();
-			}
-			$user = $this->getUser();
-
+			$user = $this->getAuthenticatedUser();
 			$em = $this->getDoctrine();
 
 			// Get all Transactions, newest first
 			$all_transactions = $em
 				->getRepository('AppBundle:Transaction')
-				->findBy([], ['id' => 'DESC']);
+				->findBy(
+					[],
+					['id' => 'DESC']
+				);
 
 			// Keep only Transactions involving the current User
 			$transactions = [];
@@ -245,19 +248,22 @@
 			}
 
 			// Generate a list of Transactions with associated Messages sorted by date
-			$messages_repo = $em->getRepository('AppBundle:Message');
 			$threads = [];
 			foreach ($transactions as $transaction) {
 				$threads[] = [
 					'transaction' => $transaction,
-					'messages' => $messages_repo->findBy(
-						['transaction' => $transaction],
-						['date' => 'DESC']
-					)
+					'messages' => $em
+						->getRepository('AppBundle:Message')
+						->findBy(
+							['transaction' => $transaction],
+							['date' => 'DESC']
+						)
 				];
 			}
 
-			return $this->render('message/list.html.twig', ['threads' => $threads]);
+			return $this->render('message/list.html.twig', [
+				'threads' => $threads
+			]);
 
 		}
 

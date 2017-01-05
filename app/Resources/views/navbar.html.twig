@@ -14,9 +14,15 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li>
 				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-					<a class="btn btn-primary btn-lg" href="/profile">
-						Mon Profil
-					</a>
+					{% if is_granted('ROLE_ADMIN') %}
+						<a class="btn btn-primary btn-lg" href="/admin">
+							Panneau d’administration
+						</a>
+					{% else %}
+						<a class="btn btn-primary btn-lg" href="/profile">
+							Mon Profil
+						</a>
+					{% endif %}
 				{% else %}
 					<a class="btn btn-primary btn-lg" href="/login">
 						Connexion/Inscription

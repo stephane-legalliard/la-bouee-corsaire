@@ -5,8 +5,6 @@
 	{{ parent() }}
 
 	{% stylesheets filter="cssrewrite,scssphp" output="css/forms.css" combine=true
-		'css/bootstrap-login-register-forms/form-elements.css'
-		'css/bootstrap-login-register-forms/style.css'
 		'scss/forms.scss'
 	%}
 		<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
@@ -16,6 +14,16 @@
 
 {% block body %}
 
-	<h1>{{ block('title') }}</h1>
+	<div class="row">
+
+		<div class="col-lg-12">
+			<h1>{{ block('title') }}</h1>
+		</div>
+
+		<div class="col-sm-6 col-sm-offset-3">
+			{% block form %}{% endblock %}
+		</div>
+
+	</div>
 
 {% endblock %}

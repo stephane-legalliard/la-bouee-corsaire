@@ -1,54 +1,72 @@
 <?php
-	
+
 	namespace AppBundle\Form;
-	
+
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\FormBuilderInterface;
 	use Symfony\Component\OptionsResolver\OptionsResolver;
-	
+
+	/**
+	 * Form used to generate and edit Tasks
+	 */
 	class TaskType extends AbstractType {
-		
+
 		/**
+		 * Associated class
+		 *
 		 * @var string
 		 */
 		private $class;
-		
+
 		/**
+		 * Contruct, set the associated class
+		 *
 		 * @param string $class
 		 */
 		public function __construct($class = 'AppBundle\Entity\Task') {
 			$this->class = $class;
 		}
-		
+
 		/**
-		 * {@inheritdoc}
+		 * Builds the form.
+		 *
+		 * This method is called for each type in the hierarchy starting from the
+		 * top most type. Type extensions can further modify the form.
+		 *
+		 * @param FormBuilderInterface $builder The form builder
+		 * @param array                $options The options
 		 */
 		public function buildForm(FormBuilderInterface $builder, array $options) {
 			$builder
-			 ->add('title', null, array('label' => 'Titre'))
-			 ->add('location', null, array('label' => 'Lieu'))
-			 ->add('level', null, array('label' => 'Niveau d’expertise'))
-			 ->add('description', null, array('label' => 'Description'));
+				->add('title', null, [
+					'translation_domain' => false,
+					'label' => 'Description',
+				])
+				->add('location', null, [
+					'translation_domain' => false,
+					'label' => 'Lieu',
+				])
+				->add('level', null, [
+					'translation_domain' => false,
+					'label' => 'Niveau d’expertise',
+				])
+				->add('description', null, [
+					'translation_domain' => false,
+					'label' => 'Informations complémentaires',
+				]);
 		}
-		
+
 		/**
-		 * {@inheritdoc}
+		 * Configures the options for this type.
+		 *
+		 * @param OptionsResolver $resolver The resolver for the options
 		 */
-		public function configureOptions(OptionsResolver $resolver)
-		{
-			$resolver->setDefaults(array(
+		public function configureOptions(OptionsResolver $resolver) {
+			$resolver->setDefaults([
 				'data_class' => $this->class,
-				'csrf_token_id' => 'registration',
-			));
+			]);
 		}
-		
-		/**
-		 * {@inheritdoc}
-		 */
-		public function getBlockPrefix() {
-			return 'app_user_registration';
-		}
-		
+
 	}
-	
+
 ?>

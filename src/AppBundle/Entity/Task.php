@@ -1,20 +1,25 @@
 <?php
-	
+
 	namespace AppBundle\Entity;
-	
+
 	use AppBundle\DBAL\Types\TaskLevelType;
 	use AppBundle\Entity\User;
 	use Doctrine\ORM\Mapping as ORM;
-	use Symfony\Component\Validator\Constraints as Assert;
 	use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
-	
+	use Symfony\Component\Validator\Constraints as Assert;
+
 	/**
+	 * Tasks posted by Users
+	 *
 	 * @ORM\Entity
 	 * @ORM\Table(name="tasks")
 	 */
 	class Task {
+
+		use StatusTrait;
+
 		/**
-		 * Task ID
+		 * ID
 		 *
 		 * @ORM\Column(type="integer", options={"unsigned"=true})
 		 * @ORM\Id
@@ -24,9 +29,9 @@
 		 * @access protected
 		 */
 		protected $id;
-		
+
 		/**
-		 * Task title
+		 * Description
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
@@ -43,9 +48,9 @@
 		 * @access protected
 		 */
 		protected $title;
-		
+
 		/**
-		 * Task text description
+		 * Details
 		 *
 		 * @ORM\Column(type="text", length=255)
 		 *
@@ -62,9 +67,9 @@
 		 * @access protected
 		 */
 		protected $description;
-		
+
 		/**
-		 * Task region/city
+		 * Location (region or city)
 		 *
 		 * @ORM\Column(type="string", length=100)
 		 *
@@ -81,19 +86,9 @@
 		 * @access protected
 		 */
 		protected $location;
-		
+
 		/**
-		 * Task status
-		 *
-		 * @ORM\Column(type="boolean")
-		 *
-		 * @var    boolean
-		 * @access protected
-		 */
-		protected $enabled;
-		
-		/**
-		 * User who created the Task
+		 * Owner
 		 *
 		 * @ORM\ManyToOne(targetEntity="User")
 		 *
@@ -101,17 +96,9 @@
 		 * @access private
 		 */
 		protected $user;
-		
+
 		/**
-		 * Category of the Task
-		 *
-		 * @var    Category
-		 * @access private
-		 */
-		protected $category;
-		
-		/**
-		 * Date of Task creation
+		 * Creation date
 		 *
 		 * @ORM\Column(type="datetimetz")
 		 *
@@ -119,9 +106,9 @@
 		 * @access protected
 		 */
 		protected $date;
-		
+
 		/**
-		 * Level of the User providing the service
+		 * Required level of expertise
 		 *
 		 * @ORM\Column(type="TaskLevelType", nullable=false, options={"default"="0"})
 		 * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\TaskLevelType")
@@ -129,82 +116,57 @@
 		 * @var    enum $level
 		 * @access protected
 		 */
-		protected $level;
-		
+		protected $level = TaskLevelType::NONE;
+
 		/**
-		 * Get id
+		 * Return ID
 		 *
 		 * @return integer
 		 */
 		public function getId() { return $this->id; }
-		
+
 		/**
-		 * Get title
+		 * Return description
 		 *
 		 * @return string
 		 */
 		public function getTitle() { return $this->title; }
-		
+
 		/**
-		 * Get description
+		 * Return details
 		 *
 		 * @return string
 		 */
 		public function getDescription() { return $this->description; }
-		
+
 		/**
-		 * Get location
+		 * Return location (region or city)
 		 *
 		 * @return string
 		 */
 		public function getLocation() { return $this->location; }
-		
+
 		/**
-		 * Get status
-		 *
-		 * @return string
-		 */
-		public function getEnabled() { return $this->enabled; }
-		
-		/**
-		 * Get User
+		 * Return owner
 		 *
 		 * @return User
 		 */
 		public function getUser() { return $this->user; }
-		
+
 		/**
-		 * Get Category
+		 * Return creation date
 		 *
-		 * @return Category
+		 * @return \DateTime
 		 */
-		public function getCategory() { return $this->category; }
-		
+		public function getDate() { return $this->date; }
+
 		/**
-		 * Get level
+		 * Return required level of expertise
 		 *
 		 * @return string
 		 */
 		public function getLevel() { return $this->level; }
-		
-		/**
-		 * Set title
-		 *
-		 * @param string
-		 *
-		 * @return Task
-		 */
-		public function setTitle($title) {
-			$title = (string) $title;
-			
-			$length = strlen($title);
-			if ($length >= 3 && $length <= 100) {
-				$this->title = $title;
-			}
-			
-			return $this;
-		}
-		
+
 		/**
 		 * Set description
 		 *
@@ -212,19 +174,37 @@
 		 *
 		 * @return Task
 		 */
+		public function setTitle($title) {
+			$title = (string) $title;
+
+			$length = strlen($title);
+			if ($length >= 3 && $length <= 100) {
+				$this->title = $title;
+			}
+
+			return $this;
+		}
+
+		/**
+		 * Set details
+		 *
+		 * @param string
+		 *
+		 * @return Task
+		 */
 		public function setDescription($description) {
 			$description = (string) $description;
-			
+
 			$length = strlen($description);
 			if ($length >= 3 && $length <= 255) {
 				$this->description = $description;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
-		 * Set location
+		 * Set location (city or region)
 		 *
 		 * @param string
 		 *
@@ -232,29 +212,17 @@
 		 */
 		public function setLocation($location) {
 			$location = (string) $location;
-			
+
 			$length = strlen($location);
 			if ($length >= 3 && $length <= 100) {
 				$this->location = $location;
 			}
-			
+
 			return $this;
 		}
-		
+
 		/**
-		 * Set status (enabled/disabled)
-		 *
-		 * @param string
-		 *
-		 * @return Task
-		 */
-		public function setEnabled($enabled) {
-			$this->enabled = $enabled;
-			return $this;
-		}
-		
-		/**
-		 * Set User
+		 * Set owner
 		 *
 		 * @param User
 		 *
@@ -264,9 +232,9 @@
 			$this->user = $user;
 			return $this;
 		}
-		
+
 		/**
-		 * Set date
+		 * Set creation date
 		 *
 		 * @return Task
 		 */
@@ -274,9 +242,9 @@
 			$this->date = $date;
 			return $this;
 		}
-		
+
 		/**
-		 * Set level
+		 * Set required level of expertise
 		 *
 		 * @param string
 		 *
@@ -284,21 +252,24 @@
 		 */
 		public function setLevel($level) {
 			switch ($level) {
-				case '0':
-				case '1':
-				case '2':
-				case '3':
+				case TaskLevelType::NONE:
+				case TaskLevelType::INITIE:
+				case TaskLevelType::AVANCE:
+				case TaskLevelType::EXPERT:
 					$this->level = $level;
 					break;
 			}
-			
+
 			return $this;
 		}
-		
-		public function isDisabled() {
-			return (!$this->getEnabled());
-		}
-		
+
+		/**
+		 * Build a new Task instance from parameters given in an array
+		 *
+		 * @param array
+		 *
+		 * @return Task
+		 */
 		public static function fromArray($array) {
 			$task = new static();
 			foreach ($array as $key => $value) {
@@ -309,7 +280,7 @@
 			}
 			return $task;
 		}
-		
+
 	}
-	
+
 ?>

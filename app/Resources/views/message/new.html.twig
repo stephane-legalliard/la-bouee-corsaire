@@ -4,67 +4,71 @@
 	Rédaction d’un nouveau Message
 {% endblock %}
 
-{% block body %}
+{% block form %}
 
-	{{ parent() }}
+	{{ form_start(form, {'method': 'POST'}) }}
 
-	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+		<div class="form-box">
 
-		{{ form_start(form, {'method': 'POST', 'attr': {
-			'class': 'r-form'
-		}}) }}
+			<div class="form-top">
+				<div class="form-top-left">
+					<h3>
+						Contacter {{ message.dest }}
+						au sujet de {{ message.transaction.task.title }}
+					</h3>
+					<p>
+						Vous pouvez entrer une évaluation du temps nécessaire à remplir
+						cette tâche dans le premier champ, et votre message dans le second
+						champ.
+					</p>
+				</div>
+				<div class="form-top-right">
+					<i class="fa fa-envelope"></i>
+				</div>
+			</div>
 
-			<div class="form-box">
+			<div class="form-bottom">
 
-				<div class="form-top">
-					<div class="form-top-left">
-						<h3>
-							Contacter {{ message.dest }}
-							au sujet de {{ message.transaction.task.title }}
-						</h3>
-						<p>
-							Vous pouvez entrer une évaluation du temps nécessaire à remplir
-							cette tâche dans le premier champ, et votre message dans le second
-							champ.
-						</p>
-					</div>
-					<div class="form-top-right">
-						<i class="fa fa-envelope"></i>
-					</div>
+				<div class="form-group">
+					{{ form_label(form.duration, null, {'label_attr': {
+						'class': 'sr-only'
+					}}) }}
+					{{ form_errors(form.duration) }}
+					{{ form_widget(form.duration, {'attr': {
+						'class': 'form-control',
+						'placeholder': form.duration.vars.label
+					}}) }}
 				</div>
 
-				<div class="form-bottom">
-
-					<div class="form-group">
-						{{ form_label(form.duration, null, {'label_attr': {
-							'class': 'sr-only'
-						}}) }}
-						{{ form_errors(form.duration) }}
-						{{ form_widget(form.duration, {'attr': {
-							'class': 'form-control',
-							'placeholder': form.duration.vars.label
-						}}) }}
-					</div>
-
-					<div class="form-group">
-						{{ form_label(form.content, null, {'label_attr': {
-							'class': 'sr-only'
-						}}) }}
-						{{ form_errors(form.content) }}
-						{{ form_widget(form.content, {'attr': {
-							'class': 'form-control',
-							'placeholder': form.content.vars.label
-						}}) }}
-					</div>
-
-					<button type="submit" class="btn btn-default">Envoyer</button>
-
+				<div class="form-group">
+					{{ form_label(form.content, null, {'label_attr': {
+						'class': 'sr-only'
+					}}) }}
+					{{ form_errors(form.content) }}
+					{{ form_widget(form.content, {'attr': {
+						'class': 'form-control',
+						'placeholder': form.content.vars.label
+					}}) }}
 				</div>
+
+				{% if (message.transaction.task.user == message.author) and (message.transaction.duration != 0) %}
+					<div class="form-group">
+						{{ form_label(form.validation, null) }}
+						{{ form_errors(form.validation) }}
+						{{ form_widget(form.validation, {'attr': {
+							'class': 'form-control'
+						}}) }}
+					</div>
+				{% else %}
+					{% do form.validation.setRendered %}
+				{% endif %}
+
+				<button type="submit" class="btn btn-default">Envoyer</button>
 
 			</div>
 
-		{{ form_end(form) }}
+		</div>
 
-	</div>
+	{{ form_end(form) }}
 
 {% endblock %}

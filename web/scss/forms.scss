@@ -1,86 +1,242 @@
-/*Déclaration variables couleurs*/
-$navbar_fond:#93A567;
+/* set default colors */
+
+$navbar_fond: #93A567;
 $body_fond: #D4CC8E;
-$input_border:#19b9e7;
+$input_border: #19b9e7;
 
 /* background image URI */
+
 $background-image: url('../images/1.jpg');
 
+/* page */
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 28px;
+	text-align: center;
+}
 .container-fluid {
 	background-image: $background-image;
 	background-size: cover;
 }
 
-/*----------RESTYLISATION---------*/
+/* titles */
 
-
-form-box {
-	margin-top: 70px;
+h1, h2 {
+	margin-top: 10px;
+	font-size: 34px;
+	font-weight: 100;
+	line-height: 48px;
+}
+h3 {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 26px;
 }
 
-.form-top {
-	overflow: hidden;
-	padding: 0 25px 15px 25px;
-	background: #444;
-	background: rgba(0, 0, 0, 0.35);
-	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
-	text-align: left;
+/* forms */
+
+form {
+	.form-box {
+		margin-top: 40px;
+		.form-top {
+			overflow: hidden;
+			padding: 0 25px 15px 25px;
+			background: #444;
+			background: rgba(0, 0, 0, 0.35);
+			-moz-border-radius: 4px 4px 0 0;
+			-webkit-border-radius: 4px 4px 0 0;
+			border-radius: 4px 4px 0 0;
+			text-align: left;
+			.form-top-left {
+				float: left;
+				width: 75%;
+				padding-top: 25px;
+				h3 {
+					margin-top: 0;
+					color: #fff;
+				}
+				p {
+					opacity: 0.8;
+					color: #fff;
+				}
+			}
+			.form-top-right {
+				float: left;
+				width: 25%;
+				padding-top: 5px;
+				font-size: 66px;
+				color: #fff;
+				line-height: 100px;
+				text-align: right;
+				opacity: 0.3;
+			}
+		}
+		.form-bottom {
+			padding: 25px 25px 30px 25px;
+			background: #444;
+			background: rgba(0, 0, 0, 0.3);
+			-moz-border-radius: 0 0 4px 4px;
+			-webkit-border-radius: 0 0 4px 4px;
+			border-radius: 0 0 4px 4px;
+			text-align: center;
+		}
+	}
+	.form-group {
+		margin-bottom: 25px;
+	}
+	.input-error {
+		border-color: #42c5ea;
+	}
+	input,
+	input.form-control, 
+	textarea, 
+	textarea.form-control {
+		height: 44px;
+		margin: 0;
+		padding: 0 15px;
+		vertical-align: middle;
+		background: #fff;
+		border: 2px solid $input_border;
+		font-family: 'Roboto', sans-serif;
+		font-size: 15px;
+		font-weight: 300;
+		line-height: 44px;
+		color: #888;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		-o-transition: all .3s;
+		-moz-transition: all .3s;
+		-webkit-transition: all .3s;
+		-ms-transition: all .3s;
+		transition: all .3s;
+	}
+	textarea,
+	textarea.form-control {
+		height: 100px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		line-height: 28px;
+	}
+	input:focus,
+	input.form-control:focus, 
+	textarea:focus, 
+	textarea.form-control:focus {
+		outline: 0;
+		background: #fff;
+		border: 3px solid $input_border;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	input[type="text"]:-moz-placeholder,
+	input[type="text"]:-ms-input-placeholder,
+	input[type="text"]::-webkit-input-placeholder,
+	input[type="password"]:-moz-placeholder, 
+	input[type="password"]:-ms-input-placeholder, 
+	input[type="password"]::-webkit-input-placeholder, 
+	textarea:-moz-placeholder,
+	textarea:-ms-input-placeholder,
+	textarea::-webkit-input-placeholder,
+	textarea.form-control:-moz-placeholder,
+	textarea.form-control:-ms-input-placeholder,
+	textarea.form-control::-webkit-input-placeholder {
+		color: #888;
+	}
+	input[type="checkbox"] {
+		width: inherit;
+		display: inline;
+		cursor: pointer;
+	}
+	button.btn {
+		width: 100%;
+		height: 44px;
+		margin: 0;
+		padding: 0 40px;
+		vertical-align: middle;
+		background-color:$input_border;
+		border: 0;
+		font-family: 'Roboto', sans-serif;
+		font-size: 15px;
+		font-weight: 300;
+		line-height: 44px;
+		color: #fff;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		text-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		-o-transition: all .3s;
+		-moz-transition: all .3s;
+		-webkit-transition: all .3s;
+		-ms-transition: all .3s;
+		transition: all .3s;
+	}
+	button.btn:hover,
+	button.btn:active,
+	button.btn:focus,
+	button.btn:active:focus,
+	button.btn.active:focus {
+		opacity: 1;
+		color: #fff;
+		background-color: $input_border;
+	}
+	button.btn:active,
+	button.btn:focus,
+	button.btn:active:focus,
+	button.btn.active:focus {
+		outline: 0;
+	}
+	button.btn:focus,
+	button.btn:active:focus,
+	button.btn.active:focus {
+		background: #42c5ea;
+	}
+	button.btn:active {
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
 }
 
-.form-top-left {
-	float: left;
-	width: 75%;
-	padding-top: 25px;
-}
+/* login/register form */
 
-.form-top-left h3 { margin-top: 0; color: #fff; }
-.form-top-left p { opacity: 0.8; color: #fff; }
-
-.form-top-right {
-	float: left;
-	width: 25%;
-	padding-top: 5px;
-	font-size: 66px;
-	color: #fff;
-	line-height: 100px;
-	text-align: right;
-	opacity: 0.3;
-}
-
-.form-bottom {
-	padding: 25px 25px 30px 25px;
-	background: #444;
-	background: rgba(0, 0, 0, 0.3);
-	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+.show-forms {
+	padding-top: 40px;
+	font-size: 2em;
+	color: #000;
+	line-height: 26px;
 	text-align: center;
 }
-
-button.btn{
-  background-color:$input_border;
-  width: 100%;
+.show-register-form,
+.show-forms-divider,
+.show-login-form {
+	opacity: 0.6;
+}
+.show-register-form,
+.show-login-form {
+	cursor: pointer;
+	-o-transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	-ms-transition: all .3s;
+	transition: all .3s;
+}
+.show-register-form.active,
+.show-login-form.active,
+.show-register-form:hover,
+.show-login-form:hover {
+	opacity: 1;
 }
 
- button.btn:focus, button.btn:hover{
-  background-color:$input_border;
-  opacity: 1;
-}
-input[type="text"], input[type="password"], textarea.form-control, input[type="email"]{
-      border: 2px solid $input_border;
-}
-input[type="text"]:focus, input[type="password"]:focus{
-      border-color:$input_border;
-}
-
-/*----------AIDE---------*/
-.show-forms{ /*Couleur text/log in Sign up*/
-  color: black;
-  font-size: 2em;
-  a:hover{
-    border-color: red;
-  }
-}
-
-
-footer{
-  color: black;
+.register-form {
+	display: none;
 }
