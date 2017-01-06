@@ -14,6 +14,7 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
+/web/api/
 /web/bundles/
 **/.sass-cache/
 /Structure HTML/SCSS/style.css
