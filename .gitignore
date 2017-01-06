@@ -1,5 +1,6 @@
 /app/config/parameters.yml
 /build/
+/composer.phar
 /phpunit
 /phpunit.xml
 /var/*
