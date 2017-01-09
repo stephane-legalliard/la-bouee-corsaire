@@ -153,7 +153,7 @@
 
 			$form->handleRequest($request);
 			if ($form->isSubmitted() && $form->isValid()) {
-				return saveTask($form->getData());
+				return $this->saveTask($form->getData());
 			}
 
 			return $this->render('task/edit.html.twig', [
