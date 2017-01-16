@@ -220,53 +220,6 @@
 
 		}
 
-		/**
-		 * Show full list of Messages associated with the current User
-		 *
-		 * @Route("/list", name="message_list")
-		 *
-		 * @return Response
-		 */
-		public function listAction() {
-			$user = $this->getAuthenticatedUser();
-			$em = $this->getDoctrine();
-
-			// Get all Transactions, newest first
-			$all_transactions = $em
-				->getRepository('AppBundle:Transaction')
-				->findBy(
-					[],
-					['id' => 'DESC']
-				);
-
-			// Keep only Transactions involving the current User
-			$transactions = [];
-			foreach ($all_transactions as $transaction) {
-				if ($transaction->getUsers()->contains($user)) {
-					$transactions[] = $transaction;
-				}
-			}
-
-			// Generate a list of Transactions with associated Messages sorted by date
-			$threads = [];
-			foreach ($transactions as $transaction) {
-				$threads[] = [
-					'transaction' => $transaction,
-					'messages' => $em
-						->getRepository('AppBundle:Message')
-						->findBy(
-							['transaction' => $transaction],
-							['date' => 'DESC']
-						)
-				];
-			}
-
-			return $this->render('message/list.html.twig', [
-				'threads' => $threads
-			]);
-
-		}
-
 	}
 
 ?>
