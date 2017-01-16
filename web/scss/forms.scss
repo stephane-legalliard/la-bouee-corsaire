@@ -91,8 +91,8 @@ form {
 		border-color: #42c5ea;
 	}
 	input,
-	input.form-control, 
-	textarea, 
+	input.form-control,
+	textarea,
 	textarea.form-control {
 		height: 44px;
 		margin: 0;
@@ -125,8 +125,8 @@ form {
 		line-height: 28px;
 	}
 	input:focus,
-	input.form-control:focus, 
-	textarea:focus, 
+	input.form-control:focus,
+	textarea:focus,
 	textarea.form-control:focus {
 		outline: 0;
 		background: #fff;
@@ -138,9 +138,9 @@ form {
 	input[type="text"]:-moz-placeholder,
 	input[type="text"]:-ms-input-placeholder,
 	input[type="text"]::-webkit-input-placeholder,
-	input[type="password"]:-moz-placeholder, 
-	input[type="password"]:-ms-input-placeholder, 
-	input[type="password"]::-webkit-input-placeholder, 
+	input[type="password"]:-moz-placeholder,
+	input[type="password"]:-ms-input-placeholder,
+	input[type="password"]::-webkit-input-placeholder,
 	textarea:-moz-placeholder,
 	textarea:-ms-input-placeholder,
 	textarea::-webkit-input-placeholder,
