@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "50f2d1de38c046743d848d94a500c40d",
+    "content-hash": "e4e86763b6f4bc907bb4c23cf965eb50",
     "packages": [
         {
             "name": "components/jquery",
@@ -864,40 +864,40 @@
         },
         {
             "name": "fresh/doctrine-enum-bundle",
-            "version": "v4.8.1",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fre5h/DoctrineEnumBundle.git",
-                "reference": "52e88289662a6585d7686fdeb79b584111b78550"
+                "reference": "7254120a15d1946b45d99e5e56665e12e75bb122"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fre5h/DoctrineEnumBundle/zipball/52e88289662a6585d7686fdeb79b584111b78550",
-                "reference": "52e88289662a6585d7686fdeb79b584111b78550",
+                "url": "https://api.github.com/repos/fre5h/DoctrineEnumBundle/zipball/7254120a15d1946b45d99e5e56665e12e75bb122",
+                "reference": "7254120a15d1946b45d99e5e56665e12e75bb122",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.2",
-                "doctrine/dbal": "~2.2",
-                "php": ">=5.4.0",
-                "symfony/config": "~2.6|~3.0",
-                "symfony/dependency-injection": "~2.6|~3.0",
-                "symfony/doctrine-bridge": "~2.6|~3.0",
-                "symfony/form": "~2.6|~3.0",
-                "symfony/framework-bundle": "~2.6|~3.0",
-                "symfony/http-kernel": "~2.6|~3.0",
-                "symfony/validator": "~2.6|~3.0",
-                "twig/twig": "~1.26"
+                "doctrine/common": "~2.6",
+                "doctrine/dbal": "~2.5",
+                "php": ">=5.6.0",
+                "symfony/config": "~3.2",
+                "symfony/dependency-injection": "~3.2",
+                "symfony/doctrine-bridge": "~3.2",
+                "symfony/form": "~3.2",
+                "symfony/framework-bundle": "~3.2",
+                "symfony/http-kernel": "~3.2",
+                "symfony/validator": "~3.2",
+                "twig/twig": "~1.30 || ~2.0"
             },
             "require-dev": {
                 "escapestudios/symfony2-coding-standard": "~2.9",
-                "phpunit/phpunit": "~4.8",
+                "phpunit/phpunit": "5.7.*",
                 "squizlabs/php_codesniffer": "~2.7"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.x-dev"
+                    "dev-master": "5.x-dev"
                 }
             },
             "autoload": {
@@ -939,7 +939,7 @@
                 "symfony",
                 "type"
             ],
-            "time": "2016-11-28T17:24:57+00:00"
+            "time": "2017-01-09T15:54:28+00:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
