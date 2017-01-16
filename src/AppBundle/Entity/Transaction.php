@@ -259,6 +259,12 @@
 			return $this;
 		}
 
+
+		/**
+		 * A Transaction can not be disabled
+		 */
+		public function isDisabled() { return false; }
+
 	}
 
 ?>
