@@ -1,5 +1,6 @@
 /app/config/parameters.yml
 /build/
+/composer.phar
 /phpunit
 /phpunit.xml
 /var/*
@@ -14,7 +15,5 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
+/web/api/
 /web/bundles/
-**/.sass-cache/
-/Structure HTML/SCSS/style.css
-/Structure HTML/SCSS/style.css.map

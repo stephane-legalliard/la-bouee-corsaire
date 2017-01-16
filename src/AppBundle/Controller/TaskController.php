@@ -98,7 +98,7 @@
 
 			$form->handleRequest($request);
 			if ($form->isSubmitted() && $form->isValid()) {
-				return saveTask($form->getData());
+				return $this->saveTask($form->getData());
 			}
 
 			return $this->render('task/new.html.twig', [
@@ -122,7 +122,7 @@
 					['enabled' => true],
 					['date' => 'DESC']
 				);
-			
+
 			return $this->render('task/list.html.twig', [
 				'tasks' => $tasks,
 				'user' => $this->getUser(),
@@ -153,7 +153,7 @@
 
 			$form->handleRequest($request);
 			if ($form->isSubmitted() && $form->isValid()) {
-				return saveTask($form->getData());
+				return $this->saveTask($form->getData());
 			}
 
 			return $this->render('task/edit.html.twig', [
