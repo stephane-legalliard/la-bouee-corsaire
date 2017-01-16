@@ -24,6 +24,8 @@ $home-background: url('../images/colleagues.jpg');
 
 body {
 	background-color: $navbar_fond;
+	font-family: 'PT Sans', sans-serif;
+font-family: 'PT Serif', serif;
 }
 
 /* top navigation bar */
@@ -54,19 +56,70 @@ body {
 		border-color: transparent;
 	}
 }
+/*----Besoins//Services en-cours -----*/
+.besoin{
+	h2{
+			color: #3386D2;
+			margin-top: 25px;
+    margin-bottom: 25px;
+	}
+	.thumbnail{
+		border: 2px solid #dddddd;
+	}
+	a.thumbnail:hover{
+		text-decoration: none;
+	}
+	h3{
+		font-weight: bold;
+	}
+}
+/*----------Explications-------------*/
+.example {
+    padding-top: 25px;
+
+    .row {
+      padding-bottom: 2em;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+				color: #3386D2;
+    }
+
+    .col-md-3 img {
+        width: 50%;
+    }
+
+    p{
+      margin-bottom: 2em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*----------FOOTER------------------*/
 footer{
   background-color:$navbar_fond;
   margin-top: 25px;
   padding-bottom: 0;
-.SocialMedia li{
-  display: inline-block;
-}
+
 h3{
-  color: $text_color;
+  color: #337ab7;
   font-size: 20px;
   font-weight:400;
+}
+a:hover, a:focus{
+	text-decoration: none;
 }
   ul, ul h3 a{
     list-style-type: none;
@@ -89,11 +142,8 @@ h3{
     margin-left: 60px;
   }
   button.btn{
-    background-color:$input_border;
     width: 65%;
+		margin-left: 60px;
   }
-   button.btn:focus, button.btn:hover{
-    background-color:$input_border;
-    opacity: 1;
-  }
+
 }
