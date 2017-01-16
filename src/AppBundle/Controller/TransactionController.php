@@ -87,7 +87,8 @@
 			return $this->render('transaction/show.html.twig', [
 				'transaction' => $transaction,
 				'messages'    => $messages,
-				'user'        => $user
+				'user'        => $user,
+				'message'     => ''
 			]);
 
 		}
@@ -126,7 +127,8 @@
 			return $this->render('transaction/show.html.twig', [
 				'transaction' => $transaction,
 				'messages'    => $messages,
-				'user'        => $user
+				'user'        => $user,
+				'message'     => 'Cette Transaction a été validée, les heures ont été transférées.'
 			]);
 
 		}
