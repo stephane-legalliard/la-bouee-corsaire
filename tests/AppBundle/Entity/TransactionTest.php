@@ -75,8 +75,17 @@
 			$transaction = $this->getTransaction();
 			$this->assertSame(TransactionStatusType::OPEN, $transaction->getStatus());
 
+			$owner = $this->getUser();
+			$owner->setUsername('owner');
+			$provider = $this->getUser();
+			$provider->setUsername('provider');
+
 			$task = $this->getTask();
+			$task->setUser($owner);
 			$transaction->setTask($task);
+
+			$transaction->addUser($owner);
+			$transaction->addUser($provider);
 
 			$transaction->validate();
 			$this->assertSame(TransactionStatusType::VALIDATED, $transaction->getStatus());

@@ -246,6 +246,23 @@
 		 */
 		public function close() {
 			$this->setStatus(TransactionStatusType::DONE);
+
+			// Set Task owner
+			$owner = $this->getTask()->getUser();
+
+			// Set Task provider
+			foreach ($this->getUsers() as $user) {
+				if ($user != $owner) {
+					$provider = $user;
+				}
+			}
+
+			// Substract hours from Task owner credit
+			$owner->subHours($this->getDuration());
+
+			// Add hours to Task provider credit
+			$provider->addHours($this->getDuration());
+
 			return $this;
 		}
 
