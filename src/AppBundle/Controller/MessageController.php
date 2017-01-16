@@ -19,7 +19,7 @@
 		/**
 		 * {@inheritdoc}
 		 */
-		protected function getById($class, $id) {
+		protected function getById($class, $id, $enabled_only = true) {
 			$user = $this->getAuthenticatedUser();
 			$entity = parent::getById($class, $id);
 			if (

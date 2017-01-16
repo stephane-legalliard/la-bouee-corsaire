@@ -30,10 +30,11 @@
 		 *
 		 * @param string $class
 		 * @param int    $id
+		 * @param bool   $enabled_only
 		 *
 		 * @return Entity
 		 */
-		protected function getById($class, $id) {
+		protected function getById($class, $id, $enabled_only = true) {
 			$entity = $this
 				->getDoctrine()
 				->getRepository('AppBundle:'.$class)
@@ -45,7 +46,9 @@
 				);
 			}
 
-			$this->checkEnabled($class, $entity);
+			if ($enabled_only) {
+				$this->checkEnabled($class, $entity);
+			}
 
 			return $entity;
 		}
