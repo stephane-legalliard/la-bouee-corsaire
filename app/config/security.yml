@@ -37,3 +37,4 @@ security:
         - { path: ^/task/disable/, role: ROLE_USER }
         - { path: ^/task/edit/, role: ROLE_USER }
         - { path: ^/task/new, role: ROLE_USER }
+        - { path: ^/transaction/, role: ROLE_USER }
