@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Transactions{% endblock %}
+
+{% block body %}
+
+	<h1>{{ block('title') }}</h1>
+
+	<div class="row">
+
+		<section class="col-md-4">
+
+			<h2>Transactions en discussion</h2>
+
+			{% for transaction in list_open %}
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="/transaction/show/{{ transaction.id }}">{{ transaction.task.title }}</a>
+					</div>
+					<div class="panel-body">
+						<p>Utilisateurs concernés :</p>
+						{% for user in transaction.users %}
+							<p>{{ user.username }}</p>
+						{% endfor %}
+					</div>
+				</div>
+
+			{% endfor %}
+
+		</section>
+
+		<section class="col-md-4">
+
+			<h2>Transactions confirmées</h2>
+
+			{% for transaction in list_validated %}
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="/transaction/show/{{ transaction.id }}">{{ transaction.task.title }}</a>
+					</div>
+					<div class="panel-body">
+						<p>Utilisateurs concernés :</p>
+						{% for user in transaction.users %}
+							<p>{{ user.username }}</p>
+						{% endfor %}
+					</div>
+				</div>
+
+			{% endfor %}
+
+		</section>
+
+		<section class="col-md-4">
+
+			<h2>Transactions achevées</h2>
+
+			{% for transaction in list_done %}
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="/transaction/show/{{ transaction.id }}">{{ transaction.task.title }}</a>
+					</div>
+					<div class="panel-body">
+						<p>Utilisateurs concernés :</p>
+						{% for user in transaction.users %}
+							<p>{{ user.username }}</p>
+						{% endfor %}
+					</div>
+				</div>
+
+			{% endfor %}
+
+		</section>
+
+{% endblock %}
