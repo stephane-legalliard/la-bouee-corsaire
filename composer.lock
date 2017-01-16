@@ -3118,16 +3118,16 @@
         },
         {
             "name": "phpro/grumphp",
-            "version": "v0.11.0",
+            "version": "v0.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp.git",
-                "reference": "bf66083408d533e54d468492373546e32a0a0b15"
+                "reference": "90b71cac989381341582a51d7e2657293fab7899"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp/zipball/bf66083408d533e54d468492373546e32a0a0b15",
-                "reference": "bf66083408d533e54d468492373546e32a0a0b15",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/90b71cac989381341582a51d7e2657293fab7899",
+                "reference": "90b71cac989381341582a51d7e2657293fab7899",
                 "shasum": ""
             },
             "require": {
@@ -3207,7 +3207,7 @@
                 }
             ],
             "description": "A composer plugin that enables source code quality checks.",
-            "time": "2016-12-18T13:21:57+00:00"
+            "time": "2017-01-10T07:42:08+00:00"
         },
         {
             "name": "phpunit/php-timer",
