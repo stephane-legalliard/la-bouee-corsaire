@@ -130,6 +130,43 @@
 		}
 
 		/**
+		 * Show list of Tasks owned by current User
+		 *
+		 * @Route("/list-owned")
+		 *
+		 * @return Response
+		 */
+		public function listOwnedAction() {
+			$user = $this->getUser();
+
+			$list = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Task')
+				->findBy(
+					['user' => $user],
+					['date' => 'DESC']
+				);
+
+			$list_enabled = [];
+			$list_disabled = [];
+
+			foreach ($list as $task) {
+				if ($task->isDisabled()) {
+					$list_disabled[] = $task;
+				}
+				else {
+					$list_enabled[] = $task;
+				}
+			}
+
+			return $this->render('task/list-owned.html.twig', [
+				'tasks_enabled'  => $list_enabled,
+				'tasks_disabled' => $list_disabled,
+				'user'           => $user,
+			]);
+		}
+
+		/**
 		 * Show a form allowing edition of the Task identified by the given ID
 		 *
 		 * @Route("/edit/{id}")
@@ -184,6 +221,29 @@
 			return new Response(
 				'<p>Task with id '.$task->getId().' has been disabled.</p>'
 			);
+		}
+
+		/**
+		 * Enable the Task identified by the given ID
+		 *
+		 * @Route("/open/{id}")
+		 *
+		 * @param Request $request
+		 * @param int     $id
+		 *
+		 * @return Response
+		 */
+		public function openAction(Request $request, $id) {
+			$user = $this->getAuthenticatedUser();
+			$task = $this->getById('Task', $id, false);
+			$this->checkOwnership($task);
+
+			$task->enable();
+			$this->getDoctrine()->getManager()->flush();
+
+			return $this->redirectToRoute('task_show', [
+				'id' => $id
+			]);
 		}
 
 	}
