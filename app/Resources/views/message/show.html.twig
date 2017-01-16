@@ -19,6 +19,6 @@
 		<a class='btn btn-default' href='/message/answer/{{ message.id }}'>Répondre</a>
 	{% endif %}
 
-	<a href="/message/list" class="btn btn-default">Messagerie</a>
+	<a href="/transaction/show/{{ message.transaction.id }}" class="btn btn-default">Retour à la Transaction</a>
 
 {% endblock %}

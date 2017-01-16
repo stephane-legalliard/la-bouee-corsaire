@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ transaction.task.title }}{% endblock %}
+
+{% block body %}
+
+	<h1>{{ block('title') }}</h1>
+
+	<div class="row">
+
+		{% if message != '' %}
+			<section class="col-lg-12">
+				<p class="text-success">{{ message }}</p>
+			</section>
+		{% endif %}
+
+		<section class="col-lg-12">
+			<h2>Lieu</h2>
+			<p>{{ transaction.task.location }}</p>
+		</section>
+
+		<section class="col-lg-12">
+			<h2>Informations complémentaires</h2>
+			<p>{{ transaction.task.description }}</p>
+		</section>
+
+		<section class="col-lg-12">
+			<h2>Durée estimée</h2>
+			<p>{{ transaction.duration }} heures</p>
+		</section>
+
+		<section class="col-lg-12">
+			<h2>Messages</h2>
+			<div class="row">
+				{% for message in messages %}
+
+					<article class="col-md-4">
+
+						<div class="panel panel-default">
+
+							<div class="panel-heading">
+								<a href="/message/show/{{ message.id }}">
+									Message envoyé par {{ message.author }}
+									à {{ message.dest }}
+									le {{ message.date.format('j/m/Y à G:i') }}
+								</a>
+							</div>
+
+							<div class="panel-body">
+								<p>{{ message.content }}</p>
+							</div>
+
+						</div>
+
+					</article>
+
+				{% endfor %}
+			</div>
+		</section>
+
+		<div class="col-lg-12">
+			<a href="/transaction/list" class="btn btn-default">Retour à la liste</a>
+		</div>
+
+		{% if (transaction.task.user == user)
+		  and (transaction.status == '1') %}
+			<div class="col-lg-12">
+				<a href="/transaction/close/{{ transaction.id }}" class="btn btn-default">Confirmer que le Besoin a été rempli</a>
+			</div>
+		{% endif %}
+
+	</div>
+
+{% endblock %}
