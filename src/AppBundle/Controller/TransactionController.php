@@ -75,8 +75,48 @@
 		public function showAction(Request $request, $id) {
 			$transaction = $this->getById('Transaction', $id);
 
+			$messages = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Message')
+				->findBy(
+					['transaction' => $transaction],
+					['date' => 'DESC']
+				);
+
 			return $this->render('transaction/show.html.twig', [
 				'transaction' => $transaction,
+				'messages'    => $messages
+			]);
+
+		}
+
+		/**
+		 * Close the Transaction identified by the given ID
+		 *
+		 * @Route("/close/{id}", name="transaction_close")
+		 *
+		 * @param Request $request
+		 * @param int     $id
+		 *
+		 * @return Response
+		 */
+		public function closeAction(Request $request, $id) {
+			$transaction = $this->getById('Transaction', $id);
+
+			$transaction->close();
+			$this->getDoctrine()->getManager()->flush();
+
+			$messages = $this
+				->getDoctrine()
+				->getRepository('AppBundle:Message')
+				->findBy(
+					['transaction' => $transaction],
+					['date' => 'DESC']
+				);
+
+			return $this->render('transaction/show.html.twig', [
+				'transaction' => $transaction,
+				'messages'    => $messages
 			]);
 
 		}
