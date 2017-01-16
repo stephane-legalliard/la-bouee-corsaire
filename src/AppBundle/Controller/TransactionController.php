@@ -74,6 +74,7 @@
 		 */
 		public function showAction(Request $request, $id) {
 			$transaction = $this->getById('Transaction', $id);
+			$user = $this->getUser();
 
 			$messages = $this
 				->getDoctrine()
@@ -85,7 +86,8 @@
 
 			return $this->render('transaction/show.html.twig', [
 				'transaction' => $transaction,
-				'messages'    => $messages
+				'messages'    => $messages,
+				'user'        => $user
 			]);
 
 		}
@@ -102,6 +104,13 @@
 		 */
 		public function closeAction(Request $request, $id) {
 			$transaction = $this->getById('Transaction', $id);
+			$user = $this->getUser();
+
+			if ($transaction->getTask()->getUser() !== $user) {
+				throw $this->createAccessDeniedException(
+					'You are not allowed to close the Transaction with id '.$transaction->getId()
+				);
+			}
 
 			$transaction->close();
 			$this->getDoctrine()->getManager()->flush();
@@ -116,7 +125,8 @@
 
 			return $this->render('transaction/show.html.twig', [
 				'transaction' => $transaction,
-				'messages'    => $messages
+				'messages'    => $messages,
+				'user'        => $user
 			]);
 
 		}
