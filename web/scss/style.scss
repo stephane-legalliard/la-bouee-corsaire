@@ -25,7 +25,6 @@ $home-background: url('../images/colleagues.jpg');
 body {
 	background-color: $navbar_fond;
 	font-family: 'PT Sans', sans-serif;
-font-family: 'PT Serif', serif;
 }
 
 /* top navigation bar */
@@ -44,6 +43,13 @@ font-family: 'PT Serif', serif;
 	.navbar-brand {
 		color: $text_color;
 		font-weight: 400;
+		img {
+			display: inline-block;
+		}
+		a {
+			text-decoration: none;
+			color: $text-color;
+		}
 	}
 	.navbar-brand:hover {
 		color: $input_border;
