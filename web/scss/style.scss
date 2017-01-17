@@ -43,6 +43,13 @@ body {
 	.navbar-brand {
 		color: $text_color;
 		font-weight: 400;
+		img {
+			display: inline-block;
+		}
+		a {
+			text-decoration: none;
+			color: $text-color;
+		}
 	}
 	.navbar-brand:hover {
 		color: $input_border;
