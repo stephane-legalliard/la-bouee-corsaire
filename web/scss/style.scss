@@ -103,6 +103,22 @@ body {
 
 
 /*----------FOOTER------------------*/
+
+// footer position
+.container-fluid {
+	position: relative;
+	min-height: 100vh;
+}
+.content-row {
+	// footer height
+	margin-bottom: 200px;
+}
+.footer-row {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
 footer{
   background-color:$navbar_fond;
   margin-top: 25px;
