@@ -146,3 +146,37 @@ a:hover, a:focus{
 	word-wrap: break-word;
 	min-height: 193px;
 }
+
+/* login/register form */
+
+.show-forms {
+	padding-top: 40px;
+	font-size: 2em;
+	color: #000;
+	line-height: 26px;
+	text-align: center;
+}
+.show-register-form,
+.show-forms-divider,
+.show-login-form {
+	opacity: 0.6;
+}
+.show-register-form,
+.show-login-form {
+	cursor: pointer;
+	-o-transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	-ms-transition: all .3s;
+	transition: all .3s;
+}
+.show-register-form.active,
+.show-login-form.active,
+.show-register-form:hover,
+.show-login-form:hover {
+	opacity: 1;
+}
+
+.register-form {
+	display: none;
+}
