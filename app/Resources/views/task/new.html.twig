@@ -1,75 +1,92 @@
-{% extends 'default/form.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}
-	Création d’un nouveau Besoin
+{% block stylesheets %}
+
+	{{ parent() }}
+
+	{% stylesheets filter="scssphp" output="css/profile.css" combine=true
+		"scss/profile.scss"
+	%}
+		<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+	{% endstylesheets %}
+
 {% endblock %}
 
-{% block form %}
+{% block title %}Nouveau Besoin{% endblock %}
+
+{% block body %}
 
 	{{ form_start(form, {'method': 'POST'}) }}
 
-		<div class="form-box">
+		<div class="row">
 
-			<div class="form-top">
-				<div class="form-top-left">
-					<h3>Nouveau Besoin</h3>
-					<p>
-						Renseignez ci-dessous les informations concernant la tâche que
-						vous souhaitez voir réalisée :
-					</p>
-				</div>
-				<div class="form-top-right">
-					<i class="fa fa-pencil"></i>
+			<div class="col-md-6 col-md-offset-3 toppad">
+
+				<div class="panel panel-info">
+
+					<div class="panel-heading">
+						<h1 class="panel-title text-center">{{ block('title') }}</h1>
+						{{ form_errors(form.title) }}
+						{{ form_errors(form.location) }}
+						{{ form_errors(form.level) }}
+						{{ form_errors(form.description) }}
+					</div>
+
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3" align="center">
+								<img alt="avatar" src="/images/task.png"
+								 class="avatar img-responsive">
+							</div>
+							<div class="col-md-9">
+								<table class="table table-user-information">
+									<tbody>
+										<tr>
+											<td>{{ form_label(form.title) }}</td>
+											<td>
+												{{ form_widget(form.title, {'attr': {
+													'class': 'form-control'
+												}}) }}
+											</td>
+										</tr>
+										<tr>
+											<td>{{ form_label(form.location) }}</td>
+											<td>
+												{{ form_widget(form.location, {'attr': {
+													'class': 'form-control'
+												}}) }}
+											</td>
+										</tr>
+										<tr>
+											<td>{{ form_label(form.level) }}</td>
+											<td>
+												{{ form_widget(form.level, {'attr': {
+													'class': 'form-control'
+												}}) }}
+											</td>
+										</tr>
+										<tr>
+											<td>{{ form_label(form.description) }}</td>
+											<td>
+												{{ form_widget(form.description, {'attr': {
+													'class': 'form-control'
+												}}) }}
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel-footer">
+						<button type="submit" class="btn btn-default">
+							Publier un nouveau Besoin
+						</button>
+					</div>
+
 				</div>
 			</div>
-
-			<div class="form-bottom">
-
-				<div class="form-group">
-					{{ form_label(form.title, null, {'label_attr': {
-						'class': 'sr-only'
-					}}) }}
-					{{ form_errors(form.title) }}
-					{{ form_widget(form.title, {'attr': {
-						'class': 'form-control',
-						'placeholder': form.title.vars.label
-					}}) }}
-				</div>
-
-				<div class="form-group">
-					{{ form_label(form.location, null, {'label_attr': {
-						'class': 'sr-only'
-					}}) }}
-					{{ form_errors(form.location) }}
-					{{ form_widget(form.location, {'attr': {
-						'class': 'form-control',
-						'placeholder': form.location.vars.label
-					}}) }}
-				</div>
-
-				<div class="form-group">
-					{{ form_label(form.level) }}
-					{{ form_errors(form.level) }}
-					{{ form_widget(form.level, {'attr': {
-						'class': 'form-control'
-					}}) }}
-				</div>
-
-				<div class="form-group">
-					{{ form_label(form.description, null, {'label_attr': {
-						'class': 'sr-only'
-					}}) }}
-					{{ form_errors(form.description) }}
-					{{ form_widget(form.description, {'attr': {
-						'class': 'form-control',
-						'placeholder': form.description.vars.label
-					}}) }}
-				</div>
-
-				<button type="submit" class="btn btn-default">Créer</button>
-
-			</div>
-
 		</div>
 
 	{{ form_end(form) }}
