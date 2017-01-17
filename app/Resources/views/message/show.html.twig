@@ -1,24 +1,65 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+
+	{{ parent() }}
+
+	{% stylesheets filter="scssphp" output="css/profile.css" combine=true
+		"scss/profile.scss"
+	%}
+	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+	{% endstylesheets %}
+
+{% endblock %}
+
 {% block title %}{{ message.transaction.task.title }}{% endblock %}
 
 {% block body %}
 
-	<a href="/task/show/{{ message.transaction.task.id }}">
-		<h1>{{ block('title') }}</h1>
-	</a>
+	<div class="row">
 
-	<div class='panel panel-default'>
-		<div class="panel-heading">Message envoyé à {{ message.dest }} par {{ message.author }}</div>
-		<div class="panel-body">
-			<p>{{ message.content }}</p>
+		<div class="col-md-6 col-md-offset-3 toppad">
+
+			<div class="panel panel-info">
+
+				<div class="panel-heading">
+					<h1 class="panel-title text-center">
+						Message envoyé à {{ message.dest }}
+						par {{ message.author }}
+						le {{ message.date.format('j/m/Y à G:i') }}
+						au sujet de <a href="/task/show/{{ message.transaction.task.id }}">
+							{{ message.transaction.task.title }}
+						</a>
+					</h1>
+				</div>
+
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3" align="center">
+							<img alt="avatar" src="/images/message.png"
+							 class="avatar img-responsive">
+
+								{% if user == message.dest %}
+									<a href="/message/answer/{{ message.id }}" data-original-title="Répondre"
+									 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
+										<i class="glyphicon glyphicon-edit"></i>
+										Répondre
+									</a>
+								{% endif %}
+
+						</div>
+						<div class="col-md-9">
+							<p>
+								{{ message.content }}
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	</div>
 
-	{% if user == message.dest %}
-		<a class='btn btn-default' href='/message/answer/{{ message.id }}'>Répondre</a>
-	{% endif %}
-
-	<a href="/transaction/show/{{ message.transaction.id }}" class="btn btn-default">Retour à la Transaction</a>
+	<p><a href="/transaction/show/{{ message.transaction.id }}">Retour à la Transaction</a></p>
 
 {% endblock %}
