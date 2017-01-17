@@ -1,24 +1,75 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+
+	{{ parent() }}
+
+	{% stylesheets filter="scssphp" output="css/profile.css" combine=true
+		"scss/profile.scss"
+	%}
+	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+	{% endstylesheets %}
+
+{% endblock %}
+
 {% block title %}{{ task.title }}{% endblock %}
 
 {% block body %}
-	<h1>{{ block('title') }}</h1>
-	<h2>Lieu</h2>
-	<p>{{ task.location }}</p>
-	<h2>Description</h2>
-	<p>{{ task.description }}</p>
 
-	{% if task.user == user %}
-		<p><a class='btn btn-default' href='/task/edit/{{ task.id }}'>
-			Éditer ce Besoin
-		</a></p>
-	{% else %}
-		<p><a class='btn btn-default' href='/message/new/{{ task.id }}'>
-			Se proposer pour remplir ce Besoin
-		</a></p>
-	{% endif %}
+	<div class="row">
 
-	<p><a class='btn btn-default' href='/task/list'>Retour à la liste des Besoins</a></p>
+		<div class="col-md-6 col-md-offset-3 toppad">
+
+			<div class="panel panel-info fos_user_user_show">
+
+				<div class="panel-heading">
+					<h1 class="panel-title text-center">{{ block('title') }}</h1>
+				</div>
+
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3" align="center">
+							<img alt="avatar" src="/images/task.png"
+							 class="avatar img-responsive">
+
+								{% if task.user == user %}
+									<a href="/task/edit/{{ task.id }}" data-original-title="Edition"
+									 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
+										<i class="glyphicon glyphicon-edit"></i>
+										Édition
+									</a>
+								{% endif %}
+
+						</div>
+						<div class="col-md-9">
+							<table class="table table-user-information">
+								<tbody>
+									<tr>
+										<td>Lieu :</td>
+										<td>{{ task.location }}</td>
+									</tr>
+									<tr>
+										<td>Informations complémentaires :</td>
+										<td>{{ task.description }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				{% if task.user != user %}
+					<div class="panel-footer text-center">
+						<a href="/message/new/{{ task.id }}" class="btn btn-default">
+							Se proposer pour remplir ce Besoin
+						</a>
+					</div>
+				{% endif %}
+
+			</div>
+		</div>
+	</div>
+
+	<p><a href='/task/list'>Retour à la liste des Besoins</a></p>
 {% endblock %}
 
