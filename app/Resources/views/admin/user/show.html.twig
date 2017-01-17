@@ -1,33 +1,88 @@
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+
+	{{ parent() }}
+
+	{% stylesheets filter="scssphp" output="css/profile.css" combine=true
+		"scss/profile.scss"
+	%}
+	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+	{% endstylesheets %}
+
+{% endblock %}
+
 {% block title %}Administration - {{ user.username }}{% endblock %}
 
 {% block body %}
 
-	<h1>{{ block('title') }}</h1>
-
 	<div class="row">
-		<div class='col-lg-8 col-md-10 col-sm-12'>
 
-			<div class='panel panel-default'>
+		<div class="col-md-6 col-md-offset-3 toppad">
 
-				<div class="panel-heading">{{ user.name }} {{ user.surname }} - <a href='/admin/user/edit/{{ user.id }}'>Modifier</a></div>
+			<div class="panel panel-info fos_user_user_show">
+
+				<div class="panel-heading">
+					<h1 class="panel-title text-center">{{ user.username | upper}}</h1>
+				</div>
+
 				<div class="panel-body">
-					<p>Pseudo : {{ user.username }}</p>
-					<p>E-mail : {{ user.email }}</p>
-					<p>Prénom : {{ user.name }}</p>
-					<p>Nom : {{ user.surname }}</p>
-					<p>Adresse : {{ user.adress }}</p>
-					<p>Région : {{ user.region }}</p>
-					<p>Ville : {{ user.city }}</p>
-					<p>Téléphone : {{ user.phone }}</p>
-					<p>Crédit : {{ user.hours }}h</p>
-					<p>Compte actif : {{ user.enabled }}</p>
-					<p>Dernière connexion : {{ user.lastLogin|localizeddate() }}</p>
+					<div class="row">
+						<div class="col-md-3" align="center">
+							<img alt="avatar" src="../../../../images/man.png"
+							 class="avatar img-circle img-responsive">
+							<a href="/admin/user/edit/{{ user.id }}" data-original-title="Edition du profil"
+							 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
+								<i class="glyphicon glyphicon-edit"></i>
+								Édition
+							</a>
+						</div>
+						<div class="col-md-9">
+							<table class="table table-user-information">
+								<tbody>
+									<tr>
+										<td>E-mail :</td>
+										<td>{{ user.email }}</td>
+									</tr>
+									<tr>
+										<td>Prénom :</td>
+										<td>{{ user.name }}</td>
+									</tr>
+									<tr>
+										<td>Nom :</td>
+										<td>{{ user.surname }}</td>
+									</tr>
+									<tr>
+										<td>Adresse :</td>
+										<td>{{ user.adress }}</td>
+									</tr>
+									<tr>
+										<td>Région :</td>
+										<td>{{ user.region }}</td>
+									</tr>
+									<tr>
+										<td>Ville :</td>
+										<td>{{ user.city }}</td>
+									</tr>
+									<tr>
+										<td>Téléphone :</td>
+										<td>{{ user.phone }}</td>
+									</tr>
+									<tr>
+										<td>Solde :</td>
+										<td>{{ user.hours }}h</td>
+									</tr>
+									<tr>
+										<td>Dernière connexion :</td>
+										<td>{{ user.lastLogin|localizeddate() }}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 
 			</div>
-
 		</div>
 	</div>
 
