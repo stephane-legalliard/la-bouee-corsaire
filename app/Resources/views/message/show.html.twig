@@ -27,6 +27,9 @@
 						Message envoyé à {{ message.dest }}
 						par {{ message.author }}
 						le {{ message.date.format('j/m/Y à G:i') }}
+						au sujet de <a href="/task/show/{{ message.transaction.task.id }}">
+							{{ message.transaction.task.title }}
+						</a>
 					</h1>
 				</div>
 
@@ -46,12 +49,6 @@
 
 						</div>
 						<div class="col-md-9">
-							<label>Besoin concerné</label>
-							<span class="pull-right">
-								<a href="/task/show/{{ message.transaction.task.id }}">
-									{{ message.transaction.task.title }}
-								</a>
-							</span>
 							<p>
 								{{ message.content }}
 							</p>
