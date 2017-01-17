@@ -96,17 +96,6 @@ font-family: 'PT Serif', serif;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*----------FOOTER------------------*/
 footer{
   background-color:$navbar_fond;
@@ -145,5 +134,12 @@ a:hover, a:focus{
     width: 65%;
 		margin-left: 60px;
   }
+
+
+}
+/*--------Liste des tâches---------------------*/
+.panel-info{
+	word-wrap: break-word;
+	min-height: 193px;
 
 }
