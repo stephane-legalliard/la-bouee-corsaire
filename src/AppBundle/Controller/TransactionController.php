@@ -16,6 +16,21 @@
 	class TransactionController extends Controller {
 
 		/**
+		 * {@inheritdoc}
+		 */
+		protected function getById($class, $id, $enabled_only = true) {
+			$user = $this->getAuthenticatedUser();
+			$entity = parent::getById($class, $id);
+			if (!$entity->getUsers()->contains($this->getUser())) {
+				throw $this->createAccessDeniedException(
+					'You are not allowed to see the '.$class.' with id '.$id
+				);
+			}
+
+			return $entity;
+		}
+
+		/**
 		 * Show list of Transactions the current User is a part of
 		 *
 		 * @Route("/list", name="transaction_list")
