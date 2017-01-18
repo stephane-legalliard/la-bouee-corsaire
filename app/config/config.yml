@@ -85,7 +85,7 @@ fos_user:
             type: AppBundle\Form\RegistrationType
         confirmation:
             # set to 'true' to require email confirmation for new accounts
-            enabled: false
+            enabled: true
 
 # Assetic Configuration
 assetic:
