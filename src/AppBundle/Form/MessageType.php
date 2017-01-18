@@ -52,6 +52,7 @@
 					'label' => 'Rédigez votre message…'
 				])
 				->add('validation', CheckboxType::class, [
+					'required' => false,
 					'translation_domain' => false,
 					'label' => 'Valider la transaction'
 				]);
