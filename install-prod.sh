@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+export SYMFONY_ENV=prod
+
 if [ ! -e ./composer.phar ]; then
 	echo "Installation de composer…"
 	EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)
@@ -19,6 +21,5 @@ fi
 ./composer.phar install --no-dev
 bin/console doctrine:schema:update --force
 bin/console assetic:dump
-bin/console cache:clear
 
 exit 0
