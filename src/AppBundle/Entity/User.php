@@ -10,7 +10,7 @@
 	 * Registered Users
 	 *
 	 * @ORM\Entity
-	 * @ORM\Table(name="users")
+	 * @ORM\Table(name="bouee_users")
 	 */
 	class User extends BaseUser {
 

@@ -12,7 +12,7 @@
 	 * Tasks posted by Users
 	 *
 	 * @ORM\Entity
-	 * @ORM\Table(name="tasks")
+	 * @ORM\Table(name="bouee_tasks")
 	 */
 	class Task {
 

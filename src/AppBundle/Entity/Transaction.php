@@ -15,7 +15,7 @@
 	 * Ongoing and past Transactions between Users
 	 *
 	 * @ORM\Entity
-	 * @ORM\Table(name="transactions")
+	 * @ORM\Table(name="bouee_transactions")
 	 */
 	class Transaction {
 
@@ -47,6 +47,7 @@
 		 * Associated Users
 		 *
 		 * @ORM\ManyToMany(targetEntity="User")
+		 * @ORM\JoinTable(name="bouee_transaction_user")
 		 *
 		 * @var    User[] $users
 		 * @access private

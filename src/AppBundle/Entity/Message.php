@@ -10,7 +10,7 @@
 	 * Messages sent between Users
 	 *
 	 * @ORM\Entity
-	 * @ORM\Table(name="messages")
+	 * @ORM\Table(name="bouee_messages")
 	 */
 	class Message {
 
