@@ -110,7 +110,10 @@ body {
 }
 .content-row {
 	// footer height
-	margin-bottom: 200px;
+	margin-bottom: 30px;
+	@media screen and (max-width: 991px) {
+		margin-bottom: 90px;
+	}
 }
 .footer-row {
 	position: absolute;
